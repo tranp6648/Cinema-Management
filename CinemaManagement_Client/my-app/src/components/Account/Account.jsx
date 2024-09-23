@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import React, { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
+import { Login, Register } from '../Services/AccountService';
 function Account() {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -20,13 +21,13 @@ function Account() {
   const navigate = useNavigate();
 
   const [pillDetail, setPillDetail] = useState({
-    Username: '',
-    Password: '',
-    Email: '',
-    Phone: '',
-    fullname: '',
-    Birthday: null,
-    Accounttype: '',
+    username: '',
+    password: '',
+    email: '',
+    phone: '',
+    fullName: '',
+    birthday: null,
+    
   })
   const [showChangePasswordPopup, setShowChangePasswordPopup] = useState(false);
   const[showChangePassworUserPopup,setshowChangePassworUserPopup]=useState(false);
@@ -63,7 +64,7 @@ function Account() {
   const handleDateChange = (date) => {
 
     const formattedDate = date.toISOString().split('T')[0];
-    setPillDetail({ ...pillDetail, Birthday: formattedDate });
+    setPillDetail({ ...pillDetail, birthday: formattedDate });
   }
   const isValidDate = (dateString) => {
     const regexDate = /^\d{4}-\d{2}-\d{2}$/;
@@ -152,50 +153,11 @@ function Account() {
         setShowRememberMeMessage(true);
         return; // Do not proceed with login
       }
-      const response = await fetch('http://localhost:5231/api/Account/Login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(AccLogin),
-      });
-
-      const responseData = await response.json();
-
-      if (!response.ok) {
-        throw new Error(responseData.message || 'Login failed');
-      }
-
-      const { id, accountType, username, status } = responseData;
-
-      // Additional actions after a successful response
-      Swal.fire({
-        icon: 'success',
-        title: 'Login success',
-        showConfirmButton: false,
-        timer: 1500,
-      }).then(() => {
-        if (accountType == 0) {
-
-
-          if (status == false) {
-            handeleEdit(id,username,accountType);
-          }else{
-            navigate('/Admin', { state: { ID: id, username: username } })
-       
-          }
-  
-
-        } else if (accountType == 1) {
-          if(status==false){
-            handleUserEdit(id,username,accountType);
-          }else{
-            navigate('/layout', { state: { IDAccount: id, username: username } })
-          }
-       
-        }
-
-      });
+      const response=await Login({
+        indentifier:AccLogin.AccountLogin,
+        password:AccLogin.PasswordLogin
+      })
+      console.log(response)
 
     } catch (error) {
       console.error('Error during login:', error);
@@ -367,92 +329,42 @@ function Account() {
     }
    
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (pillDetail.Username === '' || pillDetail.Email === '' || pillDetail.Phone === '' || pillDetail.fullname === '' || pillDetail.Birthday === null) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Username And Email And Phone And FullName is required',
-        showConfirmButton: false,
-        timer: 1500,
-
-      });
-    } else if (!isValidEmail(pillDetail.Email)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Invalid email format',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else if (!isvalidPhone(pillDetail.Phone)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Invalid Phone format',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else if (!isValidDate(pillDetail.Birthday)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Invalid Date format',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-    else {
-      setloading(true);
-      pillDetail.Accounttype = 1;
-      pillDetail.Password = pillDetail.Username
-      fetch('http://localhost:5231/api/Account/Add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(pillDetail),
+      const response=await Register({
+        fullName:pillDetail.fullName,
+        email:pillDetail.email,
+        phone:pillDetail.phone,
+        birthday:pillDetail.birthday?new Date(pillDetail.birthday).toISOString().split('T')[0] :new Date().toISOString().split('T')[0],
+        username:pillDetail.username
       })
-        .then(async (response) => {
-          const contentType = response.headers.get('content-type');
-          let responseData = await response.json();
-
-
-          if (!response.ok) {
-            throw new Error(responseData.message);
-
+  
+      if(!response.errors){
+        setloading(true)
+        Swal.fire({
+          icon: 'success',
+          title: 'Register success',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setloading(false)
+      }else{
+        let errorMessages='';
+        for(const key in response.errors){
+          if(response.errors.hasOwnProperty(key)){
+            errorMessages+=`<p >${response.errors[key]}</p>`
           }
-
-
-        })
-        .then((data) => {
-          setPillDetail({
-            fullname: '',
-            Email: '',
-            Username: '',
-            Phone: '',
-            Birthday: '',
-            Password: ''
-          })
-          Swal.fire({
-            icon: 'success',
-            title: 'Add success',
-            showConfirmButton: false,
-            timer: 1500,
-
-          });
-          // Additional actions after a successful response
-        })
-        .catch((error) => {
-          Swal.fire({
-            icon: 'error',
-            title: error.message,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        })
-        .finally(() => {
-          setloading(false);
-        });
-    }
+        }
+        Swal.fire({
+          icon: 'error',
+          title: 'Failed',
+          showConfirmButton: false,
+          timer: 1500,
+          html:errorMessages
+        })  
+      }
+    
+    
 
   };
   const handleInputChange = (e) => {
@@ -515,9 +427,9 @@ function Account() {
                   FullName&nbsp;
                   <span className='required'>*</span>
                 </label>
-                <input type="text" value={pillDetail.fullname} onChange={handleInputChange} onBlur={() => validateInput('FullName', pillDetail.fullname)} name='fullname' className='woocommerce-Input woocommerce-Input--text input-text' />
-                {errors.FullName && (
-                  <p className="text-red-500 text-sm italic">{errors.FullName}</p>
+                <input type="text" value={pillDetail.fullName} onChange={handleInputChange} onBlur={() => validateInput('fullName', pillDetail.fullName)}  name='fullName' className='woocommerce-Input woocommerce-Input--text input-text' />
+                {errors.fullName && (
+                  <p className="text-red-500 text-sm italic">{errors.fullName}</p>
                 )}
               </p>
               <p className='woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide'>
@@ -525,9 +437,9 @@ function Account() {
                   UserName&nbsp;
                   <span className='required'>*</span>
                 </label>
-                <input type="text" value={pillDetail.Username} onChange={handleInputChange} name='Username' onBlur={() => validateInput('Username', pillDetail.Username)} className='woocommerce-Input woocommerce-Input--text input-text' />
-                {errors.Username && (
-                  <p className="text-red-500 text-sm italic">{errors.Username}</p>
+                <input type="text" value={pillDetail.username} onChange={handleInputChange}  onBlur={() => validateInput('username', pillDetail.username)} name='username'  className='woocommerce-Input woocommerce-Input--text input-text' />
+                {errors.username && (
+                  <p className="text-red-500 text-sm italic">{errors.username}</p>
                 )}
               </p>
               <p className='woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide'>
@@ -535,7 +447,7 @@ function Account() {
                   Phone&nbsp;
                   <span className='required'>*</span>
                 </label>
-                <input type="text" name='Phone' value={pillDetail.Phone} onChange={handleInputChange} onBlur={() => validateInput('Phone', pillDetail.Phone)} className='woocommerce-Input woocommerce-Input--text input-text' />
+                <input type="text" name='phone' value={pillDetail.phone} onChange={handleInputChange} onBlur={() => validateInput('phone', pillDetail.phone)} className='woocommerce-Input woocommerce-Input--text input-text' />
                 {errors.Phone && (
                   <p className="text-red-500 text-sm italic">{errors.Phone}</p>
                 )}
@@ -545,7 +457,7 @@ function Account() {
                   Birthday&nbsp;
                   <span className='required'>*</span>
                 </label>
-                <DatePicker name='Birthday' selected={pillDetail.Birthday ? new Date(pillDetail.Birthday) : null} onBlur={() => validateInput('Birthday', pillDetail.Birthday)} onChange={handleDateChange} className='woocommerce-Input woocommerce-Input--text input-text' dateFormat="dd/MM/yyyy" />
+                <DatePicker name='Birthday' selected={pillDetail.birthday?new Date(pillDetail.birthday).toISOString().split('T')[0] :new Date().toISOString().split('T')[0]} onBlur={() => validateInput('Birthday', pillDetail.birthday)} onChange={handleDateChange} className='woocommerce-Input woocommerce-Input--text input-text' dateFormat="dd/MM/yyyy" />
                 {errors.Birthday && (
                   <p className="text-red-500 text-sm italic">{errors.Birthday}</p>
                 )}
@@ -555,7 +467,7 @@ function Account() {
                   Email&nbsp;
                   <span className='required'>*</span>
                 </label>
-                <input type="text" name='Email' value={pillDetail.Email} onChange={handleInputChange} onBlur={() => validateInput('Email', pillDetail.Email)} className='woocommerce-Input woocommerce-Input--text input-text' />
+                <input type="text" name='email' value={pillDetail.email} onChange={handleInputChange} onBlur={() => validateInput('Email', pillDetail.email)} className='woocommerce-Input woocommerce-Input--text input-text' />
                 {errors.Email && (
                   <p className="text-red-500 text-sm italic">{errors.Email}</p>
                 )}

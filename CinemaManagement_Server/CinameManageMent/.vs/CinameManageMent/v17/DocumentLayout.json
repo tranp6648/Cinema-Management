@@ -1,7 +1,72 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\validation\\changepasswordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\changepasswordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\changepassdtp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\changepassdtp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\data\\otpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\otpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\data\\forgetpasswordresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\forgetpasswordresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\cinamemanagement.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:cinamemanagement.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\cinamemanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:cinamemanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +74,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 12,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterAccount.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
+              "RelativeDocumentMoniker": "Data\\RegisterAccount.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
+              "RelativeToolTip": "Data\\RegisterAccount.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAQwA8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T03:38:10.051Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -42,6 +121,195 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OTPDTO.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\OTPDTO.cs",
+              "RelativeDocumentMoniker": "Data\\OTPDTO.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\OTPDTO.cs",
+              "RelativeToolTip": "Data\\OTPDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T14:07:33.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\AccountServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
+              "RelativeToolTip": "Services\\AccountServiceImpl.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAUwGMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T03:42:09.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswAoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T03:36:33.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAUwDcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T06:37:26.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChangePasswordValidation.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\ChangePasswordValidation.cs",
+              "RelativeDocumentMoniker": "Validation\\ChangePasswordValidation.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\ChangePasswordValidation.cs",
+              "RelativeToolTip": "Validation\\ChangePasswordValidation.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T09:55:15.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Account.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Models\\Account.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Account.cs",
+              "RelativeToolTip": "Models\\Account.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T09:50:30.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-20T06:44:42.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T02:43:18.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ForgetPasswordResult.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\ForgetPasswordResult.cs",
+              "RelativeDocumentMoniker": "Data\\ForgetPasswordResult.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\ForgetPasswordResult.cs",
+              "RelativeToolTip": "Data\\ForgetPasswordResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T03:10:59.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountValidation.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
+              "RelativeDocumentMoniker": "Validation\\AccountValidation.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
+              "RelativeToolTip": "Validation\\AccountValidation.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBoAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T09:46:09.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ChangePassDTP.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\ChangePassDTP.cs",
+              "RelativeDocumentMoniker": "Data\\ChangePassDTP.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\ChangePassDTP.cs",
+              "RelativeToolTip": "Data\\ChangePassDTP.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T05:34:59.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "Data\\LoginDTO.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\LoginDTO.cs",
+              "RelativeToolTip": "Data\\LoginDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T14:28:28.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Models\\DatabaseContext.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
+              "RelativeToolTip": "Models\\DatabaseContext.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwBMAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T02:47:04.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CinameManageMent",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\CinameManageMent.csproj",
+              "RelativeDocumentMoniker": "CinameManageMent.csproj",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\CinameManageMent.csproj",
+              "RelativeToolTip": "CinameManageMent.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-20T02:43:22.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CinameManageMent.http",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\CinameManageMent.http",
+              "RelativeDocumentMoniker": "CinameManageMent.http",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\CinameManageMent.http",
+              "RelativeToolTip": "CinameManageMent.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-09-20T06:44:39.921Z"
             }
           ]
         }
