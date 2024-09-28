@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "T40lxwgcnP3KXTZ/ij0nrVeatPYzUJljqSwSSY7roJQ=",
+  "Hash": "nT8wYOSO5YAqDlqITEDSyrTe92v8dJJKruTZhlypw0I=",
   "Source": "CinameManageMent",
   "BasePath": "_content/CinameManageMent",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "CinameManageMent\\wwwroot",
+      "Source": "CinameManageMent",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\d65beba60562489a80c3585da3a0d655.png",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "Images/d65beba60562489a80c3585da3a0d655.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\d65beba60562489a80c3585da3a0d655.png"
+    },
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\defaultImage.jpg",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "Images/defaultImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\defaultImage.jpg"
+    }
+  ]
 }

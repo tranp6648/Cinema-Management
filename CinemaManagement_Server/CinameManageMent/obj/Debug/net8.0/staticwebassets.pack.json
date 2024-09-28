@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\d65beba60562489a80c3585da3a0d655.png",
+      "PackagePath": "staticwebassets\\Images\\d65beba60562489a80c3585da3a0d655.png"
+    },
+    {
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\defaultImage.jpg",
+      "PackagePath": "staticwebassets\\Images\\defaultImage.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CinameManageMent.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CinameManageMent.props",
+      "PackagePath": "build\\CinameManageMent.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CinameManageMent.props",
+      "PackagePath": "buildMultiTargeting\\CinameManageMent.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CinameManageMent.props",
+      "PackagePath": "buildTransitive\\CinameManageMent.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

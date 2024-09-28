@@ -158,6 +158,29 @@ function Account() {
         password:AccLogin.PasswordLogin
       })
       console.log(response)
+      if(response!=null){
+        
+        localStorage.setItem("token",response.token)
+        localStorage.setItem("role",response.claims.role);
+        localStorage.setItem("Id",response.claims.id);
+        localStorage.setItem("Email",response.claims.email);
+        localStorage.setItem("Phone",response.claims.phone);
+        localStorage.setItem("FullName",response.claims.fullName);
+        localStorage.setItem("Birthday",response.claims.birthday);
+        localStorage.setItem("username",response.claims.username);
+        localStorage.setItem("Avatar",response.claims.avatar)
+        if(response.claims.role==="Admin"){
+          Swal.fire({
+            icon: 'success',
+            title: response.message,
+            showConfirmButton: false,
+            timer: 1500
+          }).then(()=>{
+            navigate("/Admin")
+          })
+        
+        }
+      }
 
     } catch (error) {
       console.error('Error during login:', error);

@@ -1,8 +1,11 @@
-﻿
+﻿using CinameManageMent.Data;
 using CinameManageMent.Models;
 using CinameManageMent.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 
 namespace CinameManageMent
 {
@@ -12,45 +15,80 @@ namespace CinameManageMent
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Add services to the container
+            ConfigureServices(builder);
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline
+            ConfigureMiddleware(app);
+
+            app.Run();
+        }
+
+        private static void ConfigureServices(WebApplicationBuilder builder)
+        {
+            // Add essential services
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Configure the database context
             var connectionString = builder.Configuration["ConnectionStrings:DefaultConnect"];
-            builder.Services.AddDbContext<DatabaseContext>(option => option.UseLazyLoadingProxies().UseSqlServer(connectionString));
-            builder.Services.AddScoped<AccountService,AccountServiceImpl>();
+            builder.Services.AddDbContext<DatabaseContext>(options =>
+                options.UseLazyLoadingProxies().UseSqlServer(connectionString));
+
+            // Register services
+            builder.Services.AddScoped<AccountService, AccountServiceImpl>();
+
+            // Configure JWT authentication (if needed in the future)
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"])),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("User", policy =>
+                {
+                    policy.RequireAssertion(context =>
+                        context.User.HasClaim(c => c.Type == ClaimTypes.Role && ( c.Value == "User"))
+                        ); // Add any additional claim checks here
+                });
+                options.AddPolicy("Admin", policy =>
+                {
+                    policy.RequireAssertion(context =>
+                        context.User.HasClaim(c => c.Type == ClaimTypes.Role && (c.Value == "Admin"))
+                        ); // Add any additional claim checks here
+                });
+            });
+
+            // Configure CORS policy
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("ReactPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:3000") // Update with your React app URL
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
                 });
             });
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
-                {
-                    options.LoginPath = "/api/auth/login"; // Đường dẫn đến action đăng nhập
-                    options.LogoutPath = "/api/auth/logout"; // Đường dẫn đến action đăng xuất
-                    options.ExpireTimeSpan=TimeSpan.FromMinutes(10);
-                    options.SlidingExpiration = true;
-                });
+        }
 
-            builder.Services.AddAuthorization(options =>
-            {
-                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
-                options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
-            });
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+        private static void ConfigureMiddleware(WebApplication app)
+        {
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
             app.UseCors("ReactPolicy");
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -58,13 +96,10 @@ namespace CinameManageMent
                 DefaultContentType = "application/octet-stream"
             });
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
-
             app.MapControllers();
-
-            app.Run();
         }
     }
 }

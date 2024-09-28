@@ -3,8 +3,9 @@ import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-import './admin.css'
-import { format } from 'date-fns';
+import './admin.css';
+import Layout from '../LayoutAdmin/LayoutAdmin';
+
 
 import axios from 'axios';
 import { Bar, Pie } from 'react-chartjs-2';
@@ -212,131 +213,7 @@ function AdminPage() {
   return (
     <div className="wrapper">
 
-      <header className="main-header">
-
-        <a href="index2.html" className="logo"><b>Admin</b>LTE</a>
-
-        <nav className="navbar navbar-static-top" role="navigation">
-          <a href="#" className="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span className="sr-only">Toggle navigation</span>
-          </a>
-
-          {/* Logo */}
-          <a className="navbar-brand cursor-pointer" onClick={handleDropdownToggle}>
-            <img src="" className="user-image" alt="Logo" />
-            {/* You can also add text or other elements alongside the logo */}
-            {username}
-            &nbsp;
-            <i className="fa fa-chevron-circle-down"></i>
-          </a>
-          {showDropdown && (
-            <div className="dropdown">
-              <a href="#" onClick={() => navigate('/Account')}>
-                <i className="fa fa-sign-out" aria-hidden="true"></i> Logout
-              </a>
-              <a   onClick={() => navigate('/Edit', { state: { username: username, ID: ID } })}>
-                <i className="fa fa-user" aria-hidden="true"></i> Account
-              </a>
-
-              {/* Các mục khác của dropdown có thể được thêm vào đây */}
-            </div>
-          )}
-        </nav>
-      </header>
-
-      <aside className="main-sidebar ">
-
-        <section className="sidebar h-auto">
-
-          <div className="user-panel">
-            <div className="pull-left image">
-              <img src="" className="img-circle" alt="User Image" />
-            </div>
-            <div className="pull-left info">
-              <p className='text-white'>{username}</p>
-
-              <a href="#" className='text-white'><i className="fa fa-circle text-green-500"></i> Online</a>
-            </div>
-          </div>
-
-
-
-          <ul className="sidebar-menu">
-            <li className="header">MAIN NAVIGATION</li>
-            <li className="active treeview">
-              <a href="" onClick={() => navigate('/admin', { state: { username: username, ID: ID } })}>
-                <i className="fa fa-dashboard" ></i> <span>Dashboard</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a href="" onClick={() => navigate('/Genre', { state: { username: username, ID: ID } })}>
-                <i class="fas fa-film"></i> <span>Genre</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Category_Movie', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Category Movie</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Movie', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Movie</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/actor', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Actor</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Showtimes', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Showtimes</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Event', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Event</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Voucher', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Voucher</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Order', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Order</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Category_Blog', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Category Blog</span>
-              </a>
-
-            </li>
-            <li className="active treeview">
-              <a className='cursor-pointer' onClick={() => navigate('/Blog', { state: { username: username, ID: ID } })}>
-                <i class="fa fa-list-alt" aria-hidden="true"></i> <span> Blog</span>
-              </a>
-
-            </li>
-
-
-
-          </ul>
-        </section>
-
-      </aside>
-
+   <Layout/>
 
       <div className="content-wrapper">
 

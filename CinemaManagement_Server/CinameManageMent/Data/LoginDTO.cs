@@ -1,4 +1,6 @@
-﻿namespace CinameManageMent.Data
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace CinameManageMent.Data
 {
     public class LoginDTO
     {

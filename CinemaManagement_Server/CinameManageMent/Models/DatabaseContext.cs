@@ -1,57 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CinameManageMent.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CinameManageMent.Models;
-
-public partial class DatabaseContext : DbContext
+namespace CinameManageMent.Models
 {
-    public DatabaseContext()
+    public class DatabaseContext:DbContext
     {
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) {
+        
     }
-
-    public DatabaseContext(DbContextOptions<DatabaseContext> options)
-        : base(options)
-    {
-    }
-
-    public virtual DbSet<Account> Accounts { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-OARQJFR4;Database=Cinema_Management;user id=sa;password=123;trusted_connection=true;encrypt=false");
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Account>(entity =>
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            entity.ToTable("Account", tb => tb.HasTrigger("trg_InsertAfterAccountType"));
+            base.OnModelCreating(builder);
+          
+        }
 
-            entity.Property(e => e.CreatedOtp)
-                .HasColumnType("datetime")
-                .HasColumnName("CreatedOTP");
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.FullName)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Otp)
-                .HasMaxLength(10)
-                .IsUnicode(false)
-                .HasColumnName("OTP");
-            entity.Property(e => e.Password)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Phone)
-                .HasMaxLength(12)
-                .IsUnicode(false);
-            entity.Property(e => e.Username)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-        });
-
-        OnModelCreatingPartial(modelBuilder);
+        #region Dbset
+        public DbSet<Account> Accounts { get; set; }
+        #endregion
     }
-
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
