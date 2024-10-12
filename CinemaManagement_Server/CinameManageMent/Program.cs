@@ -40,6 +40,9 @@ namespace CinameManageMent
 
             // Register services
             builder.Services.AddScoped<AccountService, AccountServiceImpl>();
+            builder.Services.AddScoped<CategoryService, CategoryServiceImpl>();
+            builder.Services.AddScoped<ActorService, ActorServiceImpl>();
+            builder.Services.AddScoped<MovieService, MovieServiceImpl>();
 
             // Configure JWT authentication (if needed in the future)
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -67,7 +70,21 @@ namespace CinameManageMent
                         context.User.HasClaim(c => c.Type == ClaimTypes.Role && (c.Value == "Admin"))
                         ); // Add any additional claim checks here
                 });
+                options.AddPolicy("SuperAdmin", policy =>
+                {
+                    policy.RequireAssertion(context =>
+
+                    context.User.HasClaim(c => c.Type == ClaimTypes.Role && (c.Value == "SuperAdmin"))
+                    );
+                });
+                options.AddPolicy("AdminOrSuperAdmin", policy =>
+                {
+                    policy.RequireAssertion(context =>
+                        context.User.HasClaim(c => c.Type == ClaimTypes.Role &&
+                            (c.Value == "Admin" || c.Value == "SuperAdmin")));
+                });
             });
+
 
             // Configure CORS policy
             builder.Services.AddCors(options =>

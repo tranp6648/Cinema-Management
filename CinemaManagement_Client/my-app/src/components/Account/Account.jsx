@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import Swal from 'sweetalert2';
 import React, { useState } from 'react';
+import Cookies from 'js-cookie';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 import { Login, Register } from '../Services/AccountService';
@@ -159,7 +160,7 @@ function Account() {
       })
       console.log(response)
       if(response!=null){
-        
+        Cookies.set('token', response.token, { expires: 30 / 1440 }); 
         localStorage.setItem("token",response.token)
         localStorage.setItem("role",response.claims.role);
         localStorage.setItem("Id",response.claims.id);
@@ -169,14 +170,18 @@ function Account() {
         localStorage.setItem("Birthday",response.claims.birthday);
         localStorage.setItem("username",response.claims.username);
         localStorage.setItem("Avatar",response.claims.avatar)
-        if(response.claims.role==="Admin"){
+        if(response!=null){
           Swal.fire({
             icon: 'success',
             title: response.message,
             showConfirmButton: false,
             timer: 1500
           }).then(()=>{
-            navigate("/Admin")
+            if(response.claims.role==="Admin"){
+              navigate("/Admin")
+            }else if(response.claims.role==='SuperAdmin'){
+              navigate("/SuperAdmin")
+            }
           })
         
         }

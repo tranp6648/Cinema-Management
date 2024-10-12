@@ -23,6 +23,19 @@ namespace CinameManageMent.Controllers
             _accountService = accountService;
             _config = config;
         }
+        [HttpGet("GetAccountAdmin")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult GetAccountAdmin()
+        {
+            try
+            {
+                return Ok(_accountService.GetAdmin());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpPost("UpdateProfile/{id}")]
         [Authorize(Policy ="Admin")]
         public IActionResult UpdateProfile(int id, [FromBody]UpdateProfileDTO updateProfileDTO)
@@ -71,12 +84,7 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
-        //    [HttpPost("Logout")]
-        //    public async Task<IActionResult> Logout()
-        //    {
-        //        await HttpContext.SignOutAsync();
-        //        return Ok(new { message = "Logout Successfully" });
-        //    }
+        
         private string GenerateJwtToken(AccountDTO user)
         {
                 var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_config["Jwt:Secret"]));
@@ -109,9 +117,6 @@ namespace CinameManageMent.Controllers
                 return Unauthorized();
             }
             var token = GenerateJwtToken(account);
-
-
-
 
             return Ok(new
             {

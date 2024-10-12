@@ -1,6 +1,26 @@
-import axios from "axios";
+
 import { Account } from "../Url/api";
 const baseUrl = Account();
+export const GetAccountAdmin=async(token)=>{
+    try{
+        const response=await fetch(`${baseUrl}GetAccountAdmin`,{
+            method:'Get',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            console.log(responseBody)
+            return responseBody;
+        }
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
 export const ProfileAccount = async (id, token) => {
     try {
         const response = await fetch(`${baseUrl}ProfileAccount/${id}`, {
@@ -10,28 +30,10 @@ export const ProfileAccount = async (id, token) => {
                 'Authorization': `Bearer ${token}`
             },
         })
-        console.log(response)
+       
         if (!response.ok) {
             const responseBody = await response.json();
             console.log(responseBody)
-            return responseBody;
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.log(error)
-    }
-}
-export const Logout = async () => {
-    try {
-        const response = await fetch(`${baseUrl}Logout`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        if (!response.ok) {
-            const responseBody = await response.json();
             return responseBody;
         }
         const data = await response.json();

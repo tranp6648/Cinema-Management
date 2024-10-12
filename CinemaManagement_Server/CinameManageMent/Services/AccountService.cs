@@ -13,5 +13,6 @@ namespace CinameManageMent.Services
         public Account GetProfileUser(int id);
         public bool UpdateAvatar(int id,UploadPhotoDTO uploadPhotoDTO);
         public bool ChangeProfile(int id,UpdateProfileDTO updateProfileDTO);
+        public dynamic GetAdmin();
     }
 }

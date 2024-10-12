@@ -7,11 +7,23 @@ import LostPassword from './components/Account/LostPassword';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import ChangePassword from './components/Account/ChangePasword';
 import Profile from './components/Account/Profile';
+import SuperAdmin from './components/SuperAdmin/SuperAdmin';
+import CAM from './components/SuperAdmin/Category/CAM';
+import LayoutSuperAdmin from './components/LayoutSuperAdmin/LayoutSuperAdmin';
+import DetailMovie from './components/SuperAdmin/Category/DetailMovie';
+import Cinema from './components/SuperAdmin/Cinema/Cinema';
 function App() {
   return (
 <Router>
      <Routes>
       <Route path='/Admin' element={<ProtectedRoute Element={Admin} RoleRequired="Admin"/>}/>
+      <Route path='/SuperAdmin' element={< ProtectedRoute Element={LayoutSuperAdmin} RoleRequired="SuperAdmin" />}>
+          <Route index element={<ProtectedRoute Element={SuperAdmin}  RoleRequired="SuperAdmin"/>} />
+          <Route path='CAM' element={<ProtectedRoute Element={CAM} RoleRequired="SuperAdmin"/>}/>
+          <Route path='Cinema' element={<ProtectedRoute Element={Cinema} RoleRequired="SuperAdmin"/>}/>
+          <Route path='DetailMovie/:id' element={<ProtectedRoute Element={DetailMovie} RoleRequired="SuperAdmin"/>}/>
+        </Route>
+        
       <Route path='/ProfileAdmin' element={<Profile/>}/>
     <Route path='/Account' element={<Account/>}/>
     <Route path='/ChangePassword' element={<ChangePassword/>}/>

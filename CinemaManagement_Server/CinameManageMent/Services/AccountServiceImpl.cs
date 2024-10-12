@@ -84,7 +84,12 @@ namespace CinameManageMent.Services
                     Username = Login.username,
                     Phone = Login.Phone,
                     Birthday = Login.Birthday,
-                    Role = Login.AccountType == 1 ? "Admin" : "User",
+                    Role = Login.AccountType switch
+                    {
+                        1 => "Admin",
+                        2 => "User",
+                        3 => "SuperAdmin"
+                    },
                     Avatar= configuration["ImageUrl"]+Login.Avatar,
                 };
                 return user;
@@ -234,6 +239,15 @@ namespace CinameManageMent.Services
             {
                 return false;
             }
+        }
+
+        public dynamic GetAdmin()
+        {
+            return databaseContext.Accounts.FromSqlRaw("Select * From GetAdmin").Select(d => new
+            {
+                id=d.Id,
+                Username=d.username,
+            }).ToList();
         }
     }
 }

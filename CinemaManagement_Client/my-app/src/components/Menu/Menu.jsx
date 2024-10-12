@@ -37,7 +37,7 @@ function Menu(){
                     </div>
                 </div>
                 <div className='elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5e4d312'>
-                    <div className='elementor-widget-wrap elementor-element-populated'>
+                    <div className='elementor-widget-wrap elementor-element-populated' style={{left:'16%'}}>
                         <div className='elementor-element elementor-element-0bbfee0 elementor-view-primary-menu elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-aovis_elementor_menu_nav'>
                             <div className='elementor-widget-container'>
                                 <nav className='main-navigation'>

@@ -9,6 +9,7 @@ namespace CinameManageMent.Models;
 public  class Account
 {
     [Required]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Key]
     public int Id { get; set; }
     [Required]

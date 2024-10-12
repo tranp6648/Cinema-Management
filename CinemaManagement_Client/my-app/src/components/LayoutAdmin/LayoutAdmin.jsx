@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Admin/admin.css'
 import React, { useEffect, useState } from 'react';
 import { Logout } from '../Services/AccountService';
+import Cookies from 'js-cookie'
 function LayoutAdmin() {
     const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
@@ -18,11 +19,9 @@ function LayoutAdmin() {
     })
     const handleLogout=async()=>{
         try{
-            const response=await Logout();
-            if(response){
-             localStorage.clear();
+            Cookies.remove("token");
              navigate("/Account")   
-            }
+            
         }catch(error){
             console.log(error)
         }
