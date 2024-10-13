@@ -24,7 +24,7 @@ namespace CinameManageMent.Controllers
             _config = config;
         }
         [HttpGet("GetAccountAdmin")]
-        [Authorize(Policy ="SuperAdmin")]
+        [Authorize(Policy = "SuperAdmin")]
         public IActionResult GetAccountAdmin()
         {
             try
@@ -193,7 +193,11 @@ namespace CinameManageMent.Controllers
             }
             try
             {
-                return Ok(_accountService.Register(registerAccount));
+                return Ok(new
+                {
+                    result= _accountService.Register(registerAccount),
+                    Message="Add Account Successfully"
+                });
             }
             catch
             {

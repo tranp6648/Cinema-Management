@@ -17,6 +17,6 @@ namespace CinameManageMent.Data
         public DateOnly Birthday { get; set; }
         [AccountValidation(AccountValidation.ValidationType.Username)]
         public string username { get; set; }
-
+        public int AccountType { get; set; }
     }
 }

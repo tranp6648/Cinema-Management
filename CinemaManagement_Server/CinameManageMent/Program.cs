@@ -43,6 +43,7 @@ namespace CinameManageMent
             builder.Services.AddScoped<CategoryService, CategoryServiceImpl>();
             builder.Services.AddScoped<ActorService, ActorServiceImpl>();
             builder.Services.AddScoped<MovieService, MovieServiceImpl>();
+            builder.Services.AddScoped<CinemaService, CinemaServiceImpl>();
 
             // Configure JWT authentication (if needed in the future)
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -36,6 +36,9 @@ namespace CinameManageMent.Migrations
                     b.Property<int?>("AccountType")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Avatar")
                         .HasColumnType("Varchar(200)");
 
@@ -148,6 +151,9 @@ namespace CinameManageMent.Migrations
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("Nvarchar(200)");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 

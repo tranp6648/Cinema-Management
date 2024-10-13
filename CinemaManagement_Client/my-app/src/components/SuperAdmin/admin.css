@@ -13,6 +13,12 @@ body {
 .custom-select {
   z-index: 10; /* Thay đổi giá trị theo nhu cầu */
 }
+.AddPicker{
+  float: left;
+  position: relative;
+  left: -36px;
+  width: 134%;
+}
 .input{
   border: none;
   line-height: 50px;
@@ -2094,6 +2100,9 @@ input:checked + .slider:before {
   border: none;
   cursor: pointer;
   font-size: 16px;
+}
+.Date-pick{
+  width: 800%;
 }
 .Date-picker1{
   width: 605%;

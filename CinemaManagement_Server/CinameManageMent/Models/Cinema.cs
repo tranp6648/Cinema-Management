@@ -21,5 +21,6 @@ namespace CinameManageMent.Models
         public string PhoneNumber { get; set; }
         [Required]
         public int idManager { get; set; }
+        public bool status { get; set; }
     }
 }

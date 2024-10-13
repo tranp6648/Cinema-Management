@@ -12,6 +12,7 @@ import CAM from './components/SuperAdmin/Category/CAM';
 import LayoutSuperAdmin from './components/LayoutSuperAdmin/LayoutSuperAdmin';
 import DetailMovie from './components/SuperAdmin/Category/DetailMovie';
 import Cinema from './components/SuperAdmin/Cinema/Cinema';
+import ManagerAdmin from './components/SuperAdmin/ManagerAdmin/ManagerAdmin';
 function App() {
   return (
 <Router>
@@ -22,6 +23,7 @@ function App() {
           <Route path='CAM' element={<ProtectedRoute Element={CAM} RoleRequired="SuperAdmin"/>}/>
           <Route path='Cinema' element={<ProtectedRoute Element={Cinema} RoleRequired="SuperAdmin"/>}/>
           <Route path='DetailMovie/:id' element={<ProtectedRoute Element={DetailMovie} RoleRequired="SuperAdmin"/>}/>
+          <Route path='ManagerAdmin' element={<ProtectedRoute Element={ManagerAdmin} RoleRequired="SuperAdmin"/>}/>
         </Route>
         
       <Route path='/ProfileAdmin' element={<Profile/>}/>

@@ -10,3 +10,6 @@ export const Actor=()=>{
 export const Movie=()=>{
     return 'http://localhost:5277/api/Movie/';
 }
+export const Cinema=()=>{
+    return 'http://localhost:5277/api/Cinema/'
+}

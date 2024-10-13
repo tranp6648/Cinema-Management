@@ -38,4 +38,5 @@ public  class Account
     public DateTime? CreatedOtp { get; set; }
     [Column(TypeName ="Varchar(200)")]
     public string? Avatar { get; set; }
+    public bool Active { get; set; }
 }

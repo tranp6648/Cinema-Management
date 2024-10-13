@@ -61,7 +61,8 @@ namespace CinameManageMent.Services
                 var Password = new SqlParameter("@Password", BCrypt.Net.BCrypt.HashPassword(password));
                 var Phone = new SqlParameter("@Phone", registerAccount.Phone);
                 var Birthday = new SqlParameter("@Birthday", registerAccount.Birthday);
-                databaseContext.Database.ExecuteSqlRaw("EXEC sp_RegisterAccount @FullName,@Username,@Email,@Password,@Phone,@Birthday", Fullname, Username, Email, Password, Phone, Birthday);
+                var AccountType=new SqlParameter("@AccouuntType",registerAccount.AccountType);
+                databaseContext.Database.ExecuteSqlRaw("EXEC sp_RegisterAccount @FullName,@Username,@Email,@Password,@Phone,@Birthday,@AccouuntType", Fullname, Username, Email, Password, Phone, Birthday,AccountType);
                 SendEmail(registerAccount.Email, "Create Account", $"Username:{registerAccount.username}\n Password:{password}");
                 return true;
             }
