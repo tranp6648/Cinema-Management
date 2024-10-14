@@ -156,14 +156,14 @@ namespace CinameManageMent.Services
                 d.Duration,
                 d.Trailer,
 
-                CategoryName = DatabaseContext.Details.Where(a=>a.IdMovie==d.Id).Select(d => new
+                CategoryName = DatabaseContext.DetailCategoryMovies.Where(a=>a.IdMovie==d.Id).Select(d => new
                 {
                     d.Category.Name,
-                    d.Category.id,
+                    d.Category.Id,
                 }).FirstOrDefault(),
-                ActorROles=DatabaseContext.Details_Actors.Where(a => a.idMovie == d.Id).Select(d => new
+                ActorROles=DatabaseContext.DetailActorMovies.Where(a => a.IdMovie == d.Id).Select(d => new
                 {
-                   d.Actor.id,
+                   d.Actor.Id,
                     d.Actor.Name
                 }).ToList()
             }).ToList();

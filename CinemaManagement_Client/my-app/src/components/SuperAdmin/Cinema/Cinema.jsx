@@ -71,6 +71,7 @@ function Cinema() {
         const SelectedCinema = Cinema.find(cinema => cinema.id == Id);
 
         if (SelectedCinema) {
+            
             const Name = SelectedCinema.name.split(' - ')[0];
             FromData.UpdateName = Name;
             FromData.id = Id;
@@ -79,7 +80,7 @@ function Cinema() {
             FromData.UpdateAddress = SelectedCinema.address;
             FromData.UpdatePhoneNumber = SelectedCinema.phoneNumber;
         }
-
+       
         setIsPopupVisibile(true)
     }
 
@@ -122,6 +123,7 @@ function Cinema() {
                     timer: 1500
                 })
             } else {
+                console.log(FromData.id)
                 const response = await UpdateCinema(FromData.id, {
                     district: SelectedUpdateDistrict?.label == undefined ? SelectedUpdateDistrict : SelectedUpdateDistrict?.label,
                     idManager: SeletedUpdateAdmin?.value == undefined ? SeletedUpdateAdmin : SeletedUpdateAdmin?.value,
@@ -208,8 +210,10 @@ function Cinema() {
     const fetchAdmin = async () => {
         try {
             const response = await GetAccountAdmin(token);
-
-            setAdmin(response);
+            if(response.length>0){
+                setAdmin(response);
+            }
+            
 
         } catch (error) {
             console.log(error)
@@ -218,8 +222,11 @@ function Cinema() {
     const fetchCinema = async () => {
         try {
             const response = await GetCinema(token);
-            console.log(response)
-            setCinema(response);
+            if(response.length>0){
+                setCinema(response);
+            }
+       
+           
         } catch (error) {
             console.log(error)
         }

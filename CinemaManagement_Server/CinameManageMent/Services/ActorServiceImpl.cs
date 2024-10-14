@@ -49,7 +49,7 @@ namespace CinameManageMent.Services
         {
             return databaseContext.Actors.FromSqlRaw("Select * From GetActor").Select(d => new
             {
-                id = d.id,
+                id = d.Id,
                 Name = d.Name,
                 Nationality = d.Nationality,
                 Image = configuration["ImageUrl"] + d.Image,
@@ -145,7 +145,7 @@ namespace CinameManageMent.Services
         {
             return databaseContext.Actors.FromSqlRaw("Select id,Name From dbo.fn_ActorNotIn({0})", id).Select(d => new
             {
-                id=d.id,
+                id=d.Id,
                 Name=d.Name
             }).ToList();
         }

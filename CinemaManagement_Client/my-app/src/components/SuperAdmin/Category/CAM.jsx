@@ -232,7 +232,10 @@ function CAM() {
     const fetchActor = async () => {
         try {
             const response = await GetActor(token);
-            setActor(response)
+            if(response.length>0){
+                setActor(response)
+            }
+            
 
         } catch (error) {
             console.log(error)
@@ -241,8 +244,11 @@ function CAM() {
     const fetchdata = async () => {
         try {
             const response = await GetCategory(token);
-
-            setCategory(response)
+            console.log(response)
+            if(response.length>0){
+                setCategory(response)
+            }
+            
         } catch (error) {
             console.log(error)
         }
@@ -250,7 +256,10 @@ function CAM() {
     const fetchMovie = async () => {
         try {
             const response = await GetMovie(token);
-            setMovie(response)
+            if(response.length>0){
+                setMovie(response)
+            }
+          
 
         } catch (error) {
             console.log(error)

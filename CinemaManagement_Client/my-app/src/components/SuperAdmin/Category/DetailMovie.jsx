@@ -71,7 +71,7 @@ function DetailMovie() {
                 showConfirmButton: false,
                 timer: 1500
             })
-              navigate(`/SuperAdmin/Category`)
+              navigate(`/SuperAdmin/CAM`)
            }
 
         }catch(error){

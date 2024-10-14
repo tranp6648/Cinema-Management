@@ -37,17 +37,17 @@ namespace CinameManageMent.Services
 
         public dynamic GetCinema()
         {
-           return databaseContext.Cinema.FromSqlRaw("Select * From GetCinema").Select(d => new
+           return databaseContext.Cinemas.FromSqlRaw("Select * From GetCinema").Select(d => new
            {
-               id=d.id,
-               name=d.name,
-               status=d.status,
+               id=d.Id,
+               name=d.Name,
+               status=d.Status,
                District=d.District,
                Address=d.Address,
                PhoneNumber=d.PhoneNumber,
-               Manager = databaseContext.Accounts.Where(a => a.Id == d.idManager).Select(a => new
+               Manager = databaseContext.Accounts.Where(a => a.Id == d.IdManager).Select(a => new
                {
-                   ManagerAdmin=a.username,
+                   ManagerAdmin=a.Username,
                    idManager=a.Id
                }).FirstOrDefault()
            }).ToList();

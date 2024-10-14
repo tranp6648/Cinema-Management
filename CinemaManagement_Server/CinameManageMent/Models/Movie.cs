@@ -1,35 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace CinameManageMent.Models
+namespace CinameManageMent.Models;
+
+public partial class Movie
 {
-    [Table("Movie")]
-    public class Movie
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        [Required]
-        public int Id { get; set; }
-        [Required]
-        [Column(TypeName ="Varchar(200)")]
-        public string Title { get; set; }
-        [Required]
-        [Column(TypeName = "ntext")]
-        public string Description { get; set; }
-        [Required]
-        [Column(TypeName ="Date")]
-        public DateOnly ReleaseDate { get; set; }
-        [Required]
-        public int Duration { get; set; }
-        [Required]
-        [Column(TypeName ="Nvarchar(200)")]
-        public string Director { get; set; }
-        [Required]
-        [Column(TypeName ="varchar(200)")]
-        public string Trailer { get; set; }
-        [Required]
-        [Column(TypeName ="varchar(200)")]
-        public string Picture { get; set; }
+    public int Id { get; set; }
 
-    }
+    public string Title { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public DateOnly ReleaseDate { get; set; }
+
+    public int Duration { get; set; }
+
+    public string Director { get; set; } = null!;
+
+    public string Trailer { get; set; } = null!;
+
+    public string Picture { get; set; } = null!;
+
+    public virtual ICollection<DetailActorMovie> DetailActorMovies { get; set; } = new List<DetailActorMovie>();
+
+    public virtual ICollection<DetailCategoryMovie> DetailCategoryMovies { get; set; } = new List<DetailCategoryMovie>();
 }

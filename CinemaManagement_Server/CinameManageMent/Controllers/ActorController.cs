@@ -79,7 +79,11 @@ namespace CinameManageMent.Controllers
         {
             try
             {
-                return Ok();
+                return Ok(new
+                {
+                    result=actorService.AddActor(addActor),
+                    Message="Create Actor Success"
+                });
             }
             catch
             {

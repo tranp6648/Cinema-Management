@@ -1,29 +1,33 @@
-﻿using CinameManageMent.Data;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace CinameManageMent.Models
 {
     public class DatabaseContext:DbContext
     {
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) {
-        
-    }
-        protected override void OnModelCreating(ModelBuilder builder)
+        public DatabaseContext()
         {
-            base.OnModelCreating(builder);
-          
+        }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+        : base(options)
+        {
         }
 
-        #region Dbset
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Detail_Category_Movie> Details { get; set; }
-        public DbSet<Actor> Actors { get; set; }
-        public DbSet<Detail_Actor_Movie> Details_Actors { get; set;}
-        public DbSet<Cinema> Cinema { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
 
-        #endregion
+        public virtual DbSet<Actor> Actors { get; set; }
+
+        public virtual DbSet<Blog> Blogs { get; set; }
+
+        public virtual DbSet<Category> Categories { get; set; }
+
+        public virtual DbSet<CategoryBlog> CategoryBlogs { get; set; }
+
+        public virtual DbSet<Cinema> Cinemas { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
+
+        public virtual DbSet<DetailActorMovie> DetailActorMovies { get; set; }
+
+        public virtual DbSet<DetailCategoryMovie> DetailCategoryMovies { get; set; }
+
     }
 }

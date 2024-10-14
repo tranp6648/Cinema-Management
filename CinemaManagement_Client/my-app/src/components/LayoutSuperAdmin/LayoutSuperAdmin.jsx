@@ -105,6 +105,13 @@ function LayoutSuperAdmin() {
 
                         </li>
                      
+                        <li className="active treeview">
+                        <a href="" onClick={() => navigate('/SuperAdmin/Blog')}>
+                                <i className="fa fa-dashboard" ></i> <span>Blog</span>
+                            </a>
+
+                        </li>
+                     
 
 
                     </ul>

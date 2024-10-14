@@ -1,30 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace CinameManageMent.Models
+namespace CinameManageMent.Models;
+
+public partial class Actor
 {
-    [Table("Actor")]
-    public class Actor
-    {
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        public int id { get; set; }
-        [Required]
-        [Column(TypeName ="Varchar(200)")]
-        public string Name { get; set; }
-        [Required]
-        [Column(TypeName ="Varchar(100)")]
-        public string Nationality {  get; set; }
-        [Required]
-        [Column(TypeName ="Varchar(200)")]
-        public string Image { get; set; }
-        [Required]
-        [Column(TypeName ="Date")]
-        public DateOnly Birthday { get; set; }
-        [Required]
-        [Column(TypeName ="text")]
-        public string Bio { get; set; }
+    public int Id { get; set; }
 
-    }
+    public string Name { get; set; } = null!;
+
+    public string Nationality { get; set; } = null!;
+
+    public string Image { get; set; } = null!;
+
+    public DateOnly Birthday { get; set; }
+
+    public string Bio { get; set; } = null!;
+
+    public virtual ICollection<DetailActorMovie> DetailActorMovies { get; set; } = new List<DetailActorMovie>();
 }

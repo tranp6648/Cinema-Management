@@ -13,3 +13,9 @@ export const Movie=()=>{
 export const Cinema=()=>{
     return 'http://localhost:5277/api/Cinema/'
 }
+export const CategoryBlogApi=()=>{
+    return 'http://localhost:5277/api/CategoryBlog/'
+}
+export const Blog=()=>{
+    return 'http://localhost:5277/api/Blog/'
+}

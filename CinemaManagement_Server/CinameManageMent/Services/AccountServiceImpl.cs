@@ -74,15 +74,15 @@ namespace CinameManageMent.Services
 
         public AccountDTO Login(LoginDTO loginDTO)
         {
-            var Login =  databaseContext.Accounts.FirstOrDefault(d => d.Email == loginDTO.Indentifier || d.username == loginDTO.Indentifier);
-            if (Login != null && BCrypt.Net.BCrypt.Verify(loginDTO.Password, Login.password))
+            var Login =  databaseContext.Accounts.FirstOrDefault(d => d.Email == loginDTO.Indentifier || d.Username == loginDTO.Indentifier);
+            if (Login != null && BCrypt.Net.BCrypt.Verify(loginDTO.Password, Login.Password))
             {
                 var user = new AccountDTO
                 {
                     Id = Login.Id,
                     FullName = Login.FullName,
                     Email = Login.Email,
-                    Username = Login.username,
+                    Username = Login.Username,
                     Phone = Login.Phone,
                     Birthday = Login.Birthday,
                     Role = Login.AccountType switch
@@ -155,7 +155,7 @@ namespace CinameManageMent.Services
             var UserProfile = databaseContext.Accounts.FromSqlRaw("EXEC ProfileUser @Id={0}", id).AsEnumerable().Select(d => new Account
             {
                 Id = d.Id,
-                username = d.username,
+                Username=d.Username,
                 Phone = d.Phone,
                 Birthday = d.Birthday,
                 Avatar =configuration["ImageUrl"]+ d.Avatar,
@@ -247,7 +247,14 @@ namespace CinameManageMent.Services
             return databaseContext.Accounts.FromSqlRaw("Select * From GetAdmin").Select(d => new
             {
                 id=d.Id,
-                Username=d.username,
+                Username=d.Username,
+                Email=d.Email,
+                Phone=d.Phone,
+                FullName=d.FullName,    
+                Birthday=d.Birthday,
+                Active=d.Active,    
+                Avatar=d.Avatar,
+               
             }).ToList();
         }
     }

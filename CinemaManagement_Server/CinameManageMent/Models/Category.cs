@@ -1,17 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace CinameManageMent.Models
+namespace CinameManageMent.Models;
+
+public partial class Category
 {
-    [Table("Category")]
-    public class Category
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
-        [Key]
-        public int id { get; set; }
-        [Required]
-        [Column(TypeName ="Varchar(200)")]
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+  
 }
