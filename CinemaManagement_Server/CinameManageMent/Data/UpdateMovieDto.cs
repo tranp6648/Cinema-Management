@@ -8,8 +8,8 @@
         public DateOnly ReleaseDate { get; set; }
         public int Duration { get; set; }
         public string Director { get; set; }
-        public string? Trailer { get; set; }
-        public string? Picture { get; set; }
+        public IFormFile? Trailer { get; set; }
+        public IFormFile? Picture { get; set; }
         public int IdCategory { get; set; }
     }
 }

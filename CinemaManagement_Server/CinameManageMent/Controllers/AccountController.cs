@@ -23,6 +23,30 @@ namespace CinameManageMent.Controllers
             _accountService = accountService;
             _config = config;
         }
+        [HttpGet("ActiveAccount/{email}/{id}")]
+        public IActionResult ActiveAccount(string email,int id)
+        {
+            try
+            {
+                return Ok(_accountService.ActiveAccount(id,email));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPost("RegisterUser")]
+        public IActionResult RegisterUser([FromBody]RegisterAccount registerAccount)
+        {
+            try
+            {
+                return Ok(_accountService.RegisterUser(registerAccount));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpGet("GetAccountAdmin")]
         [Authorize(Policy = "SuperAdmin")]
         public IActionResult GetAccountAdmin()
@@ -135,46 +159,46 @@ namespace CinameManageMent.Controllers
                 message = "Login Sucess"
             }) ;
         }
-        //[Produces("application/json")]
-        //[Consumes("application/json")]
-        //[HttpPut("CheckOTP")]
-        //public IActionResult CheckOTP([FromBody] OTPDTO oTPDTO)
-        //{
-        //    try
-        //    {
-        //        return Ok(_accountService.CheckOtp(oTPDTO));
-        //    }
-        //    catch
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
-        //    [HttpPut("ChangePassword")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        [HttpPut("CheckOTP")]
+        public IActionResult CheckOTP([FromBody] OTPDTO oTPDTO)
+        {
+            try
+            {
+                return Ok(_accountService.CheckOtp(oTPDTO));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("ChangePassword")]
 
-        //    public IActionResult ChangePassword([FromBody] ChangePassDTP changePassDTP)
-        //    {
+        public IActionResult ChangePassword([FromBody] ChangePassDTP changePassDTP)
+        {
 
-        //        try
-        //        {
-        //            return Ok(_accountService.ChangePassword(changePassDTP));
-        //        }
-        //        catch
-        //        {
-        //            return BadRequest();
-        //        }
-        //    }
-        //    [HttpPut("ForgetPassword/{Email}")]
-        //    public IActionResult ForgetPassword(string Email)
-        //    {
-        //        try
-        //        {
-        //            return Ok(_accountService.Forget(Email));
-        //        }
-        //        catch
-        //        {
-        //            return BadRequest();
-        //        }
-        //    }
+            try
+            {
+                return Ok(_accountService.ChangePassword(changePassDTP));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("ForgetPassword/{Email}")]
+        public IActionResult ForgetPassword(string Email)
+        {
+            try
+            {
+                return Ok(_accountService.Forget(Email));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("Register")]

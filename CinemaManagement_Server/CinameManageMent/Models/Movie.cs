@@ -21,7 +21,5 @@ public partial class Movie
 
     public string Picture { get; set; } = null!;
 
-    public virtual ICollection<DetailActorMovie> DetailActorMovies { get; set; } = new List<DetailActorMovie>();
-
-    public virtual ICollection<DetailCategoryMovie> DetailCategoryMovies { get; set; } = new List<DetailCategoryMovie>();
+    
 }

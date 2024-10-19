@@ -1,5 +1,64 @@
 import { Movie } from "../Url/api";
 const baseUrl = Movie();
+
+export const UpdateDescription=async(id,Description)=>{
+    try{
+        const response=await fetch(`${baseUrl}UpdateDescription/${id}`,{
+            method:'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Description)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
+export const GetActorMovie=async(id)=>{
+    try{
+        const response=await fetch(`${baseUrl}DetailActorMovie/${id}`,{
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
+export const getDetailMovie=async(id)=>{
+    try{
+        const response=await fetch(`${baseUrl}DetailMovie/${id}`,{
+            method:'Get',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
 export const AddActorToMovie = async (Actor) => {
     try {
         const response = await fetch(`${baseUrl}AddActorMovie`, {
@@ -68,10 +127,10 @@ export const CreateMovie = async (Movie, token) => {
         const response = await fetch(`${baseUrl}AddMovie`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json',
             },
-            body: JSON.stringify(Movie) // Send JSON stringified data
+            body: Movie // Send JSON stringified data
         });
 
         if (!response.ok) {

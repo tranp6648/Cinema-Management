@@ -1,10 +1,30 @@
 
 import { Account } from "../Url/api";
 const baseUrl = Account();
-export const GetAccountAdmin=async(token)=>{
-    try{
-        const response=await fetch(`${baseUrl}GetAccountAdmin`,{
-            method:'Get',
+export const RegisterAccountUser = async (user) => {
+    try {
+        const response = await fetch(`${baseUrl}RegisterUser`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const GetAccountAdmin = async (token) => {
+    try {
+        const response = await fetch(`${baseUrl}GetAccountAdmin`, {
+            method: 'Get',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -17,7 +37,7 @@ export const GetAccountAdmin=async(token)=>{
         }
         const data = await response.json();
         return data;
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
@@ -30,7 +50,7 @@ export const ProfileAccount = async (id, token) => {
                 'Authorization': `Bearer ${token}`
             },
         })
-       
+
         if (!response.ok) {
             const responseBody = await response.json();
             console.log(responseBody)
@@ -177,7 +197,7 @@ export const Forget = async (Email) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-
+            
         })
         if (!response.ok) {
             const responseBody = await response.json();

@@ -34,6 +34,7 @@ import avatarAi from "../images/avatar_AI.webp";
 import { useLocation, useNavigate } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import { GetMovie } from "../Services/MovieService";
+import { GetBlog } from "../Services/BlogService";
 Modal.setAppElement('#root');
 
 function Homepage() {
@@ -267,10 +268,10 @@ function Homepage() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const categoryBlog = await axios.get("http://localhost:5231/api/Blog/ShowBlog");
-        const sortData = categoryBlog.data.slice(0, 3).sort((a, b) => b.Id - a.Id);
+        const categoryBlog = await GetBlog();
+        const sortData = categoryBlog.slice(0, 3).sort((a, b) => b.id - a.id);
         setViewBlog(sortData);
-        console.error(sortData);
+        console.log(categoryBlog);
 
       } catch (error) {
         console.log(error)
@@ -538,7 +539,7 @@ function Homepage() {
 
             {ViewBlog.slice(0, 3).map((ViewBlog, index) => (
               <div>
-                <img className="h-[260px] w-full object-cover" src={`http://localhost:5231/${ViewBlog.image}`}
+                <img className="h-[260px] w-full object-cover" src={`http://localhost:5277/Images/${ViewBlog.imageUrl}`}
                   style={{ objectFit: 'cover' }} alt="" />
 
               </div>
@@ -552,19 +553,19 @@ function Homepage() {
 
             {ViewBlog.slice(0, 3).map((ViewBlog, index) => (
 
-              <div className="blog-card px-[8%]" >
+              <div className="blog-card px-[8%]" style={{position:'relative'}} >
                 <div className="w-[300px]  h-[40px] flex flex-row mt-7">
 
                   <img className="avatar-Blog" src={avatarAi} alt="" />
                   <div className="flex flex-col  ml-3 justify-center" >
                     <p className="text-nameAdmin-blog">by</p>
-                    <p className=" text-nameAdmin-blog">{ViewBlog.account}</p>
+                    <p className=" text-nameAdmin-blog">SuperAdmin</p>
                   </div>
                   <div className="lineBlog ml-7"></div>
 
                   <div className="flex text-center items-center ml-6">
                     <img className="w-[20px] h-[20px]" src={comment_logo} alt="" />
-                    <p className="category-blog">{ViewBlog.category}</p>
+                    <p className="category-blog">{ViewBlog.categoryBlog.name}</p>
                   </div>
 
 
@@ -576,7 +577,7 @@ function Homepage() {
 
                   <button class="button-89" role="button">Read me</button>
                 </div>
-                <div className="absolute bg-[#D96C2C] text-center top-[572vh] flex justify-center w-[100px] h-[30px]">
+                <div className="absolute bg-[#D96C2C] text-center  flex justify-center w-[100px] h-[30px]" style={{left:'42vh',bottom:'21vh',alignItems:'center'}}>
 
                   <h1 className="created-Blog">{new Date(ViewBlog.createdAt).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</h1>
 
@@ -609,15 +610,16 @@ function Homepage() {
           className="video-modal"
           overlayClassName="overlay"
         >
-          <iframe
-            width="900px"
-            height="515px"
+          <video
+            className="w-full h-full"
             src={selectedVideoUrl}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            title="video"
-          ></iframe>
+            controls
+            autoPlay
+            muted
+            loop
+            onPlay={(e) => e.target.muted = false}
+            style={{ width: '78%', height: '90%' }}
+          ></video>
           <button onClick={closeModal}>Close</button>
         </Modal>
 

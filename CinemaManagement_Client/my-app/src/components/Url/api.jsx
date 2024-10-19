@@ -19,3 +19,15 @@ export const CategoryBlogApi=()=>{
 export const Blog=()=>{
     return 'http://localhost:5277/api/Blog/'
 }
+export const Feedback=()=>{
+    return 'http://localhost:5277/api/Feedback/'
+}
+export const Screen=()=>{
+    return 'http://localhost:5277/api/Screen/'
+}
+export const Item=()=>{
+     return 'http://localhost:5277/api/Item/'
+}
+export const ComboItem=()=>{
+     return 'http://localhost:5277/api/ComboItem/'
+}

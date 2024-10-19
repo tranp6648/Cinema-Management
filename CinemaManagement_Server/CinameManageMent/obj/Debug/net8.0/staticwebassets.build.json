@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IjwzUnuwXf3DEs6npfy2PlS6lq/XiODtrk+zVbGXuOU=",
+  "Hash": "wQG3DLU69dFEGa7UYREZtxotvQnKbjOiKgD9/V0NNdQ=",
   "Source": "CinameManageMent",
   "BasePath": "_content/CinameManageMent",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\030426e82c0d4122b51f268cfbf58161.png",
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\04e5ad22d4bb4d0ca598999ec4b1c54a.jpg",
       "SourceId": "CinameManageMent",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
       "BasePath": "_content/CinameManageMent",
-      "RelativePath": "Images/030426e82c0d4122b51f268cfbf58161.png",
+      "RelativePath": "Images/04e5ad22d4bb4d0ca598999ec4b1c54a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\030426e82c0d4122b51f268cfbf58161.png"
+      "OriginalItemSpec": "wwwroot\\Images\\04e5ad22d4bb4d0ca598999ec4b1c54a.jpg"
     },
     {
-      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\0b0653a24162491e96b2d4785ac1827e.png",
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\055c297e5a0a4c6b92f390931c6dcedb.jpg",
       "SourceId": "CinameManageMent",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
       "BasePath": "_content/CinameManageMent",
-      "RelativePath": "Images/0b0653a24162491e96b2d4785ac1827e.png",
+      "RelativePath": "Images/055c297e5a0a4c6b92f390931c6dcedb.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,15 +52,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\0b0653a24162491e96b2d4785ac1827e.png"
+      "OriginalItemSpec": "wwwroot\\Images\\055c297e5a0a4c6b92f390931c6dcedb.jpg"
     },
     {
-      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\c1e0ffd1e8eb49cf9324dada6f8a657d.jpg",
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\120b95b976dc4cad9a4209241606bc78.jpg",
       "SourceId": "CinameManageMent",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
       "BasePath": "_content/CinameManageMent",
-      "RelativePath": "Images/c1e0ffd1e8eb49cf9324dada6f8a657d.jpg",
+      "RelativePath": "Images/120b95b976dc4cad9a4209241606bc78.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,15 +71,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\c1e0ffd1e8eb49cf9324dada6f8a657d.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\120b95b976dc4cad9a4209241606bc78.jpg"
     },
     {
-      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\cac3d3ccba534752b0368b46b67a3386.png",
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\3179c2e1a71a40d99ece90fbb5a34c51.jpg",
       "SourceId": "CinameManageMent",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
       "BasePath": "_content/CinameManageMent",
-      "RelativePath": "Images/cac3d3ccba534752b0368b46b67a3386.png",
+      "RelativePath": "Images/3179c2e1a71a40d99ece90fbb5a34c51.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,15 +90,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\cac3d3ccba534752b0368b46b67a3386.png"
+      "OriginalItemSpec": "wwwroot\\Images\\3179c2e1a71a40d99ece90fbb5a34c51.jpg"
     },
     {
-      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\defaultImage.jpg",
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg",
       "SourceId": "CinameManageMent",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
       "BasePath": "_content/CinameManageMent",
-      "RelativePath": "Images/defaultImage.jpg",
+      "RelativePath": "Images/7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\defaultImage.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg"
+    },
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\9ff55c3302494e25bd89d5122543b20d.png",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "Images/9ff55c3302494e25bd89d5122543b20d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\9ff55c3302494e25bd89d5122543b20d.png"
+    },
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\030244d6d5414dc7935e7c9c4f921bba.mp4",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "videos/030244d6d5414dc7935e7c9c4f921bba.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\videos\\030244d6d5414dc7935e7c9c4f921bba.mp4"
     },
     {
       "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\3d8fe95852d64113b4a9de3718b2392c.mp4",
@@ -148,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\videos\\6ce37889bfa74841983229bd11101fe4.mp4"
+    },
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\d20297932c834a8da737694a7d561579.mp4",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "videos/d20297932c834a8da737694a7d561579.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\videos\\d20297932c834a8da737694a7d561579.mp4"
     },
     {
       "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\f3d9085d409a45cc8a47283158b16380.mp4",

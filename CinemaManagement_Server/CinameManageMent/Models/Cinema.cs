@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CinameManageMent.Models;
-
-public partial class Cinema
+[Table("Cinema")]
+public  class Cinema
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
+    [Required]
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;

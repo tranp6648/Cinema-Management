@@ -12,11 +12,8 @@ public partial class Blog
 
     public DateTime CreatedAt { get; set; }
 
-    public DateTime? UpdatedAt { get; set; }
 
-    public int IdAccountCreated { get; set; }
 
-    public int? IdAccountUpdated { get; set; }
     [ForeignKey(nameof(CategoryBlog))]
     public int IdCategoryBlog { get; set; }
     public virtual CategoryBlog CategoryBlog { get; set; }

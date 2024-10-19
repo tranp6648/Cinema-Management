@@ -32,7 +32,7 @@ namespace CinameManageMent.Services
                     From = new MailAddress("tranp6648@gmail.com"),
                     Subject = subject,
                     Body = body,
-                    IsBodyHtml = false
+                    IsBodyHtml = true
                 };
                 message.To.Add(to);
                 client.Send(message);
@@ -101,52 +101,53 @@ namespace CinameManageMent.Services
             }
         }
 
-        //    public DateTime? Forget(string Email)
-        //    {
-        //        try
-        //        {
-        //            var EmailParameter = new SqlParameter("@Email", Email);
-        //            Random random = new Random();
-        //            int Otp = random.Next(1000, 10000);
-        //            var OTPParameter = new SqlParameter("@OTP", Otp);
-        //           var createdOtp=databaseContext.Accounts.FromSqlRaw("EXEC sp_ForgetPassword @OTP,@Email",OTPParameter,EmailParameter).AsEnumerable().FirstOrDefault();
-        //            SendEmail(Email, "Send OTP", $"OTP:{Otp}");
-        //            return createdOtp?.CreatedOtp;
-        //        }
-        //        catch
-        //        {
-        //            return null;
-        //        }
-        //    }
+        public DateTime? Forget(string Email)
+        {
+            try
+            {
+                var EmailParameter = new SqlParameter("@Email", Email);
+                Random random = new Random();
+                int Otp = random.Next(1000, 10000);
+                var OTPParameter = new SqlParameter("@OTP", Otp);
+                var createdOtp = databaseContext.Accounts.FromSqlRaw("EXEC sp_ForgetPassword @OTP,@Email", OTPParameter, EmailParameter).AsEnumerable().FirstOrDefault();
+                SendEmail(Email, "Send OTP", $"OTP:{Otp}");
+                return createdOtp?.CreatedOtp;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
-        //    public bool CheckOtp(OTPDTO oTPDTO)
-        //    {
-        //        try
-        //        {
-        //            var EmailParameter=new SqlParameter("@Email",oTPDTO.Email);
-        //            var OtpParameter=new SqlParameter("@OTP",oTPDTO.OTP);
-        //           var result= databaseContext.Database.ExecuteSqlRaw("EXEC Check_OTP @Email,@OTP", EmailParameter, OtpParameter);
-        //            return result > 0;
-        //        }
-        //        catch
-        //        {
-        //            return false;
-        //        }
-        //    }
+        public bool CheckOtp(OTPDTO oTPDTO)
+        {
+            try
+            {
+                var EmailParameter = new SqlParameter("@Email", oTPDTO.Email);
+                var OtpParameter = new SqlParameter("@OTP", oTPDTO.OTP);
+                var result = databaseContext.Database.ExecuteSqlRaw("EXEC Check_OTP @Email,@OTP", EmailParameter, OtpParameter);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
-        //    public bool ChangePassword(ChangePassDTP changePassDTP)
-        //    {
-        //        try
-        //        {
-        //            var PasswordParameter=new SqlParameter("@Password", BCrypt.Net.BCrypt.HashPassword(changePassDTP.NewPassword));
-        //            var EmailParameter = new SqlParameter("@Email", changePassDTP.Email);
-        //            databaseContext.Database.ExecuteSqlRaw("EXEC Change_Password @Password,@Email",PasswordParameter, EmailParameter);
-        //            return true ;
-        //        }
-        //        catch { 
-        //        return false;
-        //        }
-        //    }
+        public bool ChangePassword(ChangePassDTP changePassDTP)
+        {
+            try
+            {
+                var PasswordParameter = new SqlParameter("@Password", BCrypt.Net.BCrypt.HashPassword(changePassDTP.NewPassword));
+                var EmailParameter = new SqlParameter("@Email", changePassDTP.Email);
+                databaseContext.Database.ExecuteSqlRaw("EXEC Change_Password @Password,@Email", PasswordParameter, EmailParameter);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
 
 
@@ -256,6 +257,76 @@ namespace CinameManageMent.Services
                 Avatar=d.Avatar,
                
             }).ToList();
+        }
+
+        public bool RegisterUser(RegisterAccount registerAccount)
+        {
+            try
+            {
+                string password = GenerateRandomString(8);
+                var Fullname = new SqlParameter("@FullName", registerAccount.FullName);
+                var Username = new SqlParameter("@Username", registerAccount.username);
+                var Email = new SqlParameter("@Email", registerAccount.Email);
+                var Password = new SqlParameter("@Password", BCrypt.Net.BCrypt.HashPassword(password));
+                var Phone = new SqlParameter("@Phone", registerAccount.Phone);
+                var Birthday = new SqlParameter("@Birthday", registerAccount.Birthday);
+                var AccountType = new SqlParameter("@AccouuntType", registerAccount.AccountType);
+                var result = databaseContext.Accounts
+    .FromSqlRaw("EXEC RegisterUser @FullName,@Username,@Email,@Password,@Phone,@Birthday,@AccouuntType",
+                Fullname, Username, Email, Password, Phone, Birthday, AccountType)
+    .AsEnumerable() 
+    .Select(a => a.Id) 
+    .FirstOrDefault();
+                string activationLink = $"http://localhost:5277/api/Account/ActiveAccount/{registerAccount.Email}/{result}";
+                string emailBody = $@"
+    <html>
+        <body>
+            <p>Hello {registerAccount.FullName},</p>
+            <p>Your account has been created. Please activate your account by clicking the button below:</p>
+            <p>
+                <a href='{activationLink}' 
+                   style='display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #28a745; text-decoration: none; border-radius: 5px;'>
+                   Activate Account
+                </a>
+            </p>
+            <p>If the button does not work, copy and paste the following link into your browser:</p>
+         
+            <p>Username: {registerAccount.username}</p>
+            <p>Password: {password}</p>
+        </body>
+    </html>";
+
+                SendEmail(registerAccount.Email, "Activate Your Account", emailBody);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ActiveAccount(int id, string Email)
+        {
+            try
+            {
+                var sql = "EXEC ActiveAccount @Id";
+                var parameters = new[]
+                {
+                    new SqlParameter("@Id",id)
+                };
+                var result=databaseContext.Database.ExecuteSqlRaw(sql, parameters);
+                if (result > 0)
+                {
+                    SendEmail(Email, "Active Account", "Active Successfully");
+                }
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

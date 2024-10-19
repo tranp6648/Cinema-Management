@@ -3,28 +3,56 @@
   "WorkspaceRootPath": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\blogserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\blogserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\comboitemserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\comboitemserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\movieserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\movieserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\comboitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\comboitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014170917_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241014170917_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\comboitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\comboitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\actorserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\actorserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updatecombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updatecombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\screenserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\screenserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\screenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\screenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\feedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\feedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\cinemaserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,88 +63,236 @@
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\cinemaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\movieserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\movieserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\detailcomboitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\detailcomboitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\screencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241019142853_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241019142853_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\comboitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\comboitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\itemserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\itemserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\categoryserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\categoryserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\createitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\createitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\detailcategorymovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\detailcategorymovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\detailactormovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\detailactormovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\actorserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\actorserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\actor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\actor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\categoryblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\categoryblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\feedbackserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\feedbackserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\accountserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\createseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\createseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\detailseatmoviescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\detailseatmoviescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\detailactormovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\detailactormovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\detailcategorymovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\detailcategorymovie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018165648_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241018165648_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018164227_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241018164227_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\categoryseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\categoryseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\categoryblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\categoryblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addcinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addcinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\createdetailscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\createdetailscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updatemoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updatemoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\accountvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241017064110_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241017064110_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updatedescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updatedescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\validation\\changepasswordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\changepasswordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\validation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:validation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\blogserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\blogserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updateblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updateblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updatestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updatestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\controllers\\categoryblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:controllers\\categoryblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\services\\categoryblogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -127,14 +303,6 @@
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:services\\categoryblogserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014151622_DBinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241014151622_DBinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addcategoryblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addcategoryblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -142,28 +310,12 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\AppData\\Local\\SourceServer\\d7834be468889fe03202479bfbfa7e18d89eaa712c17ba16c0e886625e4e52f1\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\addcinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\addcinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\actormoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\actormoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\data\\updatemoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:data\\updatemoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|e:\\cinema-management\\cinemamanagement_server\\cinamemanagement\\migrations\\20241018170807_dbinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18C9B643-FB37-4FAC-957F-61A204A75E68}|CinameManageMent.csproj|solutionrelative:migrations\\20241018170807_dbinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -173,7 +325,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -209,33 +361,189 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateCombo.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateCombo.cs",
+              "RelativeDocumentMoniker": "Data\\UpdateCombo.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateCombo.cs",
+              "RelativeToolTip": "Data\\UpdateCombo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T17:03:27.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ComboItemServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ComboItemServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\ComboItemServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ComboItemServiceImpl.cs",
+              "RelativeToolTip": "Services\\ComboItemServiceImpl.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAArwHQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T15:01:07.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\MovieServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieServiceImpl.cs",
+              "RelativeToolTip": "Services\\MovieServiceImpl.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAIAwwD4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T14:53:29.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ComboItemService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ComboItemService.cs",
+              "RelativeDocumentMoniker": "Services\\ComboItemService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ComboItemService.cs",
+              "RelativeToolTip": "Services\\ComboItemService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:56:05.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ActorServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\ActorServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorServiceImpl.cs",
+              "RelativeToolTip": "Services\\ActorServiceImpl.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAEwDwAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T08:19:06.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComboItemController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ComboItemController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ComboItemController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ComboItemController.cs",
+              "RelativeToolTip": "Controllers\\ComboItemController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:40:16.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-11T03:56:30.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAAwDMAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T03:56:37.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ScreenServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ScreenServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\ScreenServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ScreenServiceImpl.cs",
+              "RelativeToolTip": "Services\\ScreenServiceImpl.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAnwBkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:50:26.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Blog.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Blog.cs",
               "RelativeDocumentMoniker": "Models\\Blog.cs",
               "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Blog.cs",
               "RelativeToolTip": "Models\\Blog.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBMAAAAjAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAewA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T17:08:18.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\AccountServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
-              "RelativeToolTip": "Services\\AccountServiceImpl.cs",
-              "ViewState": "AQIAAPQAAAAAAAAAAAA0wAABAAAPAAAA",
+              "DocumentIndex": 10,
+              "Title": "ScreenService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ScreenService.cs",
+              "RelativeDocumentMoniker": "Services\\ScreenService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ScreenService.cs",
+              "RelativeToolTip": "Services\\ScreenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T14:53:29.103Z",
+              "WhenOpened": "2024-10-18T15:49:26.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
+              "Title": "FeedBackService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\FeedBackService.cs",
+              "RelativeDocumentMoniker": "Services\\FeedBackService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\FeedBackService.cs",
+              "RelativeToolTip": "Services\\FeedBackService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T07:19:54.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddCombo.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCombo.cs",
+              "RelativeDocumentMoniker": "Data\\AddCombo.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCombo.cs",
+              "RelativeToolTip": "Data\\AddCombo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:40:47.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CinemaServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CinemaServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\CinemaServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CinemaServiceImpl.cs",
+              "RelativeToolTip": "Services\\CinemaServiceImpl.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T00:38:15.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "CinemaService.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CinemaService.cs",
               "RelativeDocumentMoniker": "Services\\CinemaService.cs",
@@ -248,124 +556,267 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CinemaServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CinemaServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\CinemaServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CinemaServiceImpl.cs",
-              "RelativeToolTip": "Services\\CinemaServiceImpl.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAADgvyMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T05:18:16.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CinemaController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CinemaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CinemaController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CinemaController.cs",
-              "RelativeToolTip": "Controllers\\CinemaController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAqwD8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T05:25:08.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\BlogServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogServiceImpl.cs",
-              "RelativeToolTip": "Services\\BlogServiceImpl.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAvwBcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:20:03.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BlogController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "Controllers\\BlogController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAqwBcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:34:15.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20241014170917_update.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014170917_update.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241014170917_update.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014170917_update.cs",
-              "RelativeToolTip": "Migrations\\20241014170917_update.cs",
+              "DocumentIndex": 18,
+              "Title": "20241019142853_update.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241019142853_update.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241019142853_update.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241019142853_update.cs",
+              "RelativeToolTip": "Migrations\\20241019142853_update.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T17:09:17.497Z",
+              "WhenOpened": "2024-10-19T14:28:53.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AccountValidation.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
-              "RelativeDocumentMoniker": "Validation\\AccountValidation.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
-              "RelativeToolTip": "Validation\\AccountValidation.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAYwBcAAAAMAAAA",
+              "DocumentIndex": 16,
+              "Title": "DetailComboItem.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\DetailComboItem.cs",
+              "RelativeDocumentMoniker": "Data\\DetailComboItem.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\DetailComboItem.cs",
+              "RelativeToolTip": "Data\\DetailComboItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:50:26.294Z",
+              "WhenOpened": "2024-10-19T14:41:34.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MovieServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\MovieServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieServiceImpl.cs",
-              "RelativeToolTip": "Services\\MovieServiceImpl.cs",
-              "ViewState": "AQIAAP0AAAAAAAAAAADgvwYBAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T14:53:29.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "MovieService.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieService.cs",
               "RelativeDocumentMoniker": "Services\\MovieService.cs",
               "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\MovieService.cs",
               "RelativeToolTip": "Services\\MovieService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:35:13.341Z",
+              "WhenOpened": "2024-10-09T15:35:13.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Combo.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Combo.cs",
+              "RelativeDocumentMoniker": "Models\\Combo.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Combo.cs",
+              "RelativeToolTip": "Models\\Combo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T07:46:29.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MovieController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\MovieController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MovieController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\MovieController.cs",
-              "RelativeToolTip": "Controllers\\MovieController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwEEAAAAIAAAA",
+              "DocumentIndex": 23,
+              "Title": "CategoryServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\CategoryServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryServiceImpl.cs",
+              "RelativeToolTip": "Services\\CategoryServiceImpl.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwCwAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T03:07:30.265Z",
+              "WhenOpened": "2024-10-12T04:51:21.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ComboItem.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\ComboItem.cs",
+              "RelativeDocumentMoniker": "Models\\ComboItem.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\ComboItem.cs",
+              "RelativeToolTip": "Models\\ComboItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T07:49:36.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
+              "Title": "ScreenController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ScreenController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ScreenController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ScreenController.cs",
+              "RelativeToolTip": "Controllers\\ScreenController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAEwCUAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:51:05.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ItemService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ItemService.cs",
+              "RelativeDocumentMoniker": "Services\\ItemService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ItemService.cs",
+              "RelativeToolTip": "Services\\ItemService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T08:03:48.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ItemController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ItemController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ItemController.cs",
+              "RelativeToolTip": "Controllers\\ItemController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T08:10:08.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ItemServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ItemServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\ItemServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ItemServiceImpl.cs",
+              "RelativeToolTip": "Services\\ItemServiceImpl.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAuwCMAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T08:06:32.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Item.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "Models\\Item.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Item.cs",
+              "RelativeToolTip": "Models\\Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T07:39:25.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CreateItem.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateItem.cs",
+              "RelativeDocumentMoniker": "Data\\CreateItem.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateItem.cs",
+              "RelativeToolTip": "Data\\CreateItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T08:04:39.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T07:22:34.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Actor.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Actor.cs",
+              "RelativeDocumentMoniker": "Models\\Actor.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Actor.cs",
+              "RelativeToolTip": "Models\\Actor.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAzwBEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T04:39:57.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Models\\DatabaseContext.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
+              "RelativeToolTip": "Models\\DatabaseContext.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAA1wCMAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T15:14:20.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FeedbackServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\FeedbackServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\FeedbackServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\FeedbackServiceImpl.cs",
+              "RelativeToolTip": "Services\\FeedbackServiceImpl.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwCsAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T07:25:16.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CreateSeat.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateSeat.cs",
+              "RelativeDocumentMoniker": "Data\\CreateSeat.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateSeat.cs",
+              "RelativeToolTip": "Data\\CreateSeat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:47:04.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AccountServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\AccountServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountServiceImpl.cs",
+              "RelativeToolTip": "Services\\AccountServiceImpl.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAUwFsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T14:53:29.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T15:13:16.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ActorController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ActorController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs",
+              "RelativeToolTip": "Controllers\\ActorController.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAArwEsAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T00:29:55.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ActorService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorService.cs",
+              "RelativeDocumentMoniker": "Services\\ActorService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorService.cs",
+              "RelativeToolTip": "Services\\ActorService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T03:01:10.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "Services\\CategoryService.cs",
@@ -373,64 +824,95 @@
               "RelativeToolTip": "Services\\CategoryService.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAnwAgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T04:51:15.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T04:51:15.848Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAiwE8AAAAUAAAA",
+              "DocumentIndex": 39,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "Models\\Feedback.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Feedback.cs",
+              "RelativeToolTip": "Models\\Feedback.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAIwBAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T03:56:37.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T05:16:32.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CategoryServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\CategoryServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryServiceImpl.cs",
-              "RelativeToolTip": "Services\\CategoryServiceImpl.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAgwCwAAAAMAAAA",
+              "DocumentIndex": 41,
+              "Title": "DetailSeatMovieScreen.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailSeatMovieScreen.cs",
+              "RelativeDocumentMoniker": "Models\\DetailSeatMovieScreen.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailSeatMovieScreen.cs",
+              "RelativeToolTip": "Models\\DetailSeatMovieScreen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T04:51:21.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T06:19:23.422Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Category.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Category.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Category.cs",
-              "RelativeToolTip": "Models\\Category.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAkAAAAZAAAA",
+              "DocumentIndex": 40,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "Models\\Movie.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Movie.cs",
+              "RelativeToolTip": "Models\\Movie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T16:15:11.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T15:22:48.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAADgvz0AAAAIAAAA",
+              "DocumentIndex": 37,
+              "Title": "Screen.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Screen.cs",
+              "RelativeDocumentMoniker": "Models\\Screen.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Screen.cs",
+              "RelativeToolTip": "Models\\Screen.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAgwBEAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T06:20:00.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T06:14:07.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 38,
+              "Title": "Cinema.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Cinema.cs",
+              "RelativeDocumentMoniker": "Models\\Cinema.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Cinema.cs",
+              "RelativeToolTip": "Models\\Cinema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:38:18.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "20241018170807_DBInit.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018170807_DBInit.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241018170807_DBInit.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018170807_DBInit.cs",
+              "RelativeToolTip": "Migrations\\20241018170807_DBInit.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:08:08.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DetailActorMovie.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailActorMovie.cs",
+              "RelativeDocumentMoniker": "Models\\DetailActorMovie.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailActorMovie.cs",
+              "RelativeToolTip": "Models\\DetailActorMovie.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA8AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:08:16.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "DetailCategoryMovie.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailCategoryMovie.cs",
               "RelativeDocumentMoniker": "Models\\DetailCategoryMovie.cs",
@@ -438,64 +920,337 @@
               "RelativeToolTip": "Models\\DetailCategoryMovie.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAIwAsAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T16:08:06.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T16:08:06.411Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Movie.cs",
-              "RelativeDocumentMoniker": "Models\\Movie.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Movie.cs",
-              "RelativeToolTip": "Models\\Movie.cs",
+              "DocumentIndex": 44,
+              "Title": "20241018165648_update.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018165648_update.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241018165648_update.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018165648_update.cs",
+              "RelativeToolTip": "Migrations\\20241018165648_update.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:22:48.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:56:49.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DetailActorMovie.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailActorMovie.cs",
-              "RelativeDocumentMoniker": "Models\\DetailActorMovie.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DetailActorMovie.cs",
-              "RelativeToolTip": "Models\\DetailActorMovie.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAxwAwAAAAfAAAA",
+              "DocumentIndex": 45,
+              "Title": "20241018164227_update.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018164227_update.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241018164227_update.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241018164227_update.cs",
+              "RelativeToolTip": "Migrations\\20241018164227_update.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T16:08:16.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:42:27.499Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ActorServiceImpl.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorServiceImpl.cs",
-              "RelativeDocumentMoniker": "Services\\ActorServiceImpl.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorServiceImpl.cs",
-              "RelativeToolTip": "Services\\ActorServiceImpl.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAIwBcAAAAQAAAA",
+              "DocumentIndex": 47,
+              "Title": "CategoryBlog.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\CategoryBlog.cs",
+              "RelativeDocumentMoniker": "Models\\CategoryBlog.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\CategoryBlog.cs",
+              "RelativeToolTip": "Models\\CategoryBlog.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAADgvwkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T08:19:06.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T05:41:36.199Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ActorService.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorService.cs",
-              "RelativeDocumentMoniker": "Services\\ActorService.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\ActorService.cs",
-              "RelativeToolTip": "Services\\ActorService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAuwA0AAAAAAAAA",
+              "DocumentIndex": 48,
+              "Title": "Category.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T03:01:10.474Z",
+              "WhenOpened": "2024-10-14T16:15:11.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CategorySeat.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\CategorySeat.cs",
+              "RelativeDocumentMoniker": "Models\\CategorySeat.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\CategorySeat.cs",
+              "RelativeToolTip": "Models\\CategorySeat.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T06:08:38.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AddCinema.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCinema.cs",
+              "RelativeDocumentMoniker": "Data\\AddCinema.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCinema.cs",
+              "RelativeToolTip": "Data\\AddCinema.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T05:15:48.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CreateDetailScreen.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateDetailScreen.cs",
+              "RelativeDocumentMoniker": "Data\\CreateDetailScreen.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\CreateDetailScreen.cs",
+              "RelativeToolTip": "Data\\CreateDetailScreen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:15:01.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MovieController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "Controllers\\MovieController.cs",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAYwGwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T03:07:30.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "MovieDto.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\MovieDto.cs",
+              "RelativeDocumentMoniker": "Data\\MovieDto.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\MovieDto.cs",
+              "RelativeToolTip": "Data\\MovieDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:59:04.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "UpdateMovieDto.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateMovieDto.cs",
+              "RelativeDocumentMoniker": "Data\\UpdateMovieDto.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateMovieDto.cs",
+              "RelativeToolTip": "Data\\UpdateMovieDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T08:27:39.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "AccountValidation.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
+              "RelativeDocumentMoniker": "Validation\\AccountValidation.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\AccountValidation.cs",
+              "RelativeToolTip": "Validation\\AccountValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T03:50:26.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "20241017064110_update.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241017064110_update.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241017064110_update.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241017064110_update.cs",
+              "RelativeToolTip": "Migrations\\20241017064110_update.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T06:41:10.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "FeedbackController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\FeedbackController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FeedbackController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\FeedbackController.cs",
+              "RelativeToolTip": "Controllers\\FeedbackController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAvwBQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T07:36:09.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UpdateDescription.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateDescription.cs",
+              "RelativeDocumentMoniker": "Data\\UpdateDescription.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateDescription.cs",
+              "RelativeToolTip": "Data\\UpdateDescription.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T03:57:31.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ChangePasswordValidation.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\ChangePasswordValidation.cs",
+              "RelativeDocumentMoniker": "Validation\\ChangePasswordValidation.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\ChangePasswordValidation.cs",
+              "RelativeToolTip": "Validation\\ChangePasswordValidation.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAADgvxIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:22:55.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 59,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAALgAAAAAAAAAAAAcwMIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T14:53:29.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AddFeedback.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddFeedback.cs",
+              "RelativeDocumentMoniker": "Data\\AddFeedback.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddFeedback.cs",
+              "RelativeToolTip": "Data\\AddFeedback.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T07:21:34.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "RegisterAccount.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
+              "RelativeDocumentMoniker": "Data\\RegisterAccount.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
+              "RelativeToolTip": "Data\\RegisterAccount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T03:47:24.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "CategoryValidation.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\CategoryValidation.cs",
+              "RelativeDocumentMoniker": "Validation\\CategoryValidation.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Validation\\CategoryValidation.cs",
+              "RelativeToolTip": "Validation\\CategoryValidation.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:08:37.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BlogController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "Controllers\\BlogController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAwwC8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:34:15.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "BlogServiceImpl.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogServiceImpl.cs",
+              "RelativeDocumentMoniker": "Services\\BlogServiceImpl.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogServiceImpl.cs",
+              "RelativeToolTip": "Services\\BlogServiceImpl.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAvwCYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:20:03.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogService.cs",
+              "RelativeDocumentMoniker": "Services\\BlogService.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogService.cs",
+              "RelativeToolTip": "Services\\BlogService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:12:04.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "UpdateBlog.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateBlog.cs",
+              "RelativeDocumentMoniker": "Data\\UpdateBlog.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateBlog.cs",
+              "RelativeToolTip": "Data\\UpdateBlog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T14:00:56.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "AddBlog.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddBlog.cs",
+              "RelativeDocumentMoniker": "Data\\AddBlog.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddBlog.cs",
+              "RelativeToolTip": "Data\\AddBlog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:12:56.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "UpdateStatus.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateStatus.cs",
+              "RelativeDocumentMoniker": "Data\\UpdateStatus.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateStatus.cs",
+              "RelativeToolTip": "Data\\UpdateStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:49:13.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "CinemaController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CinemaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CinemaController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CinemaController.cs",
+              "RelativeToolTip": "Controllers\\CinemaController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAqwD8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T05:25:08.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAADgvz0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T06:20:00.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
               "Title": "Account.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Models\\Account.cs",
@@ -503,25 +1258,11 @@
               "RelativeToolTip": "Models\\Account.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAxwA0AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:29:30.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T15:29:30.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "DatabaseContext.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
-              "RelativeDocumentMoniker": "Models\\DatabaseContext.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Models\\DatabaseContext.cs",
-              "RelativeToolTip": "Models\\DatabaseContext.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAcwBkAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:14:20.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 72,
               "Title": "CategoryBlogController.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\CategoryBlogController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryBlogController.cs",
@@ -529,64 +1270,11 @@
               "RelativeToolTip": "Controllers\\CategoryBlogController.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAqwC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:25:20.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T07:25:20.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ActorController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ActorController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs",
-              "RelativeToolTip": "Controllers\\ActorController.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAqwF4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T00:29:55.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAqwNAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T14:53:29.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "Services\\AccountService.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\AccountService.cs",
-              "RelativeToolTip": "Services\\AccountService.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAmwA8AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:13:16.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "BlogService.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogService.cs",
-              "RelativeDocumentMoniker": "Services\\BlogService.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\BlogService.cs",
-              "RelativeToolTip": "Services\\BlogService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:12:04.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 73,
               "Title": "CategoryBlogService.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryBlogService.cs",
               "RelativeDocumentMoniker": "Services\\CategoryBlogService.cs",
@@ -594,12 +1282,11 @@
               "RelativeToolTip": "Services\\CategoryBlogService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:19:09.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T07:19:09.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 74,
               "Title": "CategoryBlogServiceImpl.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Services\\CategoryBlogServiceImpl.cs",
               "RelativeDocumentMoniker": "Services\\CategoryBlogServiceImpl.cs",
@@ -607,38 +1294,11 @@
               "RelativeToolTip": "Services\\CategoryBlogServiceImpl.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAmwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:20:40.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T07:20:40.55Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "20241014151622_DBinit.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014151622_DBinit.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241014151622_DBinit.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Migrations\\20241014151622_DBinit.cs",
-              "RelativeToolTip": "Migrations\\20241014151622_DBinit.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:16:22.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AddBlog.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddBlog.cs",
-              "RelativeDocumentMoniker": "Data\\AddBlog.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddBlog.cs",
-              "RelativeToolTip": "Data\\AddBlog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:12:56.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 75,
               "Title": "AddCategoryBlog.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCategoryBlog.cs",
               "RelativeDocumentMoniker": "Data\\AddCategoryBlog.cs",
@@ -650,7 +1310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 76,
               "Title": "ActorController.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\AppData\\Local\\SourceServer\\d7834be468889fe03202479bfbfa7e18d89eaa712c17ba16c0e886625e4e52f1\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs",
               "ToolTip": "C:\\Users\\LENOVO\\AppData\\Local\\SourceServer\\d7834be468889fe03202479bfbfa7e18d89eaa712c17ba16c0e886625e4e52f1\\CinemaManagement_Server\\CinameManageMent\\Controllers\\ActorController.cs [Read Only]",
@@ -661,43 +1321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "AddCinema.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCinema.cs",
-              "RelativeDocumentMoniker": "Data\\AddCinema.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\AddCinema.cs",
-              "RelativeToolTip": "Data\\AddCinema.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAgAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T05:15:48.643Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "RegisterAccount.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
-              "RelativeDocumentMoniker": "Data\\RegisterAccount.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\RegisterAccount.cs",
-              "RelativeToolTip": "Data\\RegisterAccount.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAABMAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:47:24.832Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "MovieDto.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\MovieDto.cs",
-              "RelativeDocumentMoniker": "Data\\MovieDto.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\MovieDto.cs",
-              "RelativeToolTip": "Data\\MovieDto.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAYwAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T09:59:04.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 77,
               "Title": "ActorMovieDTO.cs",
               "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\ActorMovieDTO.cs",
               "RelativeDocumentMoniker": "Data\\ActorMovieDTO.cs",
@@ -706,30 +1330,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T04:38:25.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UpdateMovieDto.cs",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateMovieDto.cs",
-              "RelativeDocumentMoniker": "Data\\UpdateMovieDto.cs",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\Data\\UpdateMovieDto.cs",
-              "RelativeToolTip": "Data\\UpdateMovieDto.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAzwAIAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T08:27:39.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-11T03:56:30.174Z"
             }
           ]
         }

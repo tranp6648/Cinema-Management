@@ -14,7 +14,12 @@ import DetailMovie from './components/SuperAdmin/Category/DetailMovie';
 import Cinema from './components/SuperAdmin/Cinema/Cinema';
 import ManagerAdmin from './components/SuperAdmin/ManagerAdmin/ManagerAdmin';
 import HomePage from './components/Homepage/Homepage';
-import Blog from './components/SuperAdmin/Blog/Blog'
+import Blog from './components/SuperAdmin/Blog/Blog';
+import About from './components/About/About';
+import AllMovies from './components/AllMovies/AllMovies';
+import Detail from './components/Detail/Detail';
+import DescriptionMovie from './components/SuperAdmin/Category/DescriptionMovie';
+import ComboMovie from './components/SuperAdmin/Combo/Combo';
 function App() {
   return (
 <Router>
@@ -27,8 +32,13 @@ function App() {
           <Route path='DetailMovie/:id' element={<ProtectedRoute Element={DetailMovie} RoleRequired="SuperAdmin"/>}/>
           <Route path='ManagerAdmin' element={<ProtectedRoute Element={ManagerAdmin} RoleRequired="SuperAdmin"/>}/>
           <Route path='Blog' element={<ProtectedRoute Element={Blog} RoleRequired="SuperAdmin"/>}/>
+          <Route path='DescriptionMovie/:id' element={<ProtectedRoute Element={DescriptionMovie} RoleRequired="SuperAdmin"/>}/>
+          <Route path='ComboFood' element={<ProtectedRoute Element={ComboMovie} RoleRequired="SuperAdmin"/>}/>
         </Route>
+        <Route path='/About' element={<About/>}/>
+        <Route path='/AllMovie' element={<AllMovies/>}/>
         <Route path='/Home' element={<HomePage/>}/>
+        <Route path='/Detail/:id' element={<Detail/>}/>
       <Route path='/ProfileAdmin' element={<Profile/>}/>
     <Route path='/Account' element={<Account/>}/>
     <Route path='/ChangePassword' element={<ChangePassword/>}/>

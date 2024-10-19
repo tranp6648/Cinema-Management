@@ -112,6 +112,13 @@ function LayoutSuperAdmin() {
 
                         </li>
                      
+                        <li className="active treeview">
+                        <a href="" onClick={() => navigate('/SuperAdmin/ComboFood')}>
+                                <i className="fa fa-dashboard" ></i> <span>Combo Food</span>
+                            </a>
+
+                        </li>
+                     
 
 
                     </ul>

@@ -8,6 +8,8 @@ namespace CinameManageMent.Services
         public bool AddActorMovie(ActorMovieDTO actorMovieDto);
         public dynamic GetMovie();
         public bool UpdateMovie(int id,UpdateMovieDto updateMovieDto);
-        public bool DeleteMovie(int id);
+        public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription);
+        public dynamic DetailMovie(int id);
+        public dynamic DetailActor(int id);
     }
 }

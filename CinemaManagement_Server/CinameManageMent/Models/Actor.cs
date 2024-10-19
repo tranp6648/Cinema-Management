@@ -16,6 +16,4 @@ public partial class Actor
     public DateOnly Birthday { get; set; }
 
     public string Bio { get; set; } = null!;
-
-    public virtual ICollection<DetailActorMovie> DetailActorMovies { get; set; } = new List<DetailActorMovie>();
 }

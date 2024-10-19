@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
-import { Login, Register } from '../Services/AccountService';
+import { Login, Register, RegisterAccountUser } from '../Services/AccountService';
 function Account() {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -181,6 +181,8 @@ function Account() {
               navigate("/Admin")
             }else if(response.claims.role==='SuperAdmin'){
               navigate("/SuperAdmin")
+            }else{
+              navigate("/Home")
             }
           })
         
@@ -359,7 +361,7 @@ function Account() {
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
-      const response=await Register({
+      const response=await RegisterAccountUser({
         fullName:pillDetail.fullName,
         email:pillDetail.email,
         phone:pillDetail.phone,
@@ -441,7 +443,7 @@ function Account() {
               </p>
               <button type="submit" className='woocommerce-button button woocommerce-form-login__submit' >Log in</button>
               <p className='woocommerce-LostPassword lost_password'>
-                <a onClick={() => navigate('/Forgot')}>Lost your password?</a>
+                <a onClick={() => navigate('/LostPassword')}>Lost your password?</a>
               </p>
             </form>
           </>

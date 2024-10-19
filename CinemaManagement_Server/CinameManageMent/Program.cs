@@ -46,6 +46,10 @@ namespace CinameManageMent
             builder.Services.AddScoped<CinemaService, CinemaServiceImpl>();
             builder.Services.AddScoped<CategoryBlogService, CategoryBlogServiceImpl>();
             builder.Services.AddScoped<BlogService, BlogServiceImpl>();
+            builder.Services.AddScoped<FeedBackService,FeedbackServiceImpl>();
+            builder.Services.AddScoped<ScreenService, ScreenServiceImpl>();
+            builder.Services.AddScoped<ItemService, ItemServiceImpl>();
+            builder.Services.AddScoped<ComboItemService, ComboItemServiceImpl>();
 
             // Configure JWT authentication (if needed in the future)
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -87,16 +91,20 @@ namespace CinameManageMent
                             (c.Value == "Admin" || c.Value == "SuperAdmin")));
                 });
             });
-
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.Limits.MaxRequestBodySize = 50 * 1024 * 1024; // 50 MB
+            });
 
             // Configure CORS policy
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("ReactPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000") // Update with your React app URL
+                    builder.WithOrigins("http://localhost:3000") // Specify the exact origin
                            .AllowAnyHeader()
-                           .AllowAnyMethod();
+                           .AllowAnyMethod()
+                           .AllowCredentials();
                 });
             });
         }
@@ -108,13 +116,10 @@ namespace CinameManageMent
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+        
 
             app.UseCors("ReactPolicy");
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                ServeUnknownFileTypes = true,
-                DefaultContentType = "application/octet-stream"
-            });
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();

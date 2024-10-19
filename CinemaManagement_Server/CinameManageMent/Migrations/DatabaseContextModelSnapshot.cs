@@ -123,12 +123,6 @@ namespace CinameManageMent.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdAccountCreated")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdAccountUpdated")
-                        .HasColumnType("int");
-
                     b.Property<int>("IdCategoryBlog")
                         .HasColumnType("int");
 
@@ -142,9 +136,6 @@ namespace CinameManageMent.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -187,6 +178,35 @@ namespace CinameManageMent.Migrations
                     b.ToTable("CategoryBlogs");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.CategorySeat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategorySeat");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "VIP"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Normal"
+                        });
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.Cinema", b =>
                 {
                     b.Property<int>("Id")
@@ -219,7 +239,57 @@ namespace CinameManageMent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cinemas");
+                    b.ToTable("Cinema");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.Combo", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("banner")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Combos");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.ComboItem", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idCombo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idItem")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("idCombo");
+
+                    b.HasIndex("idItem");
+
+                    b.ToTable("ComboItems");
                 });
 
             modelBuilder.Entity("CinameManageMent.Models.DetailActorMovie", b =>
@@ -271,6 +341,83 @@ namespace CinameManageMent.Migrations
                     b.ToTable("DetailCategoryMovies");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.DetailSeatMovieScreen", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("idCategorySeat")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idScreen")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("idCategorySeat");
+
+                    b.HasIndex("idScreen");
+
+                    b.ToTable("DetailSeats");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("ntext");
+
+                    b.Property<DateTime>("Feedback_Date")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("IdAccount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdMovie")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RatingComment")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdAccount");
+
+                    b.HasIndex("IdMovie");
+
+                    b.ToTable("Feedback");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.Item", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Item");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -310,10 +457,35 @@ namespace CinameManageMent.Migrations
                     b.ToTable("Movies");
                 });
 
+            modelBuilder.Entity("Screen", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CinemaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CinemaId");
+
+                    b.ToTable("Screen");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.Blog", b =>
                 {
                     b.HasOne("CinameManageMent.Models.CategoryBlog", "CategoryBlog")
-                        .WithMany("Blogs")
+                        .WithMany()
                         .HasForeignKey("IdCategoryBlog")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -321,16 +493,35 @@ namespace CinameManageMent.Migrations
                     b.Navigation("CategoryBlog");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.ComboItem", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.Combo", "Combo")
+                        .WithMany()
+                        .HasForeignKey("idCombo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("idItem")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Combo");
+
+                    b.Navigation("Item");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.DetailActorMovie", b =>
                 {
                     b.HasOne("CinameManageMent.Models.Actor", "Actor")
-                        .WithMany("DetailActorMovies")
+                        .WithMany()
                         .HasForeignKey("IdActor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CinameManageMent.Models.Movie", "Movie")
-                        .WithMany("DetailActorMovies")
+                        .WithMany()
                         .HasForeignKey("IdMovie")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -349,7 +540,7 @@ namespace CinameManageMent.Migrations
                         .IsRequired();
 
                     b.HasOne("CinameManageMent.Models.Movie", "Movie")
-                        .WithMany("DetailCategoryMovies")
+                        .WithMany()
                         .HasForeignKey("IdMovie")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -359,21 +550,53 @@ namespace CinameManageMent.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("CinameManageMent.Models.Actor", b =>
+            modelBuilder.Entity("CinameManageMent.Models.DetailSeatMovieScreen", b =>
                 {
-                    b.Navigation("DetailActorMovies");
+                    b.HasOne("CinameManageMent.Models.CategorySeat", "CategorySeat")
+                        .WithMany()
+                        .HasForeignKey("idCategorySeat")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Screen", "Screen")
+                        .WithMany()
+                        .HasForeignKey("idScreen")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategorySeat");
+
+                    b.Navigation("Screen");
                 });
 
-            modelBuilder.Entity("CinameManageMent.Models.CategoryBlog", b =>
+            modelBuilder.Entity("CinameManageMent.Models.Feedback", b =>
                 {
-                    b.Navigation("Blogs");
+                    b.HasOne("CinameManageMent.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("IdAccount")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.Movie", "Movie")
+                        .WithMany()
+                        .HasForeignKey("IdMovie")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("CinameManageMent.Models.Movie", b =>
+            modelBuilder.Entity("Screen", b =>
                 {
-                    b.Navigation("DetailActorMovies");
+                    b.HasOne("CinameManageMent.Models.Cinema", "Cinema")
+                        .WithMany()
+                        .HasForeignKey("CinemaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("DetailCategoryMovies");
+                    b.Navigation("Cinema");
                 });
 #pragma warning restore 612, 618
         }

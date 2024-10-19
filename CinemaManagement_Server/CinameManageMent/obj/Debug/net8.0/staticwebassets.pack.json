@@ -1,24 +1,32 @@
 {
   "Files": [
     {
-      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\030426e82c0d4122b51f268cfbf58161.png",
-      "PackagePath": "staticwebassets\\Images\\030426e82c0d4122b51f268cfbf58161.png"
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\04e5ad22d4bb4d0ca598999ec4b1c54a.jpg",
+      "PackagePath": "staticwebassets\\Images\\04e5ad22d4bb4d0ca598999ec4b1c54a.jpg"
     },
     {
-      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\0b0653a24162491e96b2d4785ac1827e.png",
-      "PackagePath": "staticwebassets\\Images\\0b0653a24162491e96b2d4785ac1827e.png"
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\055c297e5a0a4c6b92f390931c6dcedb.jpg",
+      "PackagePath": "staticwebassets\\Images\\055c297e5a0a4c6b92f390931c6dcedb.jpg"
     },
     {
-      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\c1e0ffd1e8eb49cf9324dada6f8a657d.jpg",
-      "PackagePath": "staticwebassets\\Images\\c1e0ffd1e8eb49cf9324dada6f8a657d.jpg"
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\120b95b976dc4cad9a4209241606bc78.jpg",
+      "PackagePath": "staticwebassets\\Images\\120b95b976dc4cad9a4209241606bc78.jpg"
     },
     {
-      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\cac3d3ccba534752b0368b46b67a3386.png",
-      "PackagePath": "staticwebassets\\Images\\cac3d3ccba534752b0368b46b67a3386.png"
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\3179c2e1a71a40d99ece90fbb5a34c51.jpg",
+      "PackagePath": "staticwebassets\\Images\\3179c2e1a71a40d99ece90fbb5a34c51.jpg"
     },
     {
-      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\defaultImage.jpg",
-      "PackagePath": "staticwebassets\\Images\\defaultImage.jpg"
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg",
+      "PackagePath": "staticwebassets\\Images\\7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg"
+    },
+    {
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\9ff55c3302494e25bd89d5122543b20d.png",
+      "PackagePath": "staticwebassets\\Images\\9ff55c3302494e25bd89d5122543b20d.png"
+    },
+    {
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\030244d6d5414dc7935e7c9c4f921bba.mp4",
+      "PackagePath": "staticwebassets\\videos\\030244d6d5414dc7935e7c9c4f921bba.mp4"
     },
     {
       "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\3d8fe95852d64113b4a9de3718b2392c.mp4",
@@ -27,6 +35,10 @@
     {
       "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\6ce37889bfa74841983229bd11101fe4.mp4",
       "PackagePath": "staticwebassets\\videos\\6ce37889bfa74841983229bd11101fe4.mp4"
+    },
+    {
+      "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\d20297932c834a8da737694a7d561579.mp4",
+      "PackagePath": "staticwebassets\\videos\\d20297932c834a8da737694a7d561579.mp4"
     },
     {
       "Id": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\videos\\f3d9085d409a45cc8a47283158b16380.mp4",

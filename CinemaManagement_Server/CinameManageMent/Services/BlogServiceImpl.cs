@@ -17,6 +17,21 @@ namespace CinameManageMent.Services
             this.webHostEnvironment = webHostEnvironment;
             this.configuration = configuration;
         }
+        public void DeletePhoto(string photo)
+        {
+            try
+            {
+                string path = Path.Combine(webHostEnvironment.WebRootPath, "Images", photo);
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting file '{photo}': {ex.Message}");
+            }
+        }
 
         public bool CreateBlog(AddBlog blog)
         {
@@ -28,11 +43,11 @@ namespace CinameManageMent.Services
                 {
                     blog.ImageUrl.CopyTo(filestream);
                 }
-                var sql = "EXEC AddBlog @Title,@IdAccountCreated,@IdCategoryBlog,@ImageUrl,@ContentBlog";
+                var sql = "EXEC AddBlog @Title,@IdCategoryBlog,@ImageUrl,@ContentBlog";
                 var parameters = new[]
                 {
                     new SqlParameter("@Title",blog.Title),
-                    new SqlParameter("@IdAccountCreated",blog.idAccountCreated),
+                    
                     new SqlParameter("@IdCategoryBlog",blog.idCategoryBlog),
                     new SqlParameter("@ImageUrl",fileName),
                     new SqlParameter("@ContentBlog",blog.ContentBlog)
@@ -43,6 +58,84 @@ namespace CinameManageMent.Services
             catch
             {
                 return false;
+            }
+        }
+
+        public dynamic GetBlog()
+        {
+           
+                return databaseContext.Blogs.FromSqlRaw("Select * From GetBlog").ToList();
+           
+        }
+
+        public bool UpdateStatus(int id, UpdateStatus status)
+        {
+            try
+            {
+                var sql = "EXEC UpdateStatus @Id,@Status";
+                var parameters = new[]
+                {
+                    new SqlParameter("@Id",id),
+                new SqlParameter("@Status",status.status),
+                };
+                var result=databaseContext.Database.ExecuteSqlRaw(sql,parameters);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Updateblog(int id, UpdateBlog blog)
+        {
+            try
+            {
+                var result = 0;
+                if(blog.Image== null)
+                {
+                    var image = databaseContext.Blogs
+.FromSqlRaw("SELECT ImageUrl FROM dbo.fn_SelectBannerBlog({0})", id)
+.Select(x => x.ImageUrl)
+.FirstOrDefault();
+                    var sql = "EXEC UpdateBlog @Id,@Title,@IdCategoryblog";
+                    var parameters = new[]
+                    {
+                        new SqlParameter("@Id",id),
+                        new SqlParameter("@Title",blog.Title),
+                        new SqlParameter("@IdCategoryblog",blog.idCategoryBlog),
+                        new SqlParameter("@ImageUrl",image)
+                    };
+                    result=databaseContext.Database.ExecuteSqlRaw(sql,parameters);
+                }
+                else
+                {
+                    var image = databaseContext.Blogs
+.FromSqlRaw("SELECT ImageUrl FROM dbo.fn_SelectBannerBlog({0})", id)
+.Select(x => x.ImageUrl)
+.FirstOrDefault();
+                    DeletePhoto(image);
+                    var fileName = FileHelper.GenerateFileName(blog.Image.FileName);
+                    var path = Path.Combine(webHostEnvironment.WebRootPath, "Images", fileName);
+                    using (var filestream = new FileStream(path, FileMode.Create))
+                    {
+                        blog.Image.CopyTo(filestream);
+                    }
+                    var sql = "EXEC UpdateBlog @Id,@Title,@IdCategoryblog,@ImageUrl";
+                    var parameters = new[]
+                    {
+                        new SqlParameter("@Id",id),
+                        new SqlParameter("@Title",blog.Title),
+                        new SqlParameter("@IdCategoryblog",blog.idCategoryBlog),
+                        new SqlParameter("@ImageUrl",fileName)
+                    };
+                    result = databaseContext.Database.ExecuteSqlRaw(sql, parameters);
+                }
+                return result > 0;
+            }
+            catch
+            {
+                return false ;
             }
         }
     }

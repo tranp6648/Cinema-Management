@@ -16,7 +16,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AddCategoryMovie, DeleteCategory, GetCategory, UpdateCategory } from '../../Services/CategoryService';
 import { CreateActor, DeleteActor, GetActor, GetActorNotIn, UpdateActor } from '../../Services/ActorService';
-import { AddActorToMovie, CreateMovie, DeleteMovie, GetMovie } from '../../Services/MovieService';
+import { AddActorToMovie, CreateMovie, GetMovie } from '../../Services/MovieService';
 
 function CAM() {
 
@@ -70,48 +70,28 @@ function CAM() {
         e.preventDefault();
         try {
 
+            const formData = new FormData();
+                formData.append("Title",FromDate.Title);
+                formData.append("description",FromDate.Description);
+                formData.append("releaseDate",FromDate.ReleaseDate);
+                formData.append("duration",FromDate.Duration);
+                formData.append("director",FromDate.Director);
+                formData.append("idCategory",SelectedCategory?.value);
+                formData.append("trailer",FromDate.TrailerMovie);
+             
+                formData.append("picture",FromDate.ImageMovie)
 
-            const response = await CreateMovie({
-                title: FromDate.Title,
-                description: FromDate.Description,
-                releaseDate: FromDate.ReleaseDate,
-                duration: FromDate.Duration,
-                director: FromDate.Director,
-                idCategory: SelectedCategory?.value,
-
-                trailer: FromDate.TrailerMovie,
-                picture: FromDate.ImageMovie
-            }, token)
-            if (response.result == true) {
+            const response = await CreateMovie(formData, token)
+            if(response.result==true){
                 Swal.fire({
                     icon: 'success',
                     title: response.message,
                     showConfirmButton: false,
                     timer: 1500
                 })
-                FromDate.Title = '';
-                FromDate.ReleaseDate = null;
-                FromDate.Duration = '';
-                FromDate.Director = '';
-                FromDate.ImageMovie = null;
-                FromDate.ImageMovieImageView = null;
-                FromDate.TrailerMovie = null;
-
-                setFromData({
-
-
-
-                    Duration: '',
-
-
-                })
-                SetSelectedCategory(null)
-
-
-
-                document.getElementById('imageInput').value = '';
-                document.getElementById('trailer').value = '';
+                fetchMovie();
             }
+           
         } catch (error) {
             console.log(error);
         }
@@ -212,8 +192,11 @@ function CAM() {
     const fetActorNotin = async (id) => {
         try {
             const response = await GetActorNotIn(id);
-
-            setActorNotin(response);
+            console.log(response)
+            if(response.length>0){
+                setActorNotin(response);
+            }
+        
 
         } catch (error) {
             console.log(error)
@@ -435,33 +418,7 @@ function CAM() {
             console.log(error)
         }
     }
-    const RemoveMovie = async (id) => {
-        try {
-            const confirmation = await Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!',
-            });
-            if (confirmation.isConfirmed) {
-                const response = await DeleteMovie(id, token);
-                if (response.result == true) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: response.message,
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
-                    fetchMovie();
-                }
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+  
     const RemoveActor = async (id) => {
         try {
             const confirmation = await Swal.fire({
@@ -578,7 +535,7 @@ function CAM() {
             reader.onloadend = () => {
                 setFromData({
                     ...FromDate,
-                    ImageMovie: reader.result,
+                    ImageMovie: file,
                     ImageMovieImageView: reader.result
                 });
             };
@@ -590,15 +547,10 @@ function CAM() {
 
 
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setFromData({
-                ...FromDate,
-                TrailerMovie: reader.result,
-            });
-        };
-        reader.readAsDataURL(file);
-
+        setFromData({
+            ...FromDate, // Assuming you have other data in formData
+            TrailerMovie: file,  // Keeping the file reference
+        });
 
     };
     const handleFileChange = (e) => {
@@ -1120,8 +1072,9 @@ function CAM() {
                                                 <th>Category</th>
                                                 <th>Video</th>
                                                 <th>Actor</th>
-                                                <th>Edit</th>
                                                 <th>Delete</th>
+                                                <th>Edit</th>
+                                             
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1136,6 +1089,7 @@ function CAM() {
                                                     <td><img src={`${movie.picture}`} width="100" height="100" style={{ objectFit: 'cover' }} /></td>
                                                     <td>{movie.categoryName.name}</td>
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={(e) => handleOpenPopup(movie.trailer)}>Trailer</button></td>
+                                                    
                                                     <td>{movie.actorROles.length > 0 ? movie.actorROles.map(mov => mov.name).join(', ') : 'No role'}
                                                         <br />
                                                         <br />
@@ -1145,9 +1099,10 @@ function CAM() {
                                                             Add Actor
                                                         </button>
                                                     </td>
+                                                    <td><button className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={()=>navigate(`/SuperAdmin/DescriptionMovie/${movie.id}`,{state:{Id:movie.id}})}>Description</button></td>
 
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleMovie(movie.id)}>Edit</button></td>
-                                                    <td><button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => RemoveMovie(movie.id)}>Remove</button></td>
+                                                
                                                 </tr>
                                             ))}
                                         </tbody>

@@ -31,16 +31,40 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
-        [HttpDelete("DeleteMovie/{id}")]
-        public IActionResult DeleteMovie(int id)
+        [HttpPut("UpdateDescription/{id}")]
+        public IActionResult UpdateDescription(int id, [FromBody]UpdateDescription updateDescription)
         {
             try
             {
                 return Ok(new
                 {
-                    result= movieService.DeleteMovie(id),
-                    Message="Delete Movie Successfully"
+                    result = movieService.UpdateDescriptionMovie(id, updateDescription),
+                    Message = "Update Description Success"
                 });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("DetailActorMovie/{id}")]
+        public IActionResult DetailActorMovie(int id)
+        {
+            try
+            {
+                return Ok(movieService.DetailActor(id));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("DetailMovie/{id}")]
+        public IActionResult DetailMovie(int id)
+        {
+            try
+            {
+                return Ok(movieService.DetailMovie(id));
             }
             catch
             {
@@ -79,14 +103,14 @@ namespace CinameManageMent.Controllers
         }
         [HttpPost("AddMovie")]
         [Authorize(Policy = "AdminOrSuperAdmin")]
-        public IActionResult AddMovie([FromBody]MovieDto movie)
+        public IActionResult AddMovie([FromForm]MovieDto movie)
         {
             try
             {
                 return Ok(new
                 {
-                    result= movieService.AddMovie(movie),
-                    Message="Add Movie Success"
+                    result=movieService.AddMovie(movie),
+                    Message="Create Movie Successfully"
                 });
             }
             catch

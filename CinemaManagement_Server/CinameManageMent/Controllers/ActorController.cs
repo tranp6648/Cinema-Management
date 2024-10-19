@@ -73,6 +73,7 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+       
         [HttpPost("AddActor")]
         [Authorize(Policy ="SuperAdmin")]
         public IActionResult AddActor([FromForm] AddActor addActor)

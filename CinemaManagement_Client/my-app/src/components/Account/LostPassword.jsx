@@ -157,7 +157,7 @@ function LostPassword() {
 
                                         <div className='u-columns col2-set'>
                                             <div className='u-column1 col-1' style={{ width: '48%' }}>
-                                                <h2 className=" text-center" style={{ display: 'block' }}>Forget Password</h2>
+                                                <h2 className=" text-center" style={{ display: 'block',color:'black',fontWeight:'bold' }}>Forget Password</h2>
                                                 <div className=" hiraola-tab_content">
                                                     <div id="Login" className={`tab-pane active show`}>
                                                         <form onSubmit={handleSubmit} className='woocommerce-form woocommerce-form-login login' >

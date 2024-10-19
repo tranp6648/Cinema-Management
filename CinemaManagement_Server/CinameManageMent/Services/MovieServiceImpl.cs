@@ -19,38 +19,38 @@ namespace CinameManageMent.Services
             this.webHostEnvironment = webHostEnvironment;
             this.configuration = configuration;
         }
-        private string SaveVideoToFolder(string base64String, string webrootpath)
+        private string SavePictureToFolder(IFormFile file, string webrootpath)
         {
-            if (base64String.StartsWith("data:video"))
-            {
-                base64String = base64String.Split(',')[1];
-            }
-
-            // Ensure correct padding
-            base64String = base64String.PadRight((base64String.Length + 3) & ~3, '=');
-
             try
             {
-                byte[] pictureBytes = Convert.FromBase64String(base64String);
-                string folderPath = Path.Combine(webrootpath, "videos");
-
-                if (!Directory.Exists(folderPath))
+                var fileName = FileHelper.GenerateFileName(file.FileName);
+                var path = Path.Combine(webHostEnvironment.WebRootPath, "Images", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
                 {
-                    Directory.CreateDirectory(folderPath);
+                    file.CopyTo(fileStream);
                 }
-
-                string filename = FileHelper.GenerateFileVideo(base64String);
-                string filepath = Path.Combine(folderPath, filename);
-
-                System.IO.File.WriteAllBytes(filepath, pictureBytes);
-
-                return Path.Combine( filename);
+                return fileName;
             }
-            catch (FormatException ex)
+            catch
             {
-                // Log the exception or handle it appropriately
-                Console.WriteLine($"Error converting Base64 string: {ex.Message}");
-                return null;  // or throw an exception, return an error code, etc.
+                return null;
+            }
+        }
+        private string SaveVideoToFolder(IFormFile file, string webrootpath)
+        {
+            try
+            {
+                var fileName = FileHelper.GenerateFileName(file.FileName);
+                var path = Path.Combine(webHostEnvironment.WebRootPath, "videos", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(fileStream);
+                }
+                return fileName;
+            }
+            catch
+            {
+                return null;
             }
         }
         private void DeleteMovie(string moviePath,string webrootPath) {
@@ -127,14 +127,14 @@ namespace CinameManageMent.Services
 
         };
 
-                // Execute the stored procedure
+
                 var result = DatabaseContext.Database.ExecuteSqlRaw
            ("EXEC AddMovie @Title, @Description, @ReleaseDate, @Duration,@Trailer, @Picture, @Director,@IdCategory", parameters);
-           
 
-               
-               
-                return result>0;
+
+
+
+                return result > 0;
             }
             catch
             {
@@ -234,25 +234,7 @@ namespace CinameManageMent.Services
             
         }
 
-        public bool DeleteMovie(int id)
-        {
-            try
-            {
-                var image = DatabaseContext.Movies
-   .FromSqlRaw("SELECT Picture,Trailer FROM dbo.fn_SelectMovieId({0})", id)
-   .Select(x => new { x.Picture, x.Trailer }).FirstOrDefault();
-                this.DeletePictureFromFolder(image.Picture, webHostEnvironment.WebRootPath);
-                this.DeleteMovie(image.Trailer,webHostEnvironment.WebRootPath);
-                var idParameter = new SqlParameter("@Id", id);
-                var result = DatabaseContext.Database.ExecuteSqlRaw("Exec DeleteMovie @Id", idParameter);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
+    
         public bool AddActorMovie(ActorMovieDTO actorMovieDto)
         {
             try
@@ -268,6 +250,47 @@ namespace CinameManageMent.Services
                 return false;
             }
            
+        }
+
+        public dynamic DetailMovie(int id)
+        {
+            return DatabaseContext.Movies.FromSqlRaw("Select * From dbo.DetailMovie({0})", id).Select(d => new
+            {
+                id = d.Id,
+                Title = d.Title,
+                Description = d.Description,
+                Director = d.Director,
+                Duration = d.Duration,
+                Picture = d.Picture,
+                ReleaseDate = d.ReleaseDate,
+                Trailer=d.Trailer,
+                CategoryName=DatabaseContext.DetailCategoryMovies.Where(c => d.Id == c.IdMovie).Select(c => new
+                {
+                    idcategory= c.IdCategory,   
+                    NameCategory=c.Category.Name
+                }).FirstOrDefault(),
+               
+            }).FirstOrDefault();
+        }
+
+        public dynamic DetailActor(int id)
+        {
+      return DatabaseContext.DetailActorMovies.FromSqlRaw("Select * From dbo.fn_DetailActor({0})", id).ToList();
+        }
+
+        public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription)
+        {
+            try
+            {
+                var idMovie = new SqlParameter("@Id", id);
+                var Description=new SqlParameter("@Description",updateDescription.Description);
+                var result = DatabaseContext.Database.ExecuteSqlRaw("Exec UpdateDescription @Id,@Description", idMovie, Description);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
