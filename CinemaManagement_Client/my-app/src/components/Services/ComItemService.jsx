@@ -1,6 +1,26 @@
 import { ComboItem } from "../Url/api";
 
 const baseUrl=ComboItem();
+export const UpdateActiveStatus=async(id,combo)=>{
+    try{
+        const response=await fetch(`${baseUrl}UpdateStatus/${id}`,{
+            method:'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(combo)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            console.log(responseBody)
+            return responseBody;
+        }
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
 export const UpdateComboItem=async(id,combo)=>{
     try{
         const response=await fetch(`${baseUrl}UpdateComboItem/${id}`,{

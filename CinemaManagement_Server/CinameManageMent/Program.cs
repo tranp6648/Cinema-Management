@@ -50,6 +50,7 @@ namespace CinameManageMent
             builder.Services.AddScoped<ScreenService, ScreenServiceImpl>();
             builder.Services.AddScoped<ItemService, ItemServiceImpl>();
             builder.Services.AddScoped<ComboItemService, ComboItemServiceImpl>();
+            builder.Services.AddScoped<ShowTimeService, ShowTimeServiceImpl>();
 
             // Configure JWT authentication (if needed in the future)
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

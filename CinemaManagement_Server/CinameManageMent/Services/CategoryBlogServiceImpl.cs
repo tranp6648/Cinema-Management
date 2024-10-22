@@ -32,11 +32,7 @@ namespace CinameManageMent.Services
 
         public dynamic GetCategory()
         {
-            return _databaseContext.CategoryBlogs.FromSqlRaw("Select * From GetCategoryBlog").Select(d => new
-            {
-                Id=d.Id,
-                Name=d.Name,
-            }).ToList();
+            return _databaseContext.CategoryBlogs.FromSqlRaw("Select * From GetCategoryBlog").ToList();
         }
     }
 }

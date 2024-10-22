@@ -7,7 +7,7 @@ import Pagination from 'react-paginate';
 import 'react-paginate/theme/basic/react-paginate.css';
 import Cookies from 'js-cookie'
 import { AddItemCombo, GetItem } from "../../Services/ItemService";
-import { CreateCombo, GetComboItem, UpdateComboItem } from "../../Services/ComItemService";
+import { CreateCombo, GetComboItem, UpdateActiveStatus, UpdateComboItem } from "../../Services/ComItemService";
 function Combo() {
 
     const getTokenFromCookies = () => {
@@ -19,6 +19,7 @@ function Combo() {
     const[IsPopUpEdit,setIsPopUpEdit]=useState(false);
     const[isClosingEdit,setIsClosingEdit]=useState(false)
     const [ComboItem, setComboItem] = useState([]);
+    const [selectedStatus, setSelectedStatus] = useState({});
     const fetchComboItem = async () => {
         try {
             const repsonse = await GetComboItem();
@@ -124,6 +125,10 @@ function Combo() {
         UpdateImagePreview:null,
         UpdateImage:null
     })
+    const optionsStatus = [
+        { value: 1, label: 'Show' },
+        { value: 2, label: 'Hide' }
+    ];
     const handleClosePopupComBoitem = () => {
         setIsClosingEdit(true);
         setTimeout(() => {
@@ -174,6 +179,16 @@ function Combo() {
 
         }
     }
+    const handleStatusChange = async (selectedOption, blogId) => {
+
+        const response = await UpdateActiveStatus(blogId, {
+            status: selectedOption.label == 'Hide' ? false : true
+        })
+        if (response == true) {
+            fetchComboItem()
+        }
+
+    };
     const [isClosingPopup, setIsClosingPopup] = useState(false)
     const options = [
         { label: 'Bắp', value: 'corn' },
@@ -360,6 +375,7 @@ function Combo() {
                                                 <th>Price</th>
                                                 <th>Banner</th>
                                                 <th>Item</th>
+                                                <th>Status</th>
                                                 <th>Edit</th>
 
                                             </tr>
@@ -376,6 +392,12 @@ function Combo() {
                                                     <td>{admin.item.length > 0 ? admin.item.map(mov => mov.nameItem).join(', ') : 'No Item'}
 
                                                     </td>
+                                                    <td> <Select
+                                                        options={optionsStatus}
+                                                        value={selectedStatus[admin.id] || optionsStatus.find(option => admin.active ? option.value === 1 : option.value === 2)}
+                                                        onChange={(selectedOption) => handleStatusChange(selectedOption, admin.id)}
+                                                        className="custom-select"
+                                                    /></td>
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleComboEdit(admin.id)}>Edit</button></td>
 
                                                 </tr>

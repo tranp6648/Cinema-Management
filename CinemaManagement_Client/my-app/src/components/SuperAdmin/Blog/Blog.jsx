@@ -40,7 +40,10 @@ function Blog() {
     const fetchBlog = async () => {
         try {
             const response = await GetBlog(token);
-            setBlog(response);
+            if(response.length>0){
+                setBlog(response);
+            }
+            
         } catch (error) {
             console.log(error)
         }
@@ -72,7 +75,8 @@ function Blog() {
             console.log(error)
         }
     }
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             const response = await CreateCategoryBlog({
                 name: FromData.Name

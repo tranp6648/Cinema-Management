@@ -30,6 +30,18 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+        [HttpPut("UpdateStatus/{id}")]
+        public IActionResult UpdateStatus(int id, [FromBody]UpdateStatus updateStatus)
+        {
+            try
+            {
+                return Ok(comboItemService.UpdateStatus(id, updateStatus));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpGet("GetComboItem")]
         public IActionResult GetComboItem()
         {

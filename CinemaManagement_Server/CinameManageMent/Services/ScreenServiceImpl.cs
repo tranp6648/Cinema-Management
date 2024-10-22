@@ -40,6 +40,11 @@ namespace CinameManageMent.Services
            return true;
         }
 
+        public dynamic ScreenAdmin(int id)
+        {
+            return databaseContext.Screen.FromSqlRaw("Select * From dbo.GetScreenInAdmin({0})", id).ToList();
+        }
+
         public dynamic ShowDetailSeat(int seatId)
         {
             return databaseContext.Screen.FromSqlRaw("Select * From dbo.DetailSeat({0})",seatId).Select(d => new

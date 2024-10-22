@@ -53,6 +53,8 @@ namespace CinameManageMent.Services
            }).ToList();
         }
 
+       
+
         public bool UpdateCinema(int id, AddCinema cinema)
         {
             try

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import { GetAccountAdmin, Register } from "../../Services/AccountService";
+import { ActiveAdmin, GetAccountAdmin, Register } from "../../Services/AccountService";
 import Swal from "sweetalert2";
+import Select from 'react-select'
 import Cookies from 'js-cookie'
 function ManagerAdmin() {
     const[Admin,setAdmin]=useState([]);
@@ -12,6 +13,7 @@ function ManagerAdmin() {
         Email: '',
         Phone: ''
     })
+    const [selectedStatus, setSelectedStatus] = useState({});
     const getTokenFromCookies = () => {
         return Cookies.get('token');
     };
@@ -28,6 +30,34 @@ function ManagerAdmin() {
         }
         fetchdata();
     },[])
+    const fetchdata=async()=>{
+        try{
+            const response=await GetAccountAdmin(token);
+            console.log(response)
+            setAdmin(response);
+        }catch(error){
+            console.log(error)
+        }
+    }
+    const handleActiveAdmin=async(id)=>{
+        
+        try{
+            const response=await ActiveAdmin(id,{
+                status:true
+            })
+            if(response.result==true){
+                Swal.fire({
+                    icon: 'success',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                fetchdata();
+            }
+        }catch(error){
+            console.log(error)
+        }
+    }
     const handleBirthday = (date) => {
         const formattedDate = date.toISOString().split('T')[0];
         setFromData({ ...FromData, Birthday: formattedDate });
@@ -165,7 +195,8 @@ function ManagerAdmin() {
                                               
                                                 <th>Phone</th>
                                                <th>Avatar</th>
-                                               
+                                          
+                                               {Admin.some(admin => admin.active==false) && <th>Active</th>}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -179,6 +210,9 @@ function ManagerAdmin() {
                                                 <td>{new Date(admin.birthday).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                                                 <td>{admin.phone}</td>
                                                 <td><img src={`${admin.avatar}`}  width="100" height="100" style={{ objectFit: 'cover' }} alt="" /></td>
+                                                {admin.active==false&&(
+  <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleActiveAdmin(admin.id)} >Active</button></td>
+                                                )}
                                               
                                             </tr>
                                         ))}

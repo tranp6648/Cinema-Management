@@ -1,5 +1,6 @@
 ﻿using CinameManageMent.Data;
 using CinameManageMent.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,19 @@ namespace CinameManageMent.Controllers
                     result = screenService.CreateScreen(createSeat),
                     Message = "Create Screen Success"
                 });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("GetScreenAdmin/{id}")]
+        [Authorize(Policy ="Admin")]
+        public IActionResult GetScreenAdmin(int id)
+        {
+            try
+            {
+                return Ok(screenService.ScreenAdmin(id));
             }
             catch
             {

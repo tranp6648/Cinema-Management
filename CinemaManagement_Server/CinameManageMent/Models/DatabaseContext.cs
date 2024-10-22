@@ -35,6 +35,8 @@ namespace CinameManageMent.Models
         public virtual DbSet<Combo> Combos { get; set; }
         public virtual DbSet<ComboItem>ComboItems { get; set; } 
         public virtual DbSet<DetailSeatMovieScreen> DetailSeats { get; set; }
+        public virtual DbSet<ShowTime> ShowTime { get; set; }
+        public virtual DbSet<ShowTimeSeatPrice> ShowTimeSeatPrices { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -1,6 +1,26 @@
 
 import { Account } from "../Url/api";
 const baseUrl = Account();
+export const ActiveAdmin=async(id,admin)=>{
+    try{
+        const response=await fetch(`${baseUrl}ActiveAdmin/${id}`,{
+            method:'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(admin)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
 export const RegisterAccountUser = async (user) => {
     try {
         const response = await fetch(`${baseUrl}RegisterUser`, {

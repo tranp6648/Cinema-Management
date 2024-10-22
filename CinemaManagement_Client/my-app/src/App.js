@@ -20,11 +20,13 @@ import AllMovies from './components/AllMovies/AllMovies';
 import Detail from './components/Detail/Detail';
 import DescriptionMovie from './components/SuperAdmin/Category/DescriptionMovie';
 import ComboMovie from './components/SuperAdmin/Combo/Combo';
+import LayoutAdmin from './components/LayoutAdmin/LayoutAdmin';
+import ShowTime from './components/Admin/Showtime/ShowTime'
 function App() {
   return (
 <Router>
      <Routes>
-      <Route path='/Admin' element={<ProtectedRoute Element={Admin} RoleRequired="Admin"/>}/>
+     
       <Route path='/SuperAdmin' element={< ProtectedRoute Element={LayoutSuperAdmin} RoleRequired="SuperAdmin" />}>
           <Route index element={<ProtectedRoute Element={SuperAdmin}  RoleRequired="SuperAdmin"/>} />
           <Route path='CAM' element={<ProtectedRoute Element={CAM} RoleRequired="SuperAdmin"/>}/>
@@ -34,6 +36,10 @@ function App() {
           <Route path='Blog' element={<ProtectedRoute Element={Blog} RoleRequired="SuperAdmin"/>}/>
           <Route path='DescriptionMovie/:id' element={<ProtectedRoute Element={DescriptionMovie} RoleRequired="SuperAdmin"/>}/>
           <Route path='ComboFood' element={<ProtectedRoute Element={ComboMovie} RoleRequired="SuperAdmin"/>}/>
+        </Route>
+        <Route path='/Admin' element={<ProtectedRoute Element={LayoutAdmin} RoleRequired="Admin"/>}>
+        <Route index element={<ProtectedRoute Element={Admin} RoleRequired="Admin"/>}/>
+        <Route path='ShowTime' element={<ProtectedRoute Element={ShowTime} RoleRequired="Admin"/>}/>
         </Route>
         <Route path='/About' element={<About/>}/>
         <Route path='/AllMovie' element={<AllMovies/>}/>

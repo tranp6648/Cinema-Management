@@ -211,9 +211,9 @@ function AdminPage() {
   };
 
   return (
-    <div className="wrapper">
+   
 
-   <Layout/>
+
 
       <div className="content-wrapper">
 
@@ -436,7 +436,7 @@ function AdminPage() {
           </div>
 
         </section>
-      </div>
+      
       <footer className="main-footer">
         <div className="pull-right hidden-xs">
           <b>Version</b> 2.0

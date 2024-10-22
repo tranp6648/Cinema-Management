@@ -16,5 +16,6 @@ namespace CinameManageMent.Services
         public bool ChangeProfile(int id,UpdateProfileDTO updateProfileDTO);
         public dynamic GetAdmin();
         public bool ActiveAccount(int id,string Email);
+        public bool ActiveAdmin(int id, UpdateStatus status);
     }
 }

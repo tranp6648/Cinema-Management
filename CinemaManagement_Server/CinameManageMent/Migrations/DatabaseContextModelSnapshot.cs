@@ -250,6 +250,9 @@ namespace CinameManageMent.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
                     b.Property<string>("banner")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
@@ -457,6 +460,64 @@ namespace CinameManageMent.Migrations
                     b.ToTable("Movies");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.ShowTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdAccountCreate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdScreen")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("idMovie")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdScreen");
+
+                    b.HasIndex("idMovie");
+
+                    b.ToTable("ShowTime");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.ShowTimeSeatPrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("categorySeatId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("showTimeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("categorySeatId");
+
+                    b.HasIndex("showTimeId");
+
+                    b.ToTable("ShowTimeSeatPrice");
+                });
+
             modelBuilder.Entity("Screen", b =>
                 {
                     b.Property<int>("Id")
@@ -586,6 +647,44 @@ namespace CinameManageMent.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.ShowTime", b =>
+                {
+                    b.HasOne("Screen", "Screen")
+                        .WithMany()
+                        .HasForeignKey("IdScreen")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.Movie", "Movie")
+                        .WithMany()
+                        .HasForeignKey("idMovie")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("Screen");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.ShowTimeSeatPrice", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.CategorySeat", "categorySeat")
+                        .WithMany()
+                        .HasForeignKey("categorySeatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.ShowTime", "showTime")
+                        .WithMany()
+                        .HasForeignKey("showTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("categorySeat");
+
+                    b.Navigation("showTime");
                 });
 
             modelBuilder.Entity("Screen", b =>

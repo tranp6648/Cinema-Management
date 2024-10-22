@@ -16,5 +16,6 @@ namespace CinameManageMent.Models
         [Required]
         [Column(TypeName ="varchar(200)")]
         public string banner { get; set; }
+        public bool Active { get; set; }
     }
 }

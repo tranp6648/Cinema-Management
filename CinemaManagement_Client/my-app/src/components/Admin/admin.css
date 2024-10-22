@@ -9,7 +9,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.Time-Freetime{
+  width: 177vh;
+}
+.custom-select{
+  z-index: 1000;
+}
 
 .input{
   border: none;

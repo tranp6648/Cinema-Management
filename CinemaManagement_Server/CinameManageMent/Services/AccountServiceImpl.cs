@@ -255,6 +255,7 @@ namespace CinameManageMent.Services
                 Birthday=d.Birthday,
                 Active=d.Active,    
                 Avatar=d.Avatar,
+                Status=d.Active
                
             }).ToList();
         }
@@ -322,6 +323,25 @@ namespace CinameManageMent.Services
                 }
                 return true;
 
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ActiveAdmin(int id, Data.UpdateStatus status)
+        {
+            try
+            {
+                var sql = "Exec UpdateActiveAdmin @Id,@Active";
+                var paramaters = new[]
+                {
+                    new SqlParameter("@Id",id),
+                    new SqlParameter("@Active",status.status)
+                };
+                var result = databaseContext.Database.ExecuteSqlRaw(sql, paramaters);
+                return result > 0;
             }
             catch
             {

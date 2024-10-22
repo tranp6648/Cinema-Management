@@ -32,6 +32,7 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+       
         [HttpGet("GetCinema")]
         [Authorize(Policy ="SuperAdmin")]
         public IActionResult GetCinema()

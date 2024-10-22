@@ -99,7 +99,8 @@ namespace CinameManageMent.Services
                 {
                     iditem=a.Item.Id,
                     NameItem=a.Item.Name,
-                }).ToList()
+                }).ToList(),
+                Active=d.Active,
             }).ToList();
         }
         private void DeletePictureFromFolder(string base64String, string webrootpath)
@@ -149,6 +150,25 @@ namespace CinameManageMent.Services
                     result = databaseContext.Database.ExecuteSqlRaw(sql, parameters);
 
                 }
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateStatus(int id, UpdateStatus updateStatus)
+        {
+            try
+            {
+                var sql = "EXEC UpdateStatusComboFood @Id,@Active";
+                var parameters = new[]
+                {
+                    new SqlParameter("@Id",id),
+                    new SqlParameter("@Active",updateStatus.status)
+                };
+                var result=databaseContext.Database.ExecuteSqlRaw(sql,parameters);
                 return result > 0;
             }
             catch

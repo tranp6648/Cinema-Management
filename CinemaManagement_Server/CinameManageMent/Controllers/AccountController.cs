@@ -187,6 +187,22 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+        [HttpPut("ActiveAdmin/{id}")]
+        public IActionResult ActiveAdmin(int id, [FromBody] UpdateStatus status)
+        {
+            try
+            {
+                return Ok(new
+                {
+                    result = _accountService.ActiveAdmin(id, status),
+                    Message = "Active Admin Successfully"
+                });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpPut("ForgetPassword/{Email}")]
         public IActionResult ForgetPassword(string Email)
         {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wQG3DLU69dFEGa7UYREZtxotvQnKbjOiKgD9/V0NNdQ=",
+  "Hash": "UqCED1VRPrSpFYyaaQIvINr2lBjOH2BXHYRPIzLUDV8=",
   "Source": "CinameManageMent",
   "BasePath": "_content/CinameManageMent",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\7b5cf6e5f0a44999a6f0d90e5e86ea67.jpg"
+    },
+    {
+      "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\8664ec5fb8a849658d5c81661520b84e.jpg",
+      "SourceId": "CinameManageMent",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\",
+      "BasePath": "_content/CinameManageMent",
+      "RelativePath": "Images/8664ec5fb8a849658d5c81661520b84e.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\8664ec5fb8a849658d5c81661520b84e.jpg"
     },
     {
       "Identity": "E:\\Cinema-Management\\CinemaManagement_Server\\CinameManageMent\\wwwroot\\Images\\9ff55c3302494e25bd89d5122543b20d.png",

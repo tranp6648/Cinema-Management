@@ -31,3 +31,6 @@ export const Item=()=>{
 export const ComboItem=()=>{
      return 'http://localhost:5277/api/ComboItem/'
 }
+export const ShowTime=()=>{
+     return 'http://localhost:5277/api/ShowTime/'
+}
