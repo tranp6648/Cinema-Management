@@ -4,10 +4,11 @@ import './Cinema.css'
 import Cookies from 'js-cookie'
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
-import { GetAccountAdmin, Register } from "../../Services/AccountService";
+import Pagination from 'react-paginate'
+import { GetAccountAdmin, GetAdminCinema, Register } from "../../Services/AccountService";
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from "sweetalert2";
-import { CreateCinema, GetCinema, UpdateCinema } from "../../Services/CinemaService";
+import { CreateCinema, GetCinema, GetDistrict, UpdateCinema } from "../../Services/CinemaService";
 import { CreateScreen, GetDetailScreen } from "../../Services/ScreenService";
 function Cinema() {
   const [districts, setDistricts] = useState([]);
@@ -21,6 +22,7 @@ function Cinema() {
   const [isPopupVisible, setIsPopupVisibile] = useState(false);
   const [IsClosingVisible, setIsClosingVisible] = useState(false);
   const [roomDetails, setRoomDetails] = useState([]);
+  
   const [IsAddPopup, setIsAddPopup] = useState(false);
   const [Cinema, setCinema] = useState([]);
   const [vipSeatsCountByRoom, setVipSeatsCountByRoom] = useState({});
@@ -115,7 +117,7 @@ function Cinema() {
     setRoomSeats(newRoomSeats);
   }, [quantityRoom]);
   useEffect(() => {
-    setRoomDetails(Array.from({ length: quantityRoom }, (_, index) => roomDetails[index] || { seatCount: 0, roomName: '' }));
+    setRoomDetails(Array.from({ length: quantityRoom }, (_, index) => roomDetails[index] || { seatCount: 0, roomName: `Room ${index + 1}`, }));
   }, [quantityRoom]);
 
   const renderSeats = (seats) => {
@@ -223,7 +225,7 @@ function Cinema() {
   const handleDistrictChange = (selectedOption) => {
     SetselectedDistrcit(selectedOption);
   };
-  let combinedName = `${FromData.Name}${selectedDistrict ? ' - ' + selectedDistrict.label : ''}`;
+  let combinedName = `${FromData.Name == undefined ? '' : FromData.Name}${selectedDistrict ? ' - ' + selectedDistrict.label : ''}`;
   let CombineUpdateName = `${FromData.UpdateName}${SelectedUpdateDistrict?.label ? ' - ' + SelectedUpdateDistrict.label : ' - ' + SelectedUpdateDistrict}`;
 
   const handleEditCinema = (Id) => {
@@ -233,9 +235,10 @@ function Cinema() {
 
       const Name = SelectedCinema.name.split(' - ')[0];
       FromData.UpdateName = Name;
+      console.log(SelectedCinema.IdDistrict)
       FromData.id = Id;
       SetSelectedUpdateAdmin(SelectedCinema.manager.idManager);
-      SetSelectedUpdateDistrict(SelectedCinema.district);
+      SetSelectedUpdateDistrict(SelectedCinema.idDistrict);
       FromData.UpdateAddress = SelectedCinema.address;
       FromData.UpdatePhoneNumber = SelectedCinema.phoneNumber;
     }
@@ -245,31 +248,45 @@ function Cinema() {
 
   const SubmitAddCinema = async (e) => {
     e.preventDefault();
-    try {
+    console.log(SelectedUpdateDistrict?.value)
+    if ( selectedAdmin?.value==undefined || combinedName == '' || FromData.Name == undefined || FromData.Address == '' || FromData.PhoneNumber=='' || selectedDistrict?.label==undefined) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Please complete all information',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    } else {
+      try {
 
-      const response = await CreateCinema({
-        district: selectedDistrict?.label,
-        idManager: selectedAdmin?.value,
-        name: combinedName,
-        address: FromData.Address,
-        phoneNumber: FromData.PhoneNumber
-      }, token)
-      if (response.result == true) {
-        Swal.fire({
-          icon: 'success',
-          title: response.message,
-          showConfirmButton: false,
-          timer: 1500
-        })
-        SetselectedDistrcit(null);
-        SetselectedAdmin(null);
-        combinedName = '';
-        FromData.Address = '';
-        FromData.PhoneNumber = ''
+        const response = await CreateCinema({
+          district: selectedDistrict?.value,
+          idManager: selectedAdmin?.value,
+          name: combinedName,
+          address: FromData.Address,
+          phoneNumber: FromData.PhoneNumber
+        }, token)
+        if (response.result == true) {
+          Swal.fire({
+            icon: 'success',
+            title: response.message,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          SetselectedDistrcit(null);
+          SetselectedAdmin(null);
+          combinedName = '';
+          FromData.Address = '';
+          FromData.PhoneNumber = '';
+          combinedName='';
+          FromData.Name=undefined;
+          fetchCinema();
+        }
+      } catch (error) {
+        console.log(error)
       }
-    } catch (error) {
-      console.log(error)
     }
+
   }
   const SubmitUpdateCinema = async (e) => {
     e.preventDefault();
@@ -282,9 +299,9 @@ function Cinema() {
           timer: 1500
         })
       } else {
-        console.log(FromData.id)
+
         const response = await UpdateCinema(FromData.id, {
-          district: SelectedUpdateDistrict?.label == undefined ? SelectedUpdateDistrict : SelectedUpdateDistrict?.label,
+          district: SelectedUpdateDistrict?.value == undefined ? SelectedUpdateDistrict : SelectedUpdateDistrict?.value,
           idManager: SeletedUpdateAdmin?.value == undefined ? SeletedUpdateAdmin : SeletedUpdateAdmin?.value,
           name: CombineUpdateName,
           address: FromData.UpdateAddress,
@@ -298,6 +315,7 @@ function Cinema() {
             timer: 1500
           })
           setIsPopupVisibile(false);
+          fetchCinema();
 
         }
       }
@@ -331,6 +349,7 @@ function Cinema() {
           Phone: '',
           Birthday: null
         })
+        fetchAdmin()
       }
     } catch (error) {
       console.log(error)
@@ -363,7 +382,17 @@ function Cinema() {
 
     borderRadius: "8px",
     boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-    animation: "flipleft 0.5s", // Default animation
+    animation: "flipleft 0.5s",
+    // Default animation
+  };
+  const popupContentStyle2 = {
+    background: "#FDFCF0",
+
+    borderRadius: "8px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+    animation: "flipleft 0.5s",
+    overflowY: "auto",
+    // Default animation
   };
   const renderRoomSetupForm = (index) => {
     return (
@@ -382,17 +411,8 @@ function Cinema() {
           />
         </form>
         <form onSubmit={(e) => e.preventDefault()}>
-          <label className="inputSeat text-white" htmlFor={`roomName-room${index}`}>
-            Enter name for Room {index + 1}:
-          </label>
-          <br />
-          <input
-            type="text"
-            placeholder="Name room"
-            value={roomDetails[index]?.roomName || ''}
-            onChange={(e) => handleRoomNameChange(index, e.target.value)}
-            className="room-name-input"
-          />
+        
+         
         </form>
         <ul class="showcase mt-14">
           <li>
@@ -409,6 +429,15 @@ function Cinema() {
       </div>
     );
   };
+  const handleCloseEditCinema=()=>{
+    setIsClosingVisible(true);
+    setTimeout(() => {
+
+      setIsPopupVisibile(false)
+      setIsClosingVisible(false)
+
+    }, 500);
+  }
 
   const handleCloseAddAccount = () => {
     setisClosingPopup(true);
@@ -422,7 +451,7 @@ function Cinema() {
 
   const fetchAdmin = async () => {
     try {
-      const response = await GetAccountAdmin(token);
+      const response = await GetAdminCinema(token);
       if (response.length > 0) {
         setAdmin(response);
       }
@@ -447,9 +476,9 @@ function Cinema() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await fetch('/districts.json');
-        const data = await response.json();
-        setDistricts(data)
+        const response = await GetDistrict(token);
+
+        setDistricts(response)
       } catch (error) {
         console.log(error)
       }
@@ -468,16 +497,17 @@ function Cinema() {
     setActiveTab(index);
   };
   const handleSave = async () => {
+    // Map room details to roomData
     const roomData = roomDetails.map((room, index) => {
       const seats = roomSeats[index].map((_, seatIndex) => {
         const seatKey = `Room${index}Seat${seatIndex}`;
         const isVip = vipSeats[`Room${index}Seat${seatIndex + 1}`];
         return {
           name: `${seatIndex + 1}`,
-          type: isVip ? "2" : "1",
+          type: isVip ? "1" : "2",
         };
       });
-
+  
       return {
         name: room.roomName,
         cinemaID: selectedCinemaId,
@@ -485,58 +515,102 @@ function Cinema() {
         totalSeats: seats.length,
       };
     });
-    const payload = roomData;
-    const bodyData = payload.map(room => ({
+
+  
+    // Check if any room has a capacity of 0 or less
+    const hasInvalidCapacity = roomData.some(room => room.totalSeats <= 0);
+    if (hasInvalidCapacity) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'All rooms must have a capacity greater than 0.',
+        confirmButtonText: 'OK',
+      });
+      return; // Stop execution if validation fails
+    }
+    for (const room of roomData) {
+      const hasVipSeat = room.seats.some(seat => seat.type === "1");
+      if (!hasVipSeat) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Room "${room.name}" must contain at least one VIP seat.`,
+          confirmButtonText: 'OK',
+        });
+        return; // Stop execution if validation fails
+      }
+    }
+    // Prepare body data for the API request
+    const bodyData = roomData.map(room => ({
       idCinema: selectedCinemaId,
       Capacity: room.totalSeats,
       name: room.name,
       details: room.seats.map(seat => ({
-        idCategorySeat: seat.type
-      }))
-
+        idCategorySeat: seat.type,
+        seatName: seat.name,
+      })),
     }));
-
-
-
+  
+    // Prepare FormData for the API request
     const formData = new FormData();
     formData.append("createSeat", JSON.stringify(bodyData));
+  
+    try {
+      // Make API call to create screen
+      const response = await CreateScreen(bodyData);
+      if (response.result === true) {
+        Swal.fire({
+          icon: 'success',
+          title: response.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
-    const response = await CreateScreen(bodyData);
-    if (response.result == true) {
+        setIsClosingPopup(true);
+        setRoomDetails([]);
+        setRoomSeats([])
+        setPopupVisibility(false)
+        setSetupRoomPopupVisible(false)
+      }
+    } catch (error) {
+      // Handle any errors from the API
       Swal.fire({
-        icon: 'success',
-        title: response.message,
-        showConfirmButton: false,
-        timer: 1500
-      })
-      setPopupVisibility(false);
-      setIsClosingPopup(false);
-
+        icon: 'error',
+        title: 'Error',
+        text: 'There was an error creating the screen. Please try again later.',
+        confirmButtonText: 'OK',
+      });
     }
+  };
 
-    //   payload.forEach(room => {
-    //     room.seats.forEach(seat => {
-    //         console.log(seat.name); 
-    //     });
-    // });
-    // console.log(selectedCinemaId)
-  }
 
   const handleSetupClick = (cinemaIdFromButton) => {
-    setSelectedCinemaId(cinemaIdFromButton); // Store the selected cinema ID
-    const selectedCinema = Cinema.find(Movie => Movie.id === cinemaIdFromButton);
-    if (selectedCinema) {
-      setFromData({ ...FormData, ID: cinemaIdFromButton });
+    const SelectCinema=Cinema.find(cinema=>cinema.idCinema==cinemaIdFromButton);
+    console.log(Cinema)
+    if(SelectCinema){
+      Swal.fire({
+        icon: 'error',
+        title: 'This Cinema has Screen',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    }else{
+      setSelectedCinemaId(cinemaIdFromButton); // Store the selected cinema ID
+      const selectedCinema = Cinema.find(Movie => Movie.id === cinemaIdFromButton);
+      if (selectedCinema) {
+        setFromData({ ...FormData, ID: cinemaIdFromButton });
+      }
+      setActiveTab(0);
+      setPopupVisibility(true);
     }
-    setActiveTab(0);
-    setPopupVisibility(true);
+  
   }
   const generateSeatLayout = () => {
     // Ensure selectedAuditorium and its seats are defined
     if (!selectedAuditorium || !selectedAuditorium.seatDetails) {
       return null; // Return nothing or a placeholder if there's no data
     }
-  
+
     // Use the seats data directly from selectedAuditorium
     const seats = selectedAuditorium.seatDetails;
     const rows = [];
@@ -545,11 +619,11 @@ function Cinema() {
     for (let i = 0; i < seats.length; i += 10) {
       const rowSeats = seats.slice(i, i + 10); // Get seats for the current row
       const rowSeatsJSX = rowSeats.map(seat => {
-        const seatClass = seat.idcategoryscreen === 2 ? 'vip' : '';
+        const seatClass = seat.idcategoryscreen === 1 ? 'vip' : '';
         const currentSeatNumber = seatNumber++;
         return (
           <div key={seat.id} className={`seat-inDetail ${seatClass}`}>
-           {currentSeatNumber}
+            {currentSeatNumber}
           </div>
         );
       });
@@ -559,7 +633,7 @@ function Cinema() {
         </div>
       );
     }
-  
+
     return <div className="seats-layout">{rows}</div>;
   };
   const today = new Date();
@@ -575,18 +649,31 @@ function Cinema() {
   const [isPopupDetailSeat, setPopupDetailSeat] = useState(false)
   const [DetailScreen, setDetailScreen] = useState([])
   const handleDetailCinema = async (id) => {
+    
     try {
       const response = await GetDetailScreen(id);
       if (response.length > 0) {
         setDetailScreen(response)
         setSelectedAuditorium(response[0]);
-     
+
       }
       setPopupDetailSeat(true);
     } catch (error) {
       console.log(error)
     }
   }
+  const [searchTerm, setSearchtem] = useState('');
+  const [currentPage, setCurrentPage] = useState(0);
+  const [perPage, setperPage] = useState(5);
+  const filterCinema=Cinema.filter(cinema=>
+    cinema.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  const indexOflastCategory = (currentPage + 1) * perPage;
+    const indexofFirstCategory = indexOflastCategory - perPage;
+    const currentCategory = filterCinema.slice(indexofFirstCategory, indexOflastCategory)
+    const handlePageclick = (data) => {
+      setCurrentPage(data.selected);
+  };
   return (
 
     <div>
@@ -637,7 +724,7 @@ function Cinema() {
                     </div>
                     <div className="form-group">
                       <label >District</label>
-                      <Select options={districts.map(nation => ({ value: nation.id, label: nation.name }))}
+                      <Select value={selectedDistrict} options={districts.map(nation => ({ value: nation.id, label: nation.name }))}
                         onChange={handleDistrictChange}
                       />
 
@@ -677,7 +764,7 @@ function Cinema() {
                 </div>
                 <div className="flex items-center space-x-4 float-left flex-1 mb-2 ml-2">
                   <label for="search" className="text-gray-600">Search</label>
-                  <input type="text" id="search" name="search" placeholder="Enter your search term" className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
+                  <input type="text" id="search" name="search" placeholder="Enter your search term" value={searchTerm} onChange={(e) => setSearchtem(e.target.value)} className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
                 </div>
 
 
@@ -685,7 +772,7 @@ function Cinema() {
                   <table id="example1" className="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Operating status</th>
+                       
                         <th>#</th>
                         <th>Name</th>
                         <th>District</th>
@@ -697,26 +784,20 @@ function Cinema() {
                           <th>Closed</th>
                         )}
                         <th>setup</th>
+                        <th>Detail Seat</th>
 
                       </tr>
                     </thead>
                     <tbody>
-                      {Cinema.map((cinema, index) => (
+                      {currentCategory.map((cinema, index) => (
                         <tr>
-                          <td>
-
-                            {cinema.status ? (
-                              <span className="text-green-500">🟢 Open</span>
-                            ) : (
-                              <span className="text-red-500">🔴 Closed</span>
-                            )}
-                          </td>
+                         
                           <td>{index + 1}</td>
                           <td>{cinema.name}</td>
                           <td>{cinema.district}</td>
                           <td>{cinema.address}</td>
                           <td>{cinema.phoneNumber}</td>
-                          <td>{cinema.manager.managerAdmin}</td>
+                          <td>{cinema.manager && cinema.manager.managerAdmin ? cinema.manager.managerAdmin : ''}</td>
                           <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleEditCinema(cinema.id)}>Edit</button></td>
                           {Cinema.status == true && (
                             <td><button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" >Closed</button></td>
@@ -742,7 +823,26 @@ function Cinema() {
                     </tbody>
 
                   </table>
+                  <Pagination
+                                        previousLabel={'previous'}
+                                        nextLabel={'next'}
+                                        breakLabel={'...'}
+                                        pageCount={Math.ceil(filterCinema.length / perPage)}
+                                        marginPagesDisplayed={2}
+                                        pageRangeDisplayed={5}
+                                        onPageChange={handlePageclick}
+                                        containerClassName={'pagination'}
+                                        activeClassName={'active'}
+                                        previousClassName={'page-item'}
+                                        previousLinkClassName={'page-link'}
+                                        nextClassName={'page-item'}
+                                        nextLinkClassName={'page-link'}
+                                        breakClassName={'page-item'}
+                                        breakLinkClassName={'page-link'}
+                                        pageClassName={'page-item'}
+                                        pageLinkClassName={'page-link'}
 
+                                    />
 
                 </div>
               </div>
@@ -845,6 +945,7 @@ function Cinema() {
               {Array.from({ length: quantityRoom }).map((_, i) => (
                 <button
                   key={i}
+                  style={{ backgroundColor: '#f5f5f5', color: '#333', border: '2px solid #ddd' }}
                   className={`tab-item ${i === activeTab ? "active" : ""}`}
                   onClick={() => handleTabClick(i)}
                 >
@@ -882,7 +983,7 @@ function Cinema() {
           </div>
         </div>
       )}
-      {isPopupVisibleSetup && (
+      {isPopupVisibleSetup==true && (
         <div className="popup-container ">
           <div
             className="popup-content"
@@ -904,6 +1005,7 @@ function Cinema() {
             <div className="form-group">
               <label className="float-left">Select Room Quantity</label>
               <input
+
                 type="number"
                 value={quantityRoom}
                 onChange={handleQuantityRoomChange}
@@ -926,7 +1028,7 @@ function Cinema() {
         <div className="popup-container">
           <div
             className="popup-content1"
-            style={IsClosingPopup ? { ...popupContentStyle1, ...closingAnimation } : popupContentStyle1}
+            style={IsClosingPopup ? { ...popupContentStyle2, ...closingAnimation } : popupContentStyle2}
           >
             <div className="flex justify-end">
               <button onClick={() => setPopupDetailSeat(false)} className="close-btn">
@@ -936,11 +1038,12 @@ function Cinema() {
             <div className="tabs">
               {DetailScreen.map((auditorium) => (
                 <button
+                  style={{ backgroundColor: '#f5f5f5', color: '#333', border: '2px solid #ddd' }}
                   key={auditorium.id}
                   onClick={() => setSelectedAuditorium(auditorium)}
                   className={`tab-item ${selectedAuditorium && selectedAuditorium.id === auditorium.id ? 'active' : ''}`}
                 >
-                  Room {auditorium.name}
+                   {auditorium.name}
                 </button>
               ))}
             </div>
@@ -966,7 +1069,7 @@ function Cinema() {
               </div>
             )}
 
-            <div className="seats-layout  flex justify-center">
+            <div className="seats-layout-wrapper  flex justify-center">
               {selectedAuditorium && generateSeatLayout()}
             </div>
             <div>
@@ -991,7 +1094,7 @@ function Cinema() {
 
           <div className="popup-content" style={IsClosingVisible ? { ...popupContentStyle, ...closingAnimation } : popupContentStyle}>
             <div className='flex justify-end'>
-              <button onClick={handleCloseAddAccount} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded float-right "><i className="fas fa-times"></i></button>
+              <button onClick={handleCloseEditCinema} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded float-right "><i className="fas fa-times"></i></button>
             </div>
 
             <div >
@@ -1018,9 +1121,9 @@ function Cinema() {
                   <br />
                   <Select options={options}
                     value={
-                      SelectedUpdateDistrict?.label === undefined
-                        ? options.find(district => district.label === SelectedUpdateDistrict)
-                        : options.find(district => district.label === SelectedUpdateDistrict?.label)
+                      SelectedUpdateDistrict?.value === undefined
+                        ? options.find(district => district.value === SelectedUpdateDistrict)
+                        : options.find(district => district.value === SelectedUpdateDistrict?.value)
                     }
                     onChange={handleSelectUpdateDistrict}
 

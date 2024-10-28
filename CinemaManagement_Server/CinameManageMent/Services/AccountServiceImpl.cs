@@ -9,7 +9,7 @@ using System.Net.Mail;
 
 namespace CinameManageMent.Services
 {
-    public class AccountServiceImpl : AccountService    
+    public class AccountServiceImpl : AccountService
     {
         private readonly DatabaseContext databaseContext;
         private readonly IWebHostEnvironment webHostEnvironment;
@@ -182,7 +182,7 @@ namespace CinameManageMent.Services
 
         public bool UpdateAvatar(int id,UploadPhotoDTO uploadPhotoDTO)
         {
-            var avatar = databaseContext.Accounts.FromSqlRaw("Select dbo.GetAvatarAccountId({0}) As Avatar", id).Select(a=>a.Avatar).FirstOrDefault();
+            var avatar = databaseContext.Accounts.FromSqlRaw("Select * From dbo.GetAvatarAccountId({0}) As Avatar", id).Select(a=>a.Avatar).FirstOrDefault();
             if(avatar== "defaultImage.jpg")
             {
                 var fileName=FileHelper.GenerateFileName(uploadPhotoDTO.photo.FileName);
@@ -283,14 +283,9 @@ namespace CinameManageMent.Services
     <html>
         <body>
             <p>Hello {registerAccount.FullName},</p>
-            <p>Your account has been created. Please activate your account by clicking the button below:</p>
-            <p>
-                <a href='{activationLink}' 
-                   style='display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #28a745; text-decoration: none; border-radius: 5px;'>
-                   Activate Account
-                </a>
-            </p>
-            <p>If the button does not work, copy and paste the following link into your browser:</p>
+            <p>Your account has been created. </p>
+           
+
          
             <p>Username: {registerAccount.username}</p>
             <p>Password: {password}</p>
@@ -347,6 +342,54 @@ namespace CinameManageMent.Services
             {
                 return false;
             }
+        }
+
+        public int CountAccountUser()
+        {
+            return databaseContext.Accounts.Where(d => d.AccountType == 2).Count();
+        }
+
+        public bool ChangeProfileUser(int id, UpdateProfileUser updateProfileUser)
+        {
+            try
+            {
+                var Sql = "Exec ChangeProfileUser @Id,@Email,@Fullname,@Username,@Phone,@Password,@Birthday";
+                var parameters = new[]
+                {
+                    new SqlParameter ("@Id",id),
+                   new SqlParameter("@Email",updateProfileUser.Email),
+                   new SqlParameter("@Fullname",updateProfileUser.FullName),
+                   new SqlParameter("@Username",updateProfileUser.UserName),
+                   new SqlParameter("@Phone",updateProfileUser.Phone),
+                   new SqlParameter("@Password",BCrypt.Net.BCrypt.HashPassword(updateProfileUser.Password)),
+                   new SqlParameter("@Birthday",updateProfileUser.Birthday)
+                };
+                var result=databaseContext.Database.ExecuteSqlRaw(Sql, parameters);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public dynamic GetAdminCinema()
+        {
+            return databaseContext.Accounts
+         .Where(a => a.AccountType == 1 && !databaseContext.Cinemas.Any(c => c.IdManager == a.Id))
+         .Select(d => new
+         {
+             id = d.Id,
+             Username = d.Username,
+             Email = d.Email,
+             Phone = d.Phone,
+             FullName = d.FullName,
+             Birthday = d.Birthday,
+             Active = d.Active,
+             Avatar = d.Avatar,
+             Status = d.Active,
+         })
+         .ToList();
         }
     }
 }

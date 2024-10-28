@@ -7,9 +7,9 @@ import ReactQuill from 'react-quill';
 import { addMinutes as addMinutesOriginal } from 'date-fns';
 import { CreateCategoryBlog, GetCategoryBlog } from "../../Services/CategoryBlogService";
 import { AddBlog, GetBlog, UpdateBlog, UpdateStatus } from "../../Services/BlogService";
-import { GetMovie } from "../../Services/MovieService";
+import { GetMovie, GetMovieStatus } from "../../Services/MovieService";
 import 'react-datepicker/dist/react-datepicker.css';
-import { GetScreenAdmin } from "../../Services/ScreenService";
+import { GetScreenAdmin, ViewScreen } from "../../Services/ScreenService";
 import { format, addMinutes } from 'date-fns-tz';
 import Pagination from 'react-paginate';
 import { CreateShowTime, GetShowTime, UpdateShowTime } from "../../Services/ShowTimeService";
@@ -34,6 +34,7 @@ function ShowTime() {
         id: '',
         UpdateImageView: null
     })
+   
     const [ShowTime, setshowtime] = useState([])
     const FetchShowtime = async () => {
         try {
@@ -61,7 +62,7 @@ function ShowTime() {
     const [SelectedUpdateMovie, SetSelectedUpdateMovie] = useState(null)
     const fetchMovie = async () => {
         try {
-            const response = await GetMovie(token);
+            const response = await GetMovieStatus();
 
             if (response.length > 0) {
                 setMovie(response)
@@ -73,10 +74,12 @@ function ShowTime() {
     }
 
     const token = getTokenFromCookies();
+   
     useEffect(() => {
         fetchScreen();
         fetchMovie();
         FetchShowtime();
+        
     }, [])
     const popupContentStyle = {
         background: 'white',
@@ -97,6 +100,9 @@ function ShowTime() {
         setSelectedMovie(selectedOption);
         console.log("Selected movie:", selectedOption);
     };
+    const[seat,setseat]=useState([])
+   
+   
     const handleEditClick = (MovieID) => {
         const selectedMovie = ShowTime.find(Movie => Movie.id == MovieID)
         if (selectedMovie) {
@@ -139,6 +145,10 @@ function ShowTime() {
     const [selectedDate, setSelectedDate] = useState(null);
     const [SelectedScreen, SetSelectedScreen] = useState(null);
     const handleSelectScreen = async (SelectScree) => {
+       
+        const response = await ViewScreen(SelectScree.value);
+      
+        setseat(response)
         SetSelectedScreen(SelectScree)
     }
     const today = new Date();
@@ -196,7 +206,45 @@ function ShowTime() {
     }
     const handleAddShowTime = async (e) => {
         e.preventDefault();
+        
+        const vipPrice = prices[1]; // Assuming prices object uses category ids as keys
+        const regularPrice = prices[2];
+
+        if (vipPrice === undefined || regularPrice === undefined) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Both VIP (1) and Regular (2) categories must have prices defined.',
+                confirmButtonText: 'OK',
+            });
+            return; 
+        }
+        if (seat.length <= 0 || seat==null) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Please select at least one seat before proceeding.',
+                confirmButtonText: 'OK',
+            });
+            return; // Stop execution if no seats are selected
+        }
+        if(SelectedMovie==null || selectedDate==null||SelectedScreen==null){
+            Swal.fire({
+                icon: 'error',
+                title: 'Please complete all information',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
         try {
+          
+            const seatdetail=seat.map((seats,index)=>{
+                return {
+                    idScreen:seats.id,
+                    
+                  };
+            })
+          
             const priceData = Object.entries(prices).map(([categorySeatid, price]) => ({
                 categorySeatid,
                 price: parseFloat(price),
@@ -210,11 +258,23 @@ function ShowTime() {
                 endDate: new Date(formattedDate1),
                 idscreen: SelectedScreen?.value,
                 idAccountCreate: idRole,
-                seats: priceData
+                seats: priceData,
+                seatsById:seatdetail
             })
             if (response.result == true) {
-
+                Swal.fire({
+                    icon: 'success',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                SetSelectedMovie(null)
+                setSelectedDate(null);
+                SetSelectedScreen(null)
+                setSelectedCategory(null)
+                setseat([])
             }
+
         } catch (error) {
             console.log(error)
         }
@@ -235,6 +295,11 @@ function ShowTime() {
     const handlePageclick = (data) => {
         setCurrentPage(data.selected);
     };
+   
+
+    // Tính ngày hiện tại cộng thêm 3 ngày
+    const minSelectableDate = new Date();
+    minSelectableDate.setDate(minSelectableDate.getDate() + 3);
     return (
 
         <div>
@@ -264,9 +329,11 @@ function ShowTime() {
                                         <div className="form-group" style={{ position: 'relative', zIndex: 1000 }}>
                                             <label >Screen</label>
                                             <Select
+                                            value={SelectedScreen}
                                                 options={Screen.map(screen => ({ value: screen.id, label: screen.name }))}
                                                 onChange={handleSelectScreen}
                                                 className="custom-select"
+                                               
                                             // Use the custom option component
                                             />
 
@@ -282,6 +349,7 @@ function ShowTime() {
                                                 showTimeSelect
                                                 timeFormat="HH:mm"
                                                 timeIntervals={15}
+                                                minDate={minSelectableDate}
                                                 dateFormat="yyyy-MM-dd HH:mm"
                                                 className="form-control Time-Freetime"
                                                 placeholderText="Select Release Date and Time"
@@ -291,6 +359,7 @@ function ShowTime() {
                                         <div className="form-group" style={{ position: 'relative', zIndex: 100 }}>
                                             <label >Movie</label>
                                             <Select
+                                            value={SelectedMovie}
                                                 options={options}
                                                 onChange={handleSelectedMovie}
                                                 className="custom-select"
@@ -427,6 +496,7 @@ function ShowTime() {
                                             onChange={(date) => setUpdatedate(date)}
                                             showTimeSelect
                                             timeFormat="HH:mm"
+                                            minDate={minSelectableDate}
                                             timeIntervals={15}
                                             dateFormat="yyyy-MM-dd HH:mm"
                                             className="form-control"

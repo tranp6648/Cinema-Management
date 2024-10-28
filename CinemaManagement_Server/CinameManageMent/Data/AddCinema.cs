@@ -2,7 +2,7 @@
 {
     public class AddCinema
     {
-        public string District { get; set; }
+        public int District { get; set; }
         public int idManager { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }

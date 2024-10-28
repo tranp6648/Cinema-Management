@@ -1,10 +1,50 @@
 import { Movie } from "../Url/api";
 const baseUrl = Movie();
+export const UpdateStatus = async (id, Status, token) => {
+    try {
+        const response = await fetch(`${baseUrl}UpdateStatus/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(Status)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
 
-export const UpdateDescription=async(id,Description)=>{
-    try{
-        const response=await fetch(`${baseUrl}UpdateDescription/${id}`,{
-            method:'PUT',
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const CountMovie = async (token) => {
+    try {
+        const response = await fetch(`${baseUrl}CountMovie`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        console.log(err)
+    }
+}
+export const UpdateDescription = async (id, Description) => {
+    try {
+        const response = await fetch(`${baseUrl}UpdateDescription/${id}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -17,14 +57,14 @@ export const UpdateDescription=async(id,Description)=>{
 
         const data = await response.json();
         return data;
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
-export const GetActorMovie=async(id)=>{
-    try{
-        const response=await fetch(`${baseUrl}DetailActorMovie/${id}`,{
-            method:'GET',
+export const GetActorMovie = async (id) => {
+    try {
+        const response = await fetch(`${baseUrl}DetailActorMovie/${id}`, {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -36,14 +76,14 @@ export const GetActorMovie=async(id)=>{
 
         const data = await response.json();
         return data;
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
-export const getDetailMovie=async(id)=>{
-    try{
-        const response=await fetch(`${baseUrl}DetailMovie/${id}`,{
-            method:'Get',
+export const getDetailMovie = async (id) => {
+    try {
+        const response = await fetch(`${baseUrl}DetailMovie/${id}`, {
+            method: 'Get',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -55,7 +95,7 @@ export const getDetailMovie=async(id)=>{
 
         const data = await response.json();
         return data;
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
@@ -106,10 +146,10 @@ export const UpdateMovie = async (Id, Movie, token) => {
         const response = await fetch(`${baseUrl}UpdateMovie/${Id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json',
             },
-            body: JSON.stringify(Movie)
+            body: Movie
         })
         if (!response.ok) {
             const responseBody = await response.json();
@@ -144,6 +184,27 @@ export const CreateMovie = async (Movie, token) => {
         console.log(error);
     }
 };
+export const GetMovieStatus= async () => {
+    try {
+        const response = await fetch(`${baseUrl}GetMovie`, {
+            method: 'Get',
+            headers: {
+                'Content-Type': 'application/json',
+               
+            },
+        })
+
+        if (!response.ok) {
+            const responseBody = await response.json();
+
+            return responseBody;
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
 export const GetMovie = async (token) => {
     try {
         const response = await fetch(`${baseUrl}GetMovie`, {

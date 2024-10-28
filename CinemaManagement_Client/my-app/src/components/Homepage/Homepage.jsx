@@ -33,8 +33,8 @@ import axios from "axios";
 import avatarAi from "../images/avatar_AI.webp";
 import { useLocation, useNavigate } from "react-router-dom";
 import Menu from "../Menu/Menu";
-import { GetMovie } from "../Services/MovieService";
-import { GetBlog } from "../Services/BlogService";
+import { GetMovie, GetMovieStatus } from "../Services/MovieService";
+import { GetBlog, GetBlogStatus } from "../Services/BlogService";
 Modal.setAppElement('#root');
 
 function Homepage() {
@@ -103,7 +103,7 @@ function Homepage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await GetMovie();
+        const response = await GetMovieStatus();
         console.log(response)
         setslidesMovies1(response)
       } catch (error) {
@@ -268,7 +268,7 @@ function Homepage() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const categoryBlog = await GetBlog();
+        const categoryBlog = await GetBlogStatus();
         const sortData = categoryBlog.slice(0, 3).sort((a, b) => b.id - a.id);
         setViewBlog(sortData);
         console.log(categoryBlog);

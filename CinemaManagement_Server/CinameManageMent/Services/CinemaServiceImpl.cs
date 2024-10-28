@@ -13,6 +13,12 @@ namespace CinameManageMent.Services
         {
             this.databaseContext = databaseContext;
         }
+
+        public int CountCinema()
+        {
+            return databaseContext.Cinemas.Where(d=>d.Status==true).Count();
+        }
+
         public bool CreateCineme(AddCinema addCinema)
         {
             try
@@ -42,9 +48,11 @@ namespace CinameManageMent.Services
                id=d.Id,
                name=d.Name,
                status=d.Status,
-               District=d.District,
+               IdDistrict=d.District.id,
+               District=d.District.name,
                Address=d.Address,
                PhoneNumber=d.PhoneNumber,
+               idCinema=databaseContext.Screen.Where(X=>X.CinemaId==d.Id).Select(X=>X.CinemaId).FirstOrDefault(),
                Manager = databaseContext.Accounts.Where(a => a.Id == d.IdManager).Select(a => new
                {
                    ManagerAdmin=a.Username,
@@ -53,8 +61,11 @@ namespace CinameManageMent.Services
            }).ToList();
         }
 
-       
-
+        public dynamic GetDistrict()
+        {
+            return databaseContext.Districts.FromSqlRaw("Select * From GetDistrict").ToList();  
+        }
+        
         public bool UpdateCinema(int id, AddCinema cinema)
         {
             try

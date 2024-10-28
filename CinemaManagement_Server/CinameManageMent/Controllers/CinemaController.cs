@@ -15,6 +15,12 @@ namespace CinameManageMent.Controllers
         {
             this.cinemaService = cinemaService;
         }
+        [HttpGet("CountCinema")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountCinema()
+        {
+            return Ok(cinemaService.CountCinema());
+        }
         [HttpPut("UpdateCinema/{id}")]
         [Authorize(Policy = "SuperAdmin")]
         public IActionResult UpdateCinema(int id, [FromBody]AddCinema cinema)
@@ -32,9 +38,20 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
-       
+        [HttpGet("GetDistrict")]
+        public IActionResult GetDistrict()
+        {
+            try
+            {
+                return Ok(cinemaService.GetDistrict());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpGet("GetCinema")]
-        [Authorize(Policy ="SuperAdmin")]
+   
         public IActionResult GetCinema()
         {
             try

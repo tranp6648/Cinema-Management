@@ -13,8 +13,11 @@ public  class Cinema
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
+    [ForeignKey("District")]
+    public int DitrictId { get; set; }
+    public virtual District District { get; set; }
 
-    public string District { get; set; } = null!;
+   
 
     public string Address { get; set; } = null!;
 

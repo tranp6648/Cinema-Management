@@ -219,9 +219,8 @@ namespace CinameManageMent.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("District")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DitrictId")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdManager")
                         .HasColumnType("int");
@@ -238,6 +237,8 @@ namespace CinameManageMent.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DitrictId");
 
                     b.ToTable("Cinema");
                 });
@@ -344,6 +345,35 @@ namespace CinameManageMent.Migrations
                     b.ToTable("DetailCategoryMovies");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.DetailOrderCombo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("comboid")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("comboid");
+
+                    b.ToTable("DetailOrderCombos");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.DetailSeatMovieScreen", b =>
                 {
                     b.Property<int>("Id")
@@ -358,6 +388,10 @@ namespace CinameManageMent.Migrations
                     b.Property<int>("idScreen")
                         .HasColumnType("int");
 
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("idCategorySeat");
@@ -365,6 +399,169 @@ namespace CinameManageMent.Migrations
                     b.HasIndex("idScreen");
 
                     b.ToTable("DetailSeats");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.DetailTicketOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IdSeat")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("TicketOrders");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.District", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("District");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            name = "Quận 1"
+                        },
+                        new
+                        {
+                            id = 2,
+                            name = "Quận 2"
+                        },
+                        new
+                        {
+                            id = 3,
+                            name = "Quận 3"
+                        },
+                        new
+                        {
+                            id = 4,
+                            name = "Quận 4"
+                        },
+                        new
+                        {
+                            id = 5,
+                            name = "Quận 5"
+                        },
+                        new
+                        {
+                            id = 6,
+                            name = "Quận 6"
+                        },
+                        new
+                        {
+                            id = 7,
+                            name = "Quận 7"
+                        },
+                        new
+                        {
+                            id = 8,
+                            name = "Quận 8"
+                        },
+                        new
+                        {
+                            id = 9,
+                            name = "Quận 9"
+                        },
+                        new
+                        {
+                            id = 10,
+                            name = "Quận 10"
+                        },
+                        new
+                        {
+                            id = 11,
+                            name = "Quận 11"
+                        },
+                        new
+                        {
+                            id = 12,
+                            name = "Quận 12"
+                        },
+                        new
+                        {
+                            id = 13,
+                            name = "Quận Bình Thạnh"
+                        },
+                        new
+                        {
+                            id = 14,
+                            name = "Quận Phú Nhuận"
+                        },
+                        new
+                        {
+                            id = 15,
+                            name = "Quận Tân Bình"
+                        },
+                        new
+                        {
+                            id = 16,
+                            name = "Quận Tân Phú"
+                        },
+                        new
+                        {
+                            id = 17,
+                            name = "Quận Gò Vấp"
+                        },
+                        new
+                        {
+                            id = 18,
+                            name = "Quận Bình Tân"
+                        },
+                        new
+                        {
+                            id = 19,
+                            name = "Huyện Nhà Bè"
+                        },
+                        new
+                        {
+                            id = 20,
+                            name = "Huyện Củ Chi"
+                        },
+                        new
+                        {
+                            id = 21,
+                            name = "Huyện Hóc Môn"
+                        },
+                        new
+                        {
+                            id = 22,
+                            name = "Huyện Bình Chánh"
+                        },
+                        new
+                        {
+                            id = 23,
+                            name = "Thành phố Thủ Đức"
+                        },
+                        new
+                        {
+                            id = 24,
+                            name = "Huyện Cần Giờ"
+                        });
                 });
 
             modelBuilder.Entity("CinameManageMent.Models.Feedback", b =>
@@ -447,6 +644,9 @@ namespace CinameManageMent.Migrations
                     b.Property<DateOnly>("ReleaseDate")
                         .HasColumnType("date");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -458,6 +658,66 @@ namespace CinameManageMent.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IdAccount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OrderCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ShowTimeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdAccount");
+
+                    b.HasIndex("ShowTimeId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.SeatMovieTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IdShowTime")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idScreen")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdShowTime");
+
+                    b.ToTable("SeatMovieTimes");
                 });
 
             modelBuilder.Entity("CinameManageMent.Models.ShowTime", b =>
@@ -554,6 +814,17 @@ namespace CinameManageMent.Migrations
                     b.Navigation("CategoryBlog");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.Cinema", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.District", "District")
+                        .WithMany()
+                        .HasForeignKey("DitrictId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("District");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.ComboItem", b =>
                 {
                     b.HasOne("CinameManageMent.Models.Combo", "Combo")
@@ -611,6 +882,25 @@ namespace CinameManageMent.Migrations
                     b.Navigation("Movie");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.DetailOrderCombo", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.Combo", "combo")
+                        .WithMany()
+                        .HasForeignKey("comboid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("combo");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.DetailSeatMovieScreen", b =>
                 {
                     b.HasOne("CinameManageMent.Models.CategorySeat", "CategorySeat")
@@ -630,6 +920,17 @@ namespace CinameManageMent.Migrations
                     b.Navigation("Screen");
                 });
 
+            modelBuilder.Entity("CinameManageMent.Models.DetailTicketOrder", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("CinameManageMent.Models.Feedback", b =>
                 {
                     b.HasOne("CinameManageMent.Models.Account", "Account")
@@ -647,6 +948,36 @@ namespace CinameManageMent.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.Order", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("IdAccount")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinameManageMent.Models.ShowTime", "ShowTime")
+                        .WithMany()
+                        .HasForeignKey("ShowTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("ShowTime");
+                });
+
+            modelBuilder.Entity("CinameManageMent.Models.SeatMovieTime", b =>
+                {
+                    b.HasOne("CinameManageMent.Models.ShowTime", "ShowTime")
+                        .WithMany()
+                        .HasForeignKey("IdShowTime")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShowTime");
                 });
 
             modelBuilder.Entity("CinameManageMent.Models.ShowTime", b =>

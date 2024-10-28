@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import Cookies from 'js-cookie'
 import './admin.css';
 import { Outlet } from 'react-router-dom';
 
@@ -11,30 +11,63 @@ import { Bar, Pie } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // Import the Chart object from 'chart.js/auto'
 import { CategoryScale, LinearScale, BarController, Title } from 'chart.js';
 import LayoutSuperAdmin from '../LayoutSuperAdmin/LayoutSuperAdmin';
+import { CountBlog } from '../Services/BlogService';
+import { CountOrder, GetCoutorder, OrderDesc } from '../Services/OrderService';
+import { CountComboItem } from '../Services/ComItemService';
+import { CountShowtime } from '../Services/ShowTimeService';
+import { CountMovie } from '../Services/MovieService';
+import { CountCategoryMovie } from '../Services/CategoryService';
+import { CountActor } from '../Services/ActorService';
+import { CountAccountUser } from '../Services/AccountService';
+import { CountCinema } from '../Services/CinemaService';
 
 function SuperAdmin() {
   
   const location = useLocation();
   
   const [orderData, setOrderData] = useState([]);
-
+  const getTokenFromCookies = () => {
+    return Cookies.get('token');
+};
+const token = getTokenFromCookies();
   const [showDropdown, setShowDropdown] = useState(false);
   const [Movie, setMovie] = useState(null);
   const [Actor, setActor] = useState(null);
   const [User, setUser] = useState(null);
-  const [Event, setEvent] = useState(null);
+  const [Blog, setBlog] = useState(null);
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
   const [CategoryMovie, setCategoryMovie] = useState(null);
-  const [Genre, setGenre] = useState(null);
+  const [Combo, setCombo] = useState(null);
   const [Username, setUsername] = useState([]);
   const [Order, setOrder] = useState(null);
   const [showtime, setshowtime] = useState(null);
-  
+  const[Cinema,setCinema]=useState(null)
+  const fetchCinema=async()=>{
+    try{
+      const response=await CountCinema(token);
+      setCinema(response);
+    }catch(err){
+      console.log(err)
+    }
+  }
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountCategoryMovie');
-        setCategoryMovie(response.data);
+        const response = await CountCategoryMovie(token);
+        setCategoryMovie(response);
+      } catch (error) {
+        console.error('Error fetching product count:', error);
+      }
+    };
+
+    fetchProductCount();
+    fetchCinema();
+  }, [])
+  useEffect(() => {
+    const fetchProductCount = async () => {
+      try {
+        const response = await OrderDesc(token);
+        setUsername(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -45,8 +78,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/Orderdesc');
-        setUsername(response.data);
+        const response = await CountShowtime(token);
+        setshowtime(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -57,8 +90,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountShowtime');
-        setshowtime(response.data);
+        const response = await CountOrder(token);
+        setOrder(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -69,8 +102,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountOrder');
-        setOrder(response.data.result);
+        const response = await CountComboItem(token);
+        setCombo(response)
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -81,8 +114,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountGenre');
-        setGenre(response.data);
+        const response = await CountBlog(token)
+        setBlog(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -93,20 +126,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountEvent');
-        setEvent(response.data);
-      } catch (error) {
-        console.error('Error fetching product count:', error);
-      }
-    };
-
-    fetchProductCount();
-  }, [])
-  useEffect(() => {
-    const fetchProductCount = async () => {
-      try {
-        const response = await axios.get('http://localhost:5231/api/Movie/countUser');
-        setUser(response.data);
+        const response = await CountAccountUser(token);
+        setUser(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -118,8 +139,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountActor');
-        setActor(response.data);
+        const response = await CountActor(token);
+        setActor(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -130,8 +151,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountMovie');
-        setMovie(response.data);
+        const response = await CountMovie(token);
+        setMovie(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -140,14 +161,15 @@ function SuperAdmin() {
     fetchProductCount();
   }, []);
   const chartDataProduct = {
-    labels: ['Movie', 'Category', 'Actor', 'User'],
+    labels: ['Movie', 'Category', 'Actor', 'User','Cinema'],
     datasets: [{
-      data: [Movie, CategoryMovie, Actor, User],
+      data: [Movie, CategoryMovie, Actor, User,Cinema],
       backgroundColor: [
         'rgba(255, 99, 132, 0.6)',
         'rgba(54, 162, 235, 0.6)',
         'rgba(255, 206, 86, 0.6)',
         'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
         // Add more colors if you have more categories
       ],
     }],
@@ -160,8 +182,8 @@ function SuperAdmin() {
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5231/api/Order/GetCoutorder/${selectedMonth}`);
-        setOrderData(response.data);
+        const response = await GetCoutorder(selectedMonth,token);
+        setOrderData(response);
 
       } catch (error) {
         console.error('Error fetching order data', error);
@@ -230,8 +252,8 @@ function SuperAdmin() {
 
       <div className="small-box bg-aqua">
         <div className="inner">
-          <h3>{Event}</h3>
-          <p>Event</p>
+          <h3>{Blog}</h3>
+          <p>Blog</p>
         </div>
         <div className="icon">
           <i className="ion ion-bag"></i>
@@ -256,8 +278,8 @@ function SuperAdmin() {
 
       <div className="small-box bg-yellow">
         <div className="inner">
-          <h3>{Genre}</h3>
-          <p>Genre</p>
+          <h3>{Combo}</h3>
+          <p>Combo</p>
         </div>
         <div className="icon">
           <i className="ion ion-person-add"></i>
@@ -289,7 +311,16 @@ function SuperAdmin() {
 
         <div className="box-body chat" id="chat-box">
 
-
+        <Bar data={chartData} options={chartOptions} />
+                  <label>Select Month:</label>
+                  <select id="selectMonth"
+                    className="form-select" value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
+                    {[...Array(12).keys()].map((month) => (
+                      <option key={month + 1} value={month + 1}>
+                        {month + 1}
+                      </option>
+                    ))}
+                  </select>
 
           {/* Dropdown to select the month */}
         

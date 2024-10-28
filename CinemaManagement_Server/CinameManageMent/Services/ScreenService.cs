@@ -7,5 +7,7 @@ namespace CinameManageMent.Services
         public bool CreateScreen(List<CreateSeat> seatList);
         public dynamic ShowDetailSeat(int seatId);
         public dynamic ScreenAdmin(int id);
+        public dynamic ViewScreen(int id);
+      
     }
 }

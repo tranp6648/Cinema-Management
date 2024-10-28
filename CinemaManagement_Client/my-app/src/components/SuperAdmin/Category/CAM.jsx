@@ -16,7 +16,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AddCategoryMovie, DeleteCategory, GetCategory, UpdateCategory } from '../../Services/CategoryService';
 import { CreateActor, DeleteActor, GetActor, GetActorNotIn, UpdateActor } from '../../Services/ActorService';
-import { AddActorToMovie, CreateMovie, GetMovie } from '../../Services/MovieService';
+import { AddActorToMovie, CreateMovie, GetMovie, UpdateStatus } from '../../Services/MovieService';
 
 function CAM() {
 
@@ -68,33 +68,62 @@ function CAM() {
 
     const AddMovie = async (e) => {
         e.preventDefault();
-        try {
+        if (FromDate.Title == '' || FromDate.Description == '' || FromDate.ReleaseDate == null || FromDate.ReleaseDate == null || FromDate.Duration == '' || FromDate.Director == '' || SelectedCategory == null || FromDate.TrailerMovie == null || FromDate.ImageMovie == null) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Please complete all information',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            try {
 
-            const formData = new FormData();
-                formData.append("Title",FromDate.Title);
-                formData.append("description",FromDate.Description);
-                formData.append("releaseDate",FromDate.ReleaseDate);
-                formData.append("duration",FromDate.Duration);
-                formData.append("director",FromDate.Director);
-                formData.append("idCategory",SelectedCategory?.value);
-                formData.append("trailer",FromDate.TrailerMovie);
-             
-                formData.append("picture",FromDate.ImageMovie)
+                const formData = new FormData();
+                formData.append("Title", FromDate.Title);
+                formData.append("description", FromDate.Description);
+                formData.append("releaseDate", FromDate.ReleaseDate);
+                formData.append("duration", FromDate.Duration);
+                formData.append("director", FromDate.Director);
+                formData.append("idCategory", SelectedCategory?.value);
+                formData.append("trailer", FromDate.TrailerMovie);
 
-            const response = await CreateMovie(formData, token)
-            if(response.result==true){
-                Swal.fire({
-                    icon: 'success',
-                    title: response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                fetchMovie();
+                formData.append("picture", FromDate.ImageMovie)
+
+                const response = await CreateMovie(formData, token)
+                if (response.result == true) {
+                    FromDate.Title = '';
+                    FromDate.Description = '';
+                    FromDate.ReleaseDate = null;
+                    FromDate.Duration = '';
+                    FromDate.Director = '';
+                    SetSelectedCategory(null);
+                    FromDate.TrailerMovie = null;
+                    FromDate.ImageMovie = null;
+                    FromDate.ImageMovieImageView = null;
+                    Swal.fire({
+                        icon: 'success',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    fetchMovie();
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Movie',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                }
+
+            } catch (error) {
+                console.log(error);
             }
-           
-        } catch (error) {
-            console.log(error);
         }
+
     }
     const location = useLocation();
     const [currentPage, setCurrentPage] = useState(0);
@@ -193,10 +222,10 @@ function CAM() {
         try {
             const response = await GetActorNotIn(id);
             console.log(response)
-            if(response.length>0){
+            if (response.length > 0) {
                 setActorNotin(response);
             }
-        
+
 
         } catch (error) {
             console.log(error)
@@ -215,10 +244,10 @@ function CAM() {
     const fetchActor = async () => {
         try {
             const response = await GetActor(token);
-            if(response.length>0){
+            if (response.length > 0) {
                 setActor(response)
             }
-            
+
 
         } catch (error) {
             console.log(error)
@@ -228,10 +257,10 @@ function CAM() {
         try {
             const response = await GetCategory(token);
             console.log(response)
-            if(response.length>0){
+            if (response.length > 0) {
                 setCategory(response)
             }
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -239,10 +268,10 @@ function CAM() {
     const fetchMovie = async () => {
         try {
             const response = await GetMovie(token);
-            if(response.length>0){
+            if (response.length > 0) {
                 setMovie(response)
             }
-          
+
 
         } catch (error) {
             console.log(error)
@@ -330,95 +359,144 @@ function CAM() {
     }
     const handleUpdate = async (e) => {
         e.preventDefault();
-        try {
-            const response = await UpdateCategory(FromDate.id, {
-                name: FromDate.UpdateName
-            }, token);
-            if (response.result == true) {
-                Swal.fire({
-                    icon: 'success',
-                    title: response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                fetchdata();
-                setPopupVisibility(false);
+        if (FromDate.UpdateName == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Name is required',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            try {
+                const response = await UpdateCategory(FromDate.id, {
+                    name: FromDate.UpdateName
+                }, token);
+                if (response.result == true) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    fetchdata();
+                    setPopupVisibility(false);
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Actor',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
         }
+
     }
 
     const AddActor = async (e) => {
         e.preventDefault();
-        try {
-            const formData = new FormData();
+        if (FromDate.NameActor == '' || selectedNation == null || FromDate.Birthday == null || FromDate.Image == null || FromDate.Bio == '' || FromDate.Birthday == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Please complete all information',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            try {
+                const formData = new FormData();
 
-            formData.append("Name", FromDate.NameActor);
-            formData.append("Nationality", selectedNation?.value);
-            formData.append("Birthday", FromDate.Birthday)
-            formData.append("Image", FromDate.Image);
-            formData.append("Bio", FromDate.Bio)
-            const response = await CreateActor(formData, token);
-            if (response.result == true) {
-                Swal.fire({
-                    icon: 'success',
-                    title: response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                setSelectedNation(null)
-                FromDate.Birthday = null;
-                FromDate.NameActor = '';
-                setFromData({
+                formData.append("Name", FromDate.NameActor);
+                formData.append("Nationality", selectedNation?.value);
+                formData.append("Birthday", FromDate.Birthday)
+                formData.append("Image", FromDate.Image);
+                formData.append("Bio", FromDate.Bio)
+                const response = await CreateActor(formData, token);
+                if (response.result == true) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setSelectedNation(null)
+                    FromDate.Birthday = null;
+                    FromDate.NameActor = '';
+                    FromDate.Image = null;
+                    FromDate.ImagePreview = null;
+                    setFromData({
 
-                    Bio: ''
-                })
-                document.getElementById('imageInput').value = '';
+                        Bio: ''
+                    })
+                    fetchActor();
+                    document.getElementById('imageInput').value = '';
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Actor',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
         }
+
 
     }
     const AddSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await AddCategoryMovie({
-                name: FromDate.Name
-            }, token);
+        if (FromDate.Name != '') {
+            try {
+                const response = await AddCategoryMovie({
+                    name: FromDate.Name
+                }, token);
 
-            if (response.result == true) {
-                Swal.fire({
-                    icon: 'success',
-                    title: response.message,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                setFromData({
-                    Name: ''
-                })
-                fetchdata();
-            } else {
-                let errorMessages = '';
-                for (const key in response.errors) {
-                    if (response.errors.hasOwnProperty(key)) {
-                        errorMessages += `<p >${response.errors[key]}</p>`
+                if (response.result == true) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setFromData({
+                        Name: ''
+                    })
+                    fetchdata();
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Actor',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
                     }
                 }
-                Swal.fire({
-                    icon: 'error',
-                    title: "Failed",
-                    showConfirmButton: false,
-                    timer: 1500,
-                    html: errorMessages
-                })
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Name is required',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
+
     }
-  
+
     const RemoveActor = async (id) => {
         try {
             const confirmation = await Swal.fire({
@@ -440,6 +518,16 @@ function CAM() {
                         timer: 1500,
                     });
                     fetchActor();
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Delete Category',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
                 }
             }
         } catch (error) {
@@ -467,6 +555,16 @@ function CAM() {
                         showConfirmButton: false,
                         timer: 1500,
                     });
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Delete Category',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
                 }
                 fetchdata();
             }
@@ -492,6 +590,7 @@ function CAM() {
     const indexoflastActor = (currentPageActor + 1) * perPage;
     const indexofFirstActor = indexoflastActor - perPage;
     const currentActor = filterActor.slice(indexofFirstActor, indexoflastActor);
+
     const handlePageClickActor = (data) => {
         setCurrentPageActor(data.selected)
     }
@@ -508,7 +607,7 @@ function CAM() {
         setCurrentPageMovie(data.selected);
     }
     const handleUpdateFileChange = (e) => {
-        const file = e.target.files[0]; 
+        const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -568,6 +667,7 @@ function CAM() {
 
         }
     }
+    const [selectedStatus, setSelectedStatus] = useState({});
     const today = new Date();
     const maxBirthdate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
@@ -682,6 +782,10 @@ function CAM() {
         { value: 'Vatican City', label: 'Vatican City' },
 
     ];
+    const optionsStatus = [
+        { value: 1, label: 'Show' },
+        { value: 0, label: 'Hide' }
+    ];
     const [selectedNation, setSelectedNation] = useState(null);
     const [SelectedCategory, SetSelectedCategory] = useState(null);
     const handleSelectCategory = (SelectCategory) => {
@@ -692,33 +796,64 @@ function CAM() {
     }
     const EditActor = async (e) => {
         e.preventDefault();
-        try {
-            const formData = new FormData();
-            formData.append("Name", FromDate.UpdateNameActor);
-            formData.append("Nationality", SelectUpdateNation?.value == null ? SelectUpdateNation : SelectUpdateNation?.value);
-            formData.append("Image", FromDate.UpdateImage);
-            formData.append("Birthday", FromDate.UpdateBirthday)
 
-            const response = await UpdateActor(FromDate.idActor, formData, token);
-            if (response.result == true) {
-                Swal.fire({
-                    icon: 'success',
-                    title: response.message,
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                fetchActor();
-                setIsPopupActorVisible(false)
+        if (FromDate.UpdateNameActor == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Please complete all information',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            try {
+                const formData = new FormData();
+                formData.append("Name", FromDate.UpdateNameActor);
+                formData.append("Nationality", SelectUpdateNation?.value == null ? SelectUpdateNation : SelectUpdateNation?.value);
+                formData.append("Image", FromDate.UpdateImage);
+                formData.append("Birthday", FromDate.UpdateBirthday)
+
+                const response = await UpdateActor(FromDate.idActor, formData, token);
+                if (response.result == true) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                    fetchActor();
+                    setIsPopupActorVisible(false)
+                } else {
+                    const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Actor',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
         }
+
     }
     const handleupdatedate = (date) => {
         const formattedDate = date.toISOString().split('T')[0];
         setFromData({ ...FromDate, UpdateBirthday: formattedDate });
     }
+    const handleStatusChange = async (selectedOption, blogId) => {
 
+        const response = await UpdateStatus(blogId, {
+            status: selectedOption.label == 'Hide' ? false : true
+        }, token)
+        if (response == true) {
+            fetchMovie()
+        }
+
+    };
     const renderTabContent = () => {
         switch (ActiveTab) {
             case 'category':
@@ -755,7 +890,7 @@ function CAM() {
                                 </div>
                                 <div className="flex items-center space-x-4 float-left flex-1 mb-2 ml-2">
                                     <label for="search" className="text-gray-600">Search</label>
-                                    <input type="text" id="search" name="search" placeholder="Enter your search term" value={searchActor} onChange={(e) => setSearchActor(e.target.value)} className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
+                                    <input type="text" id="search" name="search" placeholder="Enter your search term" value={searchTerm} onChange={(e) => setSearchtem(e.target.value)} className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
                                 </div>
 
 
@@ -903,6 +1038,7 @@ function CAM() {
                                                 <th>Birthday</th>
                                                 <th>Nationality</th>
                                                 <th>Image</th>
+                                                <td>Bio</td>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -915,6 +1051,7 @@ function CAM() {
                                                     <td>{new Date(actor.birthday).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                                                     <td>{actor.nationality}</td>
                                                     <td><img src={`${actor.image}`} width="100" height="100" style={{ objectFit: 'cover' }} alt="" /></td>
+                                                    <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate(`/SuperAdmin/DescriptionActor/${actor.id}`, { state: { Id: actor.id } })}>Description</button></td>
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleActor(actor.id)}>Edit</button></td>
                                                     <td><button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => RemoveActor(actor.id)}>Remove</button></td>
                                                 </tr>
@@ -1072,9 +1209,10 @@ function CAM() {
                                                 <th>Category</th>
                                                 <th>Video</th>
                                                 <th>Actor</th>
+                                                <td>Status</td>
                                                 <th>Delete</th>
                                                 <th>Edit</th>
-                                             
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1089,7 +1227,7 @@ function CAM() {
                                                     <td><img src={`${movie.picture}`} width="100" height="100" style={{ objectFit: 'cover' }} /></td>
                                                     <td>{movie.categoryName.name}</td>
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={(e) => handleOpenPopup(movie.trailer)}>Trailer</button></td>
-                                                    
+
                                                     <td>{movie.actorROles.length > 0 ? movie.actorROles.map(mov => mov.name).join(', ') : 'No role'}
                                                         <br />
                                                         <br />
@@ -1099,10 +1237,26 @@ function CAM() {
                                                             Add Actor
                                                         </button>
                                                     </td>
-                                                    <td><button className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={()=>navigate(`/SuperAdmin/DescriptionMovie/${movie.id}`,{state:{Id:movie.id}})}>Description</button></td>
+                                                    <td style={{ position: 'relative', zIndex: 1 }}> {/* Set a lower z-index here */}
+                                                        <Select
+                                                            options={optionsStatus}
+                                                            value={selectedStatus[movie.id] || optionsStatus.find(option => movie.status ? option.value === 1 : option.value === 0)}
+                                                            onChange={(selectedOption) => handleStatusChange(selectedOption, movie.id)}
+
+                                                            styles={{
+                                                                control: (provided) => ({
+                                                                    ...provided,
+                                                                    position: 'relative',
+                                                                    zIndex: 10,
+                                                                    marginBottom: '10vh', // Higher z-index for the select
+                                                                })
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate(`/SuperAdmin/DescriptionMovie/${movie.id}`, { state: { Id: movie.id } })}>Description</button></td>
 
                                                     <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleMovie(movie.id)}>Edit</button></td>
-                                                
+
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -1283,7 +1437,7 @@ function CAM() {
 
                             <div >
 
-                                <h3 className="box-title">Edit Actor</h3>
+                                <h3 className="box-title" style={{ color: 'black' }}>Edit Actor</h3>
                             </div>
                             <form role="form" onSubmit={EditActor}>
                                 <div className="box-body">

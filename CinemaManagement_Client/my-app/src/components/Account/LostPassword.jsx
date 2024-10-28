@@ -83,6 +83,7 @@ function LostPassword() {
                 if (timeDifference > 120) {
                     // OTP has expired, request a new one
                     const responseData = await Forget(ForgetPass.Email);
+                    console.log(responseData)
                     if (responseData != null) {
                         setCreatedTime(responseData); // Set new created time
                         setIsShowOtp(true); // Show OTP input
@@ -116,6 +117,7 @@ function LostPassword() {
             otp: otpvalue,
             email: ForgetPass.Email
         })
+       
         if (response) {
             setIsShowOtp(false)
             Swal.fire({

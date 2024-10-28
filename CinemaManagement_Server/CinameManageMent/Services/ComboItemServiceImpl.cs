@@ -176,5 +176,28 @@ namespace CinameManageMent.Services
                 return false;
             }
         }
+
+        public dynamic ShowComboItem()
+        {
+            return databaseContext.Combos.FromSqlRaw("Select * From ShowComboItem").AsEnumerable().Select(d => new
+            {
+                id = d.id,
+                Name = d.name,
+                Price = d.price,
+                Banner = configuration["ImageUrl"] + d.banner,
+                Item = databaseContext.ComboItems.Where(a => a.idCombo == d.id).Select(a => new
+                {
+                    iditem = a.Item.Id,
+                    NameItem = a.Item.Name,
+                    Quantity=a.Quantity,
+                }).ToList(),
+              
+            }).ToList();
+        }
+
+        public int CountComboItem()
+        {
+            return databaseContext.Combos.Count();
+        }
     }
 }

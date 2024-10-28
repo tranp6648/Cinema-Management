@@ -165,7 +165,8 @@ namespace CinameManageMent.Services
                 {
                    d.Actor.Id,
                     d.Actor.Name
-                }).ToList()
+                }).ToList(),
+                d.Status
             }).ToList();
         }
         public int saveUpdate(int id,string Title,DateOnly ReleaseDate,int duration,string director,string trailer,string picture,int idCategory)
@@ -291,6 +292,58 @@ namespace CinameManageMent.Services
             {
                 return false;
             }
+        }
+
+        public int CountMovie()
+        {
+            return DatabaseContext.Movies.Count();
+        }
+
+        public bool UpdateStatus(int id, Data.UpdateStatus updateStatus)
+        {
+            try
+            {
+                var sql = "EXEC UpdateStatusMovie @Id,@Status";
+                var parameters = new[]
+                {
+                    new SqlParameter("@Id",id),
+                new SqlParameter("@Status",updateStatus.status),
+                };
+                var result = DatabaseContext.Database.ExecuteSqlRaw(sql, parameters);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public dynamic GetMovieStatus()
+        {
+            return DatabaseContext.Movies.FromSqlRaw("Select * From GetMovieStatus").AsEnumerable().Select(d => new
+            {
+                d.Id,
+                d.Title,
+                d.Description,
+                d.ReleaseDate,
+                d.Director,
+                Picture = configuration["ImageUrl"] + d.Picture,
+                Realedate = d.ReleaseDate,
+                d.Duration,
+                d.Trailer,
+
+                CategoryName = DatabaseContext.DetailCategoryMovies.Where(a => a.IdMovie == d.Id).Select(d => new
+                {
+                    d.Category.Name,
+                    d.Category.Id,
+                }).FirstOrDefault(),
+                ActorROles = DatabaseContext.DetailActorMovies.Where(a => a.IdMovie == d.Id).Select(d => new
+                {
+                    d.Actor.Id,
+                    d.Actor.Name
+                }).ToList(),
+                d.Status
+            }).ToList();
         }
     }
 }

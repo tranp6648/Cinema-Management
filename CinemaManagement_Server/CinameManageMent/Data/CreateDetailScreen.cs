@@ -4,5 +4,6 @@
     {
       
         public int idCategorySeat { get; set; }
+        public string SeatName { get; set; }
     }
 }

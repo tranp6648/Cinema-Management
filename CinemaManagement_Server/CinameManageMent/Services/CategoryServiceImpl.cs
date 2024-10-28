@@ -26,6 +26,11 @@ namespace CinameManageMent.Services
             }
         }
 
+        public int CountCategory()
+        {
+            return databaseContext.Categories.Count();
+        }
+
         public bool DeleteCategory(int id)
         {
             try

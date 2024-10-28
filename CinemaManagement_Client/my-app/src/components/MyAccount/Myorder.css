@@ -1,0 +1,77 @@
+.product-item {
+  display: flex;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Phong cách hình ảnh sản phẩm */
+.product-image img {
+  max-width: 100px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+/* Chi tiết sản phẩm */
+.product-details {
+  flex-grow: 1;
+}
+
+/* Tiêu đề sản phẩm */
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Thông tin sản phẩm */
+.product-quantity,
+.product-price {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Nút in */
+.print-ticket {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #cda557;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.print-ticket:hover {
+  background-color: #b0944b;
+}
+
+.ticket-title,
+.ticket-info {
+  color: #333;
+}
+
+/* Thông tin người dùng */
+.user-info {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #333;
+}

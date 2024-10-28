@@ -21,7 +21,7 @@ namespace CinameManageMent.Services
         {
             try
             {
-                var fileName = FileHelper.GenerateFileName(addActor.Image.FileName);
+                 var fileName = FileHelper.GenerateFileName(addActor.Image.FileName);
                 var path = Path.Combine(webHostEnvironment.WebRootPath, "Images", fileName);
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
@@ -148,6 +148,53 @@ namespace CinameManageMent.Services
                 id=d.Id,
                 Name=d.Name
             }).ToList();
+        }
+
+        public dynamic GetDetailActor(int id)
+        {
+            return databaseContext.Actors.FromSqlRaw("Select * From dbo.DetailActor({0})",id).Select(d => new
+            {
+                id = d.Id,
+                Name = d.Name,
+                Nationality = d.Nationality,
+                Image = configuration["ImageUrl"] + d.Image,
+                Bio = d.Bio,
+                Birthday = d.Birthday,
+                Movie = databaseContext.DetailActorMovies.Where(a => a.IdActor == d.Id).Select(a => new
+                {
+                    id=a.Movie.Id,
+                    Title=a.Movie.Title,
+                    CategoryName = databaseContext.DetailCategoryMovies.Where(b => b.IdMovie == a.Movie.Id).Select(b => new
+                    {
+                        category=b.Category.Name
+                    }).FirstOrDefault(),
+                    Director=a.Movie.Director,
+                    Picture = configuration["ImageUrl"] + a.Movie.Picture,
+                    Realedate = a.Movie.ReleaseDate,
+                    Duration=a.Movie.Duration,
+                    trailer=a.Movie.Trailer,
+                }).ToList()
+            }).FirstOrDefault();
+        }
+
+        public int CountActor()
+        {
+            return databaseContext.Actors.Count();
+        }
+
+        public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription)
+        {
+            try
+            {
+                var idMovie = new SqlParameter("@Id", id);
+                var Description = new SqlParameter("@Description", updateDescription.Description);
+                var result = databaseContext.Database.ExecuteSqlRaw("Exec UpdateActorDescription @Id,@Description", idMovie, Description);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

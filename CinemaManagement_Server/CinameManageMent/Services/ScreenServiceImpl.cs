@@ -28,17 +28,20 @@ namespace CinameManageMent.Services
     .FirstOrDefault();
                 foreach( var detailseat in seat.Details)
                 {
-                    var sqlDetail = "EXEC CreateDetailSeat @idscreen,@idcategoryseat";
+                    var sqlDetail = "EXEC CreateDetailSeat @idscreen,@idcategoryseat,@Name";
                     var parametersDetail = new[]
                     {
                         new SqlParameter("@idscreen",result),
                         new SqlParameter("@idcategoryseat",detailseat.idCategorySeat),
+                        new SqlParameter("@Name",detailseat.SeatName),
                     };
                     databaseContext.Database.ExecuteSqlRaw(sqlDetail, parametersDetail);
                 }
             }
            return true;
         }
+
+      
 
         public dynamic ScreenAdmin(int id)
         {
@@ -53,15 +56,21 @@ namespace CinameManageMent.Services
                 Capacity=d.Capacity,
                 CinemaId=d.CinemaId,
                 Name=d.Name,
-                TotalVipSeat=databaseContext.DetailSeats.Where(a=>a.idScreen==d.Id && a.idCategorySeat==2).Count(),
-                TotalNormal = databaseContext.DetailSeats.Where(a => a.idScreen == d.Id && a.idCategorySeat == 1).Count(),
+                TotalVipSeat=databaseContext.DetailSeats.Where(a=>a.idScreen==d.Id && a.idCategorySeat==1).Count(),
+                TotalNormal = databaseContext.DetailSeats.Where(a => a.idScreen == d.Id && a.idCategorySeat == 2).Count(),
                 seatDetails = databaseContext.DetailSeats.Where(a => a.idScreen == d.Id).Select(a => new
                 {
                     Id=a.Id,
                     idscreen=a.idScreen,
-                    idcategoryscreen=a.idCategorySeat
+                    idcategoryscreen=a.idCategorySeat,
+                   
                 }).ToList()
             }).ToList();
+        }
+
+        public dynamic ViewScreen(int id)
+        {
+            return databaseContext.DetailSeats.FromSqlRaw("Select * From dbo.ViewScreen({0})", id).ToList();
         }
     }
 }

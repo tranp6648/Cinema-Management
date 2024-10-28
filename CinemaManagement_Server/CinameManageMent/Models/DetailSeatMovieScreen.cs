@@ -15,6 +15,8 @@ namespace CinameManageMent.Models
         [ForeignKey(nameof(CategorySeat))]
         public int idCategorySeat { get; set; }
         public virtual CategorySeat CategorySeat { get;set; }
-
+        [Column(TypeName ="nvarchar(200)")]
+        public string name { get; set; }
+      
     }
 }

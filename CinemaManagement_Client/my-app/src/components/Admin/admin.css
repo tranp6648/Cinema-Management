@@ -15,7 +15,12 @@ body {
 .custom-select{
   z-index: 1000;
 }
-
+.disabled-button {
+  background-color: #a0a0a0; /* Màu xám nhạt cho trạng thái vô hiệu hóa */
+  cursor: not-allowed; /* Con trỏ không được phép */
+  opacity: 0.6; /* Giảm độ sáng để tạo hiệu ứng bị mờ */
+  pointer-events: none; /* Ngăn chặn mọi sự kiện click */
+}
 .input{
   border: none;
   line-height: 50px;

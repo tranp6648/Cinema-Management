@@ -92,6 +92,12 @@ function LayoutAdmin() {
             </a>
 
         </li>
+        <li className="active treeview">
+            <a href="" onClick={() => navigate('/Admin/Order')}>
+                <i className="fa fa-dashboard" ></i> <span>Order</span>
+            </a>
+
+        </li>
      
 
 

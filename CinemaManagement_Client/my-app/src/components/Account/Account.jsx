@@ -514,7 +514,8 @@ function Account() {
     }
   }
 
-
+  const idRole = localStorage.getItem("Id");
+  console.log(idRole)
   return (
     <div >
       {loading && (

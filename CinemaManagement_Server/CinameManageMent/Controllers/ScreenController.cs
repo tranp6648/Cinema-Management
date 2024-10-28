@@ -15,6 +15,10 @@ namespace CinameManageMent.Controllers
         {
             this.screenService = screenService;
         }
+        [HttpGet("ViewScreen/{id}")]
+        public IActionResult ViewScreen(int id) { 
+        return Ok(screenService.ViewScreen(id));
+        }
         [HttpPost("CreateScreen")]
         public IActionResult CreateScreen([FromBody] List<CreateSeat> createSeat)
         {

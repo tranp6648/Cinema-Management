@@ -15,7 +15,10 @@ namespace CinameManageMent.Services
         public bool UpdateAvatar(int id,UploadPhotoDTO uploadPhotoDTO);
         public bool ChangeProfile(int id,UpdateProfileDTO updateProfileDTO);
         public dynamic GetAdmin();
+        public dynamic GetAdminCinema();
         public bool ActiveAccount(int id,string Email);
         public bool ActiveAdmin(int id, UpdateStatus status);
+        public int CountAccountUser();
+        public bool ChangeProfileUser(int id,UpdateProfileUser updateProfileUser);
     }
 }

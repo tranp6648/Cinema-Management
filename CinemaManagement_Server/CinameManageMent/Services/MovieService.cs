@@ -11,5 +11,9 @@ namespace CinameManageMent.Services
         public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription);
         public dynamic DetailMovie(int id);
         public dynamic DetailActor(int id);
+        public int CountMovie();
+        public bool UpdateStatus(int id, UpdateStatus updateStatus);
+        public dynamic GetMovieStatus();
+
     }
 }

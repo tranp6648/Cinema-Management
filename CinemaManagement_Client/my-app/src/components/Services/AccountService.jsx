@@ -1,6 +1,46 @@
 
 import { Account } from "../Url/api";
 const baseUrl = Account();
+export const ChangeProfileUser=async(id,user)=>{
+try{
+const response=await fetch(`${baseUrl}ChangeProfileUser/${id}`,{
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user)
+})
+if (!response.ok) {
+    const responseBody = await response.json();
+    return responseBody;
+}
+
+const data = await response.json();
+return data;
+}catch(err){
+    console.log(err)
+}
+}
+export const CountAccountUser=async(token)=>{
+    try{
+        const response=await fetch(`${baseUrl}CountAccountUser`,{
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(err){
+        console.log(err)
+    }
+}
 export const ActiveAdmin=async(id,admin)=>{
     try{
         const response=await fetch(`${baseUrl}ActiveAdmin/${id}`,{
@@ -48,6 +88,26 @@ export const GetAccountAdmin = async (token) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            console.log(responseBody)
+            return responseBody;
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const GetAdminCinema = async () => {
+    try {
+        const response = await fetch(`${baseUrl}GetAdminCinema`, {
+            method: 'Get',
+            headers: {
+                'Content-Type': 'application/json',
+             
             },
         })
         if (!response.ok) {

@@ -1,0 +1,81 @@
+.transfer-container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center container */
+}
+
+.transfer-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group1 {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-group1 label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+  flex-basis: 30%;
+}
+
+.form-group1 p {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  color: #333;
+  margin: 0;
+  flex-basis: 50%;
+}
+.confirm-btn {
+  background-color: #28a745; /* Màu xanh lá */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.confirm-btn:hover {
+  background-color: #218838;
+}
+
+.copy-btn {
+  padding: 8px 12px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: none; /* Keep hidden as per original */
+  margin-top: 20px;
+}

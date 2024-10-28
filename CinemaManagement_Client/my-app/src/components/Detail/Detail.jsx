@@ -12,6 +12,7 @@ import ReactQuill from "react-quill";
 import { CreateFeedback, GetFeedback } from "../Services/FeedbackService";
 import Pagination from 'react-paginate';
 import 'react-paginate/theme/basic/react-paginate.css';
+import { GetAllTime, GetInfo } from "../Services/ShowTimeService";
 function Detail() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -63,8 +64,11 @@ function Detail() {
     const fetchAvgfeedback = async () => {
         try {
             const response = await AvgFeedback(ID);
-            console.log(response)
-            setavgRating(response)
+          
+            if(avgRating>=0){
+                setavgRating(response)
+            }
+          
         } catch (error) {
             console.log(error)
         }
@@ -155,9 +159,9 @@ function Detail() {
         setid(id)
 
 
-        const response = await axios.get(`http://localhost:5231/api/ShowTime/Gettime/${id}`);
-        settime(response.data);
-        if (response.data.length <= 0) {
+        const response = await GetAllTime(id)
+        settime(response);
+        if (response.length <= 0) {
             Swal.fire({
                 icon: 'error',
                 title: 'This Movie not time',
@@ -166,7 +170,7 @@ function Detail() {
             });
         } else {
             setpopupinfo(!popupinfo)
-            setSelectedTime(response.data[0].time);
+            setSelectedTime(response[0].startDate);
         }
 
     }
@@ -174,9 +178,9 @@ function Detail() {
         const fetchData = async () => {
 
             try {
-                const response = await axios.get(`http://localhost:5231/api/ShowTime/GetInfo/${selectedTime}/${id}`);
-                setInfo(response.data)
-                console.log(selectedTime)
+                const response = await GetInfo(selectedTime,id);
+                setInfo(response)
+                
 
             } catch (error) {
                 console.log(error);
@@ -186,18 +190,7 @@ function Detail() {
         fetchData();
 
     }, [selectedTime, id]);
-    const handleUpdate = async (ID, IDAccount, idTime) => {
-        try {
-            const response = await axios.post(`http://localhost:5231/api/CardSet/Addstatus/${ID}/${IDAccount}/${idTime}`);
-            if (response.status == 200) {
-                console.log("Response Data:", response.data);
-                navigate(`/Cart/${ID}`, { state: { ID: ID, IDAccount: IDAccount, IDtime: idTime } });
-
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+   
     const popupContentStyle = {
         display: 'flex',
         animation: 'fadeDown 0.5s ease-out',
@@ -226,7 +219,7 @@ function Detail() {
     const itemsPerPage = 5; const offset = currentPage * itemsPerPage;
     const currentFeedbacks = Feedback.slice(offset, offset + itemsPerPage);
 
-
+    const uniqueDates = new Set();
     const handlePageClick = (data) => {
         setCurrentPage(data.selected);
     };
@@ -350,7 +343,10 @@ function Detail() {
                                     <div className="movie-cast-item">
 
                                         <div className="cast-thumbnail">
+                                            <a onClick={()=>navigate(`/DetailActor/${actor.id}`,{state:{Id:actor.id}})}>
                                             <img src={`http://localhost:5277/images/${actor.actor.image}`} alt="" />
+                                            </a>
+                                           
                                         </div>
                                         <div className="cast-info">
                                             <h4 className="cast-name">{actor.actor.name}</h4>
@@ -532,22 +528,30 @@ function Detail() {
                 <div className="mb-bp-container">
                     <div className="mb-bp-content">
                         <ul className="toggle-tabs mb-date-tabs">
-                            {time.map((timemap, index) => (
-                                <li className={`${selectedTime == timemap.time ? "current" : ''}`} onClick={() => setSelectedTime(prevTime => (prevTime === timemap.time ? null : timemap.time))}>
-                                    <div className="day">
-                                        <span className="D_m_day">
-                                            <span className="D_m_day">
-                                                {formatMonth(timemap.time)}
-                                            </span>
-                                            <span className="D_day">{formatWeek(timemap.time)}</span>
-                                        </span>
-                                        <div className="d_day">
-                                            <strong>{formatDay(timemap.time)}</strong>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            ))}
+                        {time.filter(timemap => {
+    const formattedDate = formatDay(timemap.startDate);
+    if (uniqueDates.has(formattedDate)) return false;
+    uniqueDates.add(formattedDate);
+    return true;
+}).map((timemap, index) => (
+    <li 
+        key={index} 
+        className={`${selectedTime === timemap.startDate ? "current" : ''}`} 
+        onClick={() => setSelectedTime(prevTime => (prevTime === timemap.startDate ? null : timemap.startDate))}
+    >
+        <div className="day">
+            <span className="D_m_day">
+                <span className="D_m_day">
+                    {formatMonth(timemap.startDate)}
+                </span>
+                <span className="D_day">{formatWeek(timemap.startDate)}</span>
+            </span>
+            <div className="d_day">
+                <strong>{formatDay(timemap.startDate)}</strong>
+            </div>
+        </div>
+    </li>
+))}
                             {/*                         
                             <li className="current">
                                 <div className="day">
@@ -757,7 +761,7 @@ function Detail() {
                                                 <dl className="collateral-tabs">
                                                     <dd className="tab-container current">
                                                         <div className="tab-content1 showtimes">
-                                                            {Info.reduce((acc, info, index) => {
+                                                            {Info && Info.length > 0 ?Info.reduce((acc, info, index) => {
                                                                 // Check if the current info.auth has already been rendered
                                                                 const authRendered = acc.auths.includes(info.auth);
                                                                 // If it hasn't been rendered, add it to the accumulator array
@@ -766,7 +770,7 @@ function Detail() {
                                                                     // Find all info entries with the same auth and accumulate their times
                                                                     const times = Info.filter(item => item.auth === info.auth).map(item => (
                                                                         <li key={item.id} className="item">
-                                                                            <a onClick={() => `${IDAccount === '' ? navigate('/Account') : handleUpdate(item.id, IDAccount, item.idTime)}`}>
+                                                                            <a onClick={()=>navigate(`/Cart/${info.id}`,{state:{Id:info.id}})}>
                                                                                 <span>{formatTime(item.time)}</span>
                                                                             </a>
                                                                         </li>
@@ -775,7 +779,7 @@ function Detail() {
                                                                     acc.elements.push(
                                                                         <div key={index} className="mb-venue">
                                                                             <div className="venue-name mb-[11px]">
-                                                                                <h3>{info.auth + " " + info.ditrict}</h3>
+                                                                                <h3>{info.cinema}</h3>
                                                                             </div>
                                                                             <div className="mb-room-name mb-[11px]  ">
                                                                                 <h4>IMAX</h4>
@@ -787,7 +791,7 @@ function Detail() {
                                                                     );
                                                                 }
                                                                 return acc;
-                                                            }, { auths: [], elements: [] }).elements}
+                                                            }, { auths: [], elements: [] }).elements:""}
                                                         </div>
                                                     </dd>
                                                 </dl>

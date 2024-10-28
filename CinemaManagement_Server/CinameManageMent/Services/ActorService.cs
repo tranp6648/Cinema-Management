@@ -9,6 +9,8 @@ namespace CinameManageMent.Services
         public bool UpdateActor(int id,UpdateActor updateActor);
         public bool DeleteActor(int id);  
         public dynamic GetActorNotin(int id);
-      
+        public dynamic GetDetailActor(int id);
+        public int CountActor();
+        public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription);
     }
 }

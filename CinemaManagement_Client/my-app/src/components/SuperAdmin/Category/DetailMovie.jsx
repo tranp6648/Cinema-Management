@@ -53,30 +53,50 @@ function DetailMovie() {
     })
     const handleUpdate=async(e)=>{
         e.preventDefault();
-        try{
-            const formData = new FormData();
-           const response=await UpdateMovie(id,{
-            title:FromData.Title,
-            releaseDate:FromData.ReleaseDate,
-            duration:FromData.Duration,
-            director:FromData.Director,
-            trailer:FromData.TrailerMovie,
-            picture:FromData.PictureUpload,
-            idCategory:SelectedCategories.value
-           },token)
-           if(response.result==true){
+        if(FromData.Title=='' || FromData.Duration=='' || FromData.Director==''){
             Swal.fire({
-                icon: 'success',
-                title: response.message,
+                icon: 'error',
+                title: 'Please complete all information',
                 showConfirmButton: false,
                 timer: 1500
             })
-              navigate(`/SuperAdmin/CAM`)
-           }
-
-        }catch(error){
-            console.log(error)
+        }else{
+            try{
+                const formData = new FormData();
+                console.log(FromData.trailer)
+                formData.append('Title',FromData.Title);
+                formData.append("releaseDate",FromData.ReleaseDate);
+                formData.append("duration",FromData.Duration);
+                formData.append("director",FromData.Director);
+                formData.append("trailer",FromData.trailer);
+                formData.append("picture",FromData.PictureUpload);
+                formData.append("idCategory",SelectedCategories.value)
+               const response=await UpdateMovie(id,formData,token)
+               if(response.result==true){
+                Swal.fire({
+                    icon: 'success',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                  navigate(`/SuperAdmin/CAM`)
+               }else{
+                const responseBody = await response.json();
+                    if (responseBody.message) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: responseBody.message || 'Failed to Create Actor',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+               }
+    
+            }catch(error){
+                console.log(error)
+            }
         }
+       
     }
     const handletrailer = (e) => {
         const file = e.target.files[0];

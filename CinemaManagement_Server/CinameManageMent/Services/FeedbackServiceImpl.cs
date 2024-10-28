@@ -15,7 +15,14 @@ namespace CinameManageMent.Services
 
         public dynamic AvgFeedback(int id)
         {
-            return databaseContext.Feedbacks.Where(d => d.IdMovie == id).Average(d=>d.RatingComment);
+            var averageRating = databaseContext.Feedbacks
+      .Where(d => d.IdMovie == id)
+      .Select(d => d.RatingComment)
+      .ToList() 
+      .DefaultIfEmpty(0) 
+      .Average();
+
+            return averageRating;
         }
 
         public bool CreateFeedback(AddFeedback addFeedback)

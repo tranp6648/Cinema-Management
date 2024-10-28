@@ -11,6 +11,8 @@ import axios from 'axios';
 import { Bar, Pie } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // Import the Chart object from 'chart.js/auto'
 import { CategoryScale, LinearScale, BarController, Title } from 'chart.js';
+import { CountShowTime } from '../Services/ShowTimeService';
+import { CountOrderAdmin, GetCoutOrderAdmin } from '../Services/OrderService';
 
 function AdminPage() {
   const canvasRef = useRef(null);
@@ -30,14 +32,15 @@ function AdminPage() {
   const [Username, setUsername] = useState([]);
   const [Order, setOrder] = useState(null);
   const [showtime, setshowtime] = useState(null);
+  const idRole = localStorage.getItem("Id");
   const handleDropdownToggle = () => {
     setShowDropdown(!showDropdown);
   };
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountCategoryMovie');
-        setCategoryMovie(response.data);
+        const response = await CountOrderAdmin(idRole);
+        setCategoryMovie(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -133,8 +136,8 @@ function AdminPage() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5231/api/Movie/CountMovie');
-        setMovie(response.data);
+        const response = await CountShowTime(idRole);
+        setMovie(response);
       } catch (error) {
         console.error('Error fetching product count:', error);
       }
@@ -143,7 +146,7 @@ function AdminPage() {
     fetchProductCount();
   }, []);
   const chartDataProduct = {
-    labels: ['Movie', 'Category', 'Actor', 'User'],
+    labels: ['ShowTime','Order'],
     datasets: [{
       data: [Movie, CategoryMovie, Actor, User],
       backgroundColor: [
@@ -163,8 +166,8 @@ function AdminPage() {
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5231/api/Order/GetCoutorder/${selectedMonth}`);
-        setOrderData(response.data);
+        const response = await GetCoutOrderAdmin(selectedMonth,idRole);
+        setOrderData(response);
 
       } catch (error) {
         console.error('Error fetching order data', error);
@@ -231,60 +234,7 @@ function AdminPage() {
 
         <section className="content">
 
-          <div className="row">
-            <div className="col-lg-3 col-xs-6">
-
-              <div className="small-box bg-aqua">
-                <div className="inner">
-                  <h3>{Event}</h3>
-                  <p>Event</p>
-                </div>
-                <div className="icon">
-                  <i className="ion ion-bag"></i>
-                </div>
-                <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-xs-6">
-
-              <div className="small-box bg-green">
-                <div className="inner">
-                  <h3>{Order}</h3>
-                  <p>Order</p>
-                </div>
-                <div className="icon">
-                  <i className="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-xs-6">
-
-              <div className="small-box bg-yellow">
-                <div className="inner">
-                  <h3>{Genre}</h3>
-                  <p>Genre</p>
-                </div>
-                <div className="icon">
-                  <i className="ion ion-person-add"></i>
-                </div>
-                <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-xs-6">
-
-              <div className="small-box bg-red">
-                <div className="inner">
-                  <h3>{showtime}</h3>
-                  <p>Shotimes</p>
-                </div>
-                <div className="icon">
-                  <i className="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
+          
 
           <div className="row">
 
@@ -386,49 +336,6 @@ function AdminPage() {
 
                 </div>
               </div>
-
-              <div className="box box-solid bg-teal-gradient">
-                <div className="box-header">
-                  <i className="fa fa-th"></i>
-                  <h3 className="box-title">Sales Graph</h3>
-                  <div className="box-tools pull-right">
-                    <button className="btn bg-teal btn-sm" data-widget="collapse"><i className="fa fa-minus"></i></button>
-                    <button className="btn bg-teal btn-sm" data-widget="remove"><i className="fa fa-times"></i></button>
-                  </div>
-                </div>
-                <div className="box-body border-radius-none">
-                  <div className="chart" id="line-chart" ></div>
-                </div>
-                <div className="box-footer no-border">
-                  <table id="example1" className="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Username</th>
-
-                        <th>Fullname</th>
-                        <th>OrderCount</th>
-
-
-
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {Username.map((user, index) => (
-                        <tr>
-                          <td>{index + 1}</td>
-                          <td>{user.username}</td>
-                          <td>{user.fullName}</td>
-                          <td>{user.ordercount}</td>
-                        </tr>
-                      ))}
-                      <tr></tr>
-                    </tbody>
-
-                  </table>
-                </div>
-              </div>
-
 
 
 

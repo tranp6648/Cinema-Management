@@ -1,4 +1,5 @@
 ﻿using CinameManageMent.Data;
+using CinameManageMent.Models;
 using CinameManageMent.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,8 +12,10 @@ namespace CinameManageMent.Controllers
     public class ActorController : ControllerBase
     {
         private readonly ActorService actorService;
-        public ActorController(ActorService actorService) { 
+        private readonly DatabaseContext databaseContext;
+        public ActorController(ActorService actorService,DatabaseContext databaseContext) { 
         this.actorService = actorService;
+            this.databaseContext = databaseContext;
         }
         [HttpGet("GetActorNotIn/{id}")]
         public IActionResult GetActorNotIn(int id)
@@ -26,16 +29,49 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet("CountActor")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountOrder()
+        {
+            try
+            {
+                return Ok(actorService.CountActor());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpDelete("DeleteActor/{id}")]
         [Authorize(Policy ="SuperAdmin")]
         public IActionResult DeleteActor(int id)
         {
             try
             {
+                if(databaseContext.DetailActorMovies.Any(d=>d.IdActor==id))
+                {
+                    return BadRequest(new { message = "Actor Delete Failed. Actor is associated with movies." });
+                }
                 return Ok(new
                 {
                     message = "Delete Actor Successfully",
                     result = actorService.DeleteActor(id)
+                });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("UpdateDescription/{id}")]
+        public IActionResult UpdateDescription(int id, [FromBody] UpdateDescription updateDescription)
+        {
+            try
+            {
+                return Ok(new
+                {
+                    result = actorService.UpdateDescriptionMovie(id, updateDescription),
+                    Message = "Update Description Success"
                 });
             }
             catch
@@ -49,7 +85,21 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+
                 return Ok(actorService.getActor());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+      
+        [HttpGet("GetDetailActor/{id}")]
+        public IActionResult GetDetailActor(int id)
+        {
+            try
+            {
+                return Ok(actorService.GetDetailActor(id));
             }
             catch
             {
@@ -62,6 +112,10 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if (databaseContext.Actors.Any(d => d.Name == updateActor.Name))
+                {
+                    return BadRequest(new { message = "Name already exists" });
+                }
                 return Ok(new
                 {
                     Message = "Update Actor Successfully",
@@ -80,6 +134,10 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if(databaseContext.Actors.Any(d=>d.Name==addActor.Name)) {
+                    return BadRequest(new { message = "Name already exists" });
+                }
+             
                 return Ok(new
                 {
                     result=actorService.AddActor(addActor),

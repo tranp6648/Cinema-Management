@@ -41,6 +41,26 @@ return data;
     console.log(error)
 }
 }
+export const ViewScreen=async(id)=>{
+    try{    
+        const response=await fetch(`${baseUrl}ViewScreen/${id}`,{
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+           
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(err){
+        console.log(err)
+    }
+}
 export const CreateScreen=async(screen)=>{
     try{
         const response=await fetch(`${baseUrl}CreateScreen`,{

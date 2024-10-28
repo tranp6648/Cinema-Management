@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { ActiveAdmin, GetAccountAdmin, Register } from "../../Services/AccountService";
 import Swal from "sweetalert2";
-import Select from 'react-select'
+import Select from 'react-select';
+import Pagination from 'react-paginate'
 import Cookies from 'js-cookie'
 function ManagerAdmin() {
     const[Admin,setAdmin]=useState([]);
@@ -87,13 +88,28 @@ function ManagerAdmin() {
                     Email: '',
                     Phone: ''
                 })
+                fetchdata();
             }
         } catch (error) {
             console.log(error)
         }
     }
+    const [currentPage, setCurrentPage] = useState(0);
+  const [perPage, setperPage] = useState(5);
+
     const today = new Date();
     const maxBirthdate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    const [searchTerm, setSearchtem] = useState('');
+     const filterCinema=Admin.filter(cinema=>
+    cinema.fullName.toLowerCase().includes(searchTerm.toLowerCase())
+    
+  )
+  const indexOflastCategory = (currentPage + 1) * perPage;
+    const indexofFirstCategory = indexOflastCategory - perPage;
+    const currentCategory = filterCinema.slice(indexofFirstCategory, indexOflastCategory)
+    const handlePageclick = (data) => {
+      setCurrentPage(data.selected);
+  };
     return (
 
         <div>
@@ -179,7 +195,7 @@ function ManagerAdmin() {
                                 </div>
                                 <div className="flex items-center space-x-4 float-left flex-1 mb-2 ml-2">
                                     <label for="search" className="text-gray-600">Search</label>
-                                    <input type="text" id="search" name="search" placeholder="Enter your search term"  className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
+                                    <input type="text" id="search" name="search" placeholder="Enter your search term" value={searchTerm} onChange={(e) => setSearchtem(e.target.value)}  className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
                                 </div>
 
 
@@ -201,7 +217,7 @@ function ManagerAdmin() {
                                         </thead>
                                         <tbody>
                                            
-                                        {Admin.map((admin,index)=>(
+                                        {currentCategory.map((admin,index)=>(
                                             <tr>
                                                 <td>{index+1}</td>
                                                 <td>{admin.email}</td>
@@ -219,7 +235,26 @@ function ManagerAdmin() {
                                         </tbody>
 
                                     </table>
-                                   
+                                    <Pagination
+                                        previousLabel={'previous'}
+                                        nextLabel={'next'}
+                                        breakLabel={'...'}
+                                        pageCount={Math.ceil(filterCinema.length / perPage)}
+                                        marginPagesDisplayed={2}
+                                        pageRangeDisplayed={5}
+                                        onPageChange={handlePageclick}
+                                        containerClassName={'pagination'}
+                                        activeClassName={'active'}
+                                        previousClassName={'page-item'}
+                                        previousLinkClassName={'page-link'}
+                                        nextClassName={'page-item'}
+                                        nextLinkClassName={'page-link'}
+                                        breakClassName={'page-item'}
+                                        breakLinkClassName={'page-link'}
+                                        pageClassName={'page-item'}
+                                        pageLinkClassName={'page-link'}
+
+                                    />
 
                                 </div>
                             </div>

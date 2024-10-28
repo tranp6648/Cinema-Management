@@ -50,7 +50,7 @@ function LayoutSuperAdmin() {
                             <a href="#" onClick={handleLogout}>
                                 <i className="fa fa-sign-out" aria-hidden="true"></i> Logout
                             </a>
-                            <a onClick={() => navigate('/ProfileAdmin')}>
+                            <a onClick={() => navigate('/SuperAdmin/Profile')}>
                                 <i className="fa fa-user" aria-hidden="true"></i> Account
                             </a>
 

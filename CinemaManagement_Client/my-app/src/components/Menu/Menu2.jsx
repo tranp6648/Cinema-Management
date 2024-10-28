@@ -116,19 +116,21 @@ function Menu2(){
                     </div>
                 </div>
                 <div className='elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e24734f elementor-hidden-tablet elementor-hidden-mobile'>
-                    <div className='elementor-widget-wrap elementor-element-populated'>
-                        <div className='elementor-element elementor-element-8ad989f elementor-widget__width-auto elementor-widget elementor-widget-aovis_elementor_search_popup'>
-                            <div className='ova_wrap_search_popup'>
-                            <i class="fas fa-search" style={{color:'white',fontSize:'24pxx'}}></i>
-                            </div>
-                        </div>
-                       
-                    </div>
+                  
                     <div className='elementor-element elementor-element-2f55708 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon'>
                             <div className='elementor-widget-container'>
                                 <div className='elementor-icon-wrapper' style={{marginLeft:'32px'}}>
                                     <a href="" className='elementor-icon'>
-                                    <i class="fa-solid fa-user" style={{color:'white',fontSize:'24pxx'}}></i>
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <div className='elementor-element elementor-element-2f55708 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon'>
+                            <div className='elementor-widget-container'>
+                                <div className='elementor-icon-wrapper' style={{marginLeft:'32px'}}>
+                                    <a navigate className='elementor-icon'>
+                                    <i class="fa-solid fa-cart-shopping"></i>
                                     </a>
                                 </div>
                             </div>

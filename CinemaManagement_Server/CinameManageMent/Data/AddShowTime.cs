@@ -8,5 +8,6 @@
         public int idscreen { get; set; }
         public int idAccountCreate { get; set; }
         public List<AddShowTimeSeatPrice> Seats { get; set; }
+        public List<AddSeatShowTime> SeatsById { get; set; }
     }
 }

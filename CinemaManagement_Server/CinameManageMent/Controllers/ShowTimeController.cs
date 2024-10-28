@@ -1,6 +1,7 @@
 ﻿using CinameManageMent.Data;
 using CinameManageMent.Models;
 using CinameManageMent.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +43,56 @@ namespace CinameManageMent.Controllers
             {
                 return BadRequest();
             }
+        }
+        [HttpGet("GetInfo/{Datetime}/{ID}")]
+        public IActionResult getDate(DateTime datetime, int id)
+        {
+            try
+            {
+
+
+                return Ok(showTimeService.GetInfo(datetime, id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpGet("GetAllTime/{id}")]
+        public IActionResult GetAllTime(int id)
+        {
+            try
+            {
+                return Ok(showTimeService.GetAllTime(id));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("GetSeat/{id}")]
+        public IActionResult GetSeat(int id)
+        {
+            try
+            {
+                return Ok(showTimeService.GetSeat(id));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("CountShowTime")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountShowtime()
+        {
+            return Ok(showTimeService.CountShowTime());
+        }
+        [HttpGet("CountShowTimeAdmin/{id}")]
+        public IActionResult CountShowTimeAdmin(int id)
+        {
+            return Ok(showTimeService.CountShowTimeAdmin(id));
         }
         [HttpPost("CreateShowTime")]
         public IActionResult CreateShowTime([FromBody]AddShowTime addShowTime)

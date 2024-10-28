@@ -61,7 +61,7 @@ namespace CinameManageMent.Controllers
             }
         }
         [HttpPost("UpdateProfile/{id}")]
-        [Authorize(Policy ="Admin")]
+      
         public IActionResult UpdateProfile(int id, [FromBody]UpdateProfileDTO updateProfileDTO)
         {
             try
@@ -95,8 +95,24 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+        [HttpPut("ChangeProfileUser/{id}")]
+        public IActionResult ChangeProfileUser(int id, [FromBody] UpdateProfileUser updateProfileUser)
+        {
+            try
+            {
+                return Ok(new
+                {
+                    result = _accountService.ChangeProfileUser(id, updateProfileUser),
+                    Message = "Change Profile Success"
+                });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpGet("ProfileAccount/{id}")]
-        [Authorize(Policy = "Admin")]
+    
         public IActionResult ProfileAccount(int id)
         {
             try
@@ -158,6 +174,17 @@ namespace CinameManageMent.Controllers
                 },
                 message = "Login Sucess"
             }) ;
+        }
+        [HttpGet("CountAccountUser")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountAccountUser()
+        {
+            return Ok(_accountService.CountAccountUser());
+        }
+        [HttpGet("GetAdminCinema")]
+        public IActionResult GetAdminCinema()
+        {
+            return Ok(_accountService.GetAdminCinema());
         }
         [Produces("application/json")]
         [Consumes("application/json")]

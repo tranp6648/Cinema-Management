@@ -12,9 +12,17 @@ namespace CinameManageMent.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly CategoryService _categoryService;
-        public CategoryController(CategoryService categoryService)
+        private readonly DatabaseContext databaseContext;
+        public CategoryController(CategoryService categoryService, DatabaseContext databaseContext)
         {
             _categoryService = categoryService;
+            this.databaseContext = databaseContext;
+        }
+        [HttpGet("CountCategory")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountCategory()
+        {
+            return Ok(_categoryService.CountCategory());
         }
         [HttpDelete("DeleteCategory/{id}")]
         [Authorize(Policy ="SuperAdmin")]
@@ -22,6 +30,9 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if(databaseContext.DetailCategoryMovies.Any(d=>d.IdCategory==id)) {
+                    return BadRequest(new { message = "Category Delete Failed. Category is associated with movies." });
+                }
                 return Ok(_categoryService.DeleteCategory(id));
             }
             catch
@@ -36,6 +47,10 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if(databaseContext.Categories.Any(d=>d.Name==addCategory.Name))
+                {
+                    return BadRequest(new { message = "Name already exists" });
+                }
                 return Ok(new
                 {
                     Message = "Updated category successfully",
@@ -66,6 +81,10 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if (databaseContext.Categories.Any(d => d.Name == category.Name))
+                {
+                    return BadRequest(new { message = "Name already exists" });
+                }
                 return Ok(new
                 {
                     Message = "Added category successfully",

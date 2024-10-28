@@ -7,6 +7,8 @@ namespace CinameManageMent.Services
        public bool CreateCineme(AddCinema addCinema);
         public dynamic GetCinema();
         public bool UpdateCinema(int id,AddCinema cinema);
+        public dynamic GetDistrict();
+        public int CountCinema();
      
     }
 }

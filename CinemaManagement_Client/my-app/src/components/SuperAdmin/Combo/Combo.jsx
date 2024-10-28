@@ -40,7 +40,7 @@ function Combo() {
     }
     useEffect(() => {
         fetchComboItem();
-    })
+    },[])
     const [quantities, setQuantities] = useState({});
     const handleSelectChange = (selectedOptions) => {
         setSelectedItems(selectedOptions || []);
@@ -71,6 +71,7 @@ function Combo() {
             FromData.ImagePreview = null;
             FromData.priceFood = '';
             FromData.NameFood = '';
+            document.getElementById('imageInput').value = '';
             fetchComboItem();
         }
     }
@@ -175,8 +176,9 @@ function Combo() {
                 showConfirmButton: false,
                 timer: 1500
             })
-            setAddItem(false);
 
+            setAddItem(false);
+            fetchItem();
         }
     }
     const handleStatusChange = async (selectedOption, blogId) => {
@@ -316,6 +318,7 @@ function Combo() {
                                                 options={Item.map(nation => ({ value: nation.id, label: nation.name }))}
                                                 className="custom-select"
                                                 isMulti
+                                                value={selectedItems}
                                                 onChange={handleSelectChange}
                                             />
                                             <button
@@ -449,7 +452,7 @@ function Combo() {
 
                             <h3 className="box-title">Create Item</h3>
                         </div>
-                        <form role="form" onClick={handleCreateItem}>
+                        <form role="form" onSubmit={handleCreateItem}>
                             <div className="box-body">
                                 <div className="form-group">
                                     <label className='float-left'>Name</label>

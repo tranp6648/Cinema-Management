@@ -1,5 +1,6 @@
 ﻿using CinameManageMent.Data;
 using CinameManageMent.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,18 @@ namespace CinameManageMent.Controllers
         public ComboItemController(ComboItemService comboItemService)
         {
             this.comboItemService = comboItemService;
+        }
+        [HttpGet("ShowComboItem")]
+        public IActionResult ShowComboItem()
+        {
+            try
+            {
+                return Ok(comboItemService.ShowComboItem());
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
         [HttpPut("UpdateComboItem/{id}")]
         public IActionResult UpdateComboItem(int id, [FromBody] UpdateCombo updateCombo)
@@ -53,6 +66,12 @@ namespace CinameManageMent.Controllers
             {
                 return BadRequest();
             }
+        }
+        [HttpGet("CountComboItem")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountCombo()
+        {
+           return Ok(comboItemService.CountComboItem());
         }
         [HttpPost("CreateCombo")]
         public IActionResult CreateCombo([FromBody]AddCombo addCombo)

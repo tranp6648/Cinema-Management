@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinameManageMent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bc9ee32308dd8b5877155cb42c334ffe4f3aba4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50ae26da2e4ff2a36c6cf1d66ed22b407388b8a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinameManageMent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinameManageMent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

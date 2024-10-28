@@ -1,5 +1,25 @@
 import { Category } from "../Url/api";
 const baseUrl=Category();
+export const CountCategoryMovie=async(token)=>{
+    try{
+        const response=await fetch(`${baseUrl}CountCategory`,{
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(err){
+        console.log(err)
+    }
+}
 export const AddCategoryMovie=async(Category,token)=>{
     try{
         const response=await fetch(`${baseUrl}Add`,{

@@ -15,6 +15,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* Thêm các thuộc tính khác cho giao diện của nội dung trong popup */
   }
+  
   .form-container {
       display: flex;
       flex-direction: column;

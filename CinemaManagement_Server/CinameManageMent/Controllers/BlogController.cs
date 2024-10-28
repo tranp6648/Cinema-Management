@@ -15,6 +15,52 @@ namespace CinameManageMent.Controllers
         {
             this.blogService = blogService;
         }
+        [HttpGet("CountBlog")]
+        [Authorize(Policy = "AdminOrSuperAdmin")]
+        public IActionResult CountBlog()
+        {
+            return Ok(blogService.CountBlog());
+        }
+        [HttpGet("DetailBlog/{id}")]
+        public IActionResult DetailBlog(int id)
+        {
+            try
+            {
+                return Ok(blogService.DetailBlog(id));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("GetBlogStatus")]
+        public IActionResult GetBlogStatus()
+        {
+            try
+            {
+                return Ok(blogService.GetBlogStatus());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("UpdateDescription/{id}")]
+        public IActionResult UpdateDescription(int id, [FromBody] UpdateDescription updateDescription)
+        {
+            try
+            {
+                return Ok(new
+                {
+                    result = blogService.UpdateDescriptionMovie(id, updateDescription),
+                    Message = "Update Description Success"
+                });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpPut("UpdateStatus/{id}")]
         public IActionResult UpdateStatus(int id, [FromBody] UpdateStatus updateStatus)
         {

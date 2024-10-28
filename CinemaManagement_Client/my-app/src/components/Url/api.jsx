@@ -34,3 +34,6 @@ export const ComboItem=()=>{
 export const ShowTime=()=>{
      return 'http://localhost:5277/api/ShowTime/'
 }
+export const Order=()=>{
+    return 'http://localhost:5277/api/Order/'
+}

@@ -118,7 +118,7 @@ function Profile() {
             try {
 
                 const response = await ProfileAccount(idRole, token);
-
+                console.log(response)
                 setUserData({
                     FullName: response.fullName,
                     UserName: response.username,

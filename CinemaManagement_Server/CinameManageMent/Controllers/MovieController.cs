@@ -1,4 +1,5 @@
 ﻿using CinameManageMent.Data;
+using CinameManageMent.Models;
 using CinameManageMent.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,9 +12,11 @@ namespace CinameManageMent.Controllers
     public class MovieController : ControllerBase
     {
         private MovieService movieService;
-        public MovieController(MovieService movieService)
+        private DatabaseContext databaseContext;
+        public MovieController(MovieService movieService,DatabaseContext databaseContext)
         {
             this.movieService = movieService;
+            this.databaseContext = databaseContext;
         }
         [HttpPost("AddActorMovie")]
         public IActionResult AddActorMovie([FromBody] ActorMovieDTO actorMovieDTO)
@@ -30,6 +33,11 @@ namespace CinameManageMent.Controllers
             {
                 return BadRequest();
             }
+        }
+        [HttpGet("GetMovieStatus")]
+        public IActionResult GetMovieStatus()
+        {
+            return Ok(movieService.GetMovieStatus());
         }
         [HttpPut("UpdateDescription/{id}")]
         public IActionResult UpdateDescription(int id, [FromBody]UpdateDescription updateDescription)
@@ -59,6 +67,25 @@ namespace CinameManageMent.Controllers
                 return BadRequest();
             }
         }
+        [HttpPut("UpdateStatus/{id}")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult UpdateStatus(int id, [FromBody] UpdateStatus updateStatus)
+        {
+            try
+            {
+                return Ok(movieService.UpdateStatus(id, updateStatus));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpGet("CountMovie")]
+        [Authorize(Policy ="SuperAdmin")]
+        public IActionResult CountMovie()
+        {
+            return Ok(movieService.CountMovie());
+        }
         [HttpGet("DetailMovie/{id}")]
         public IActionResult DetailMovie(int id)
         {
@@ -73,10 +100,14 @@ namespace CinameManageMent.Controllers
         }
         [HttpPut("UpdateMovie/{id}")]
         [Authorize(Policy = "SuperAdmin")]
-        public IActionResult UpdateMovie(int id, [FromBody] UpdateMovieDto updateMovieDto)
+        public IActionResult UpdateMovie(int id, [FromForm] UpdateMovieDto updateMovieDto)
         {
             try
             {
+                if(databaseContext.Movies.Any(d=>d.Title == updateMovieDto.Title))
+                {
+                    return BadRequest(new { message = "Title already exists" });
+                }
                 return Ok(new
                 {
                     result= movieService.UpdateMovie(id, updateMovieDto),
@@ -107,6 +138,10 @@ namespace CinameManageMent.Controllers
         {
             try
             {
+                if (databaseContext.Movies.Any(d => d.Title == movie.Title))
+                {
+                    return BadRequest(new { message = "Tittle already exists" });
+                }
                 return Ok(new
                 {
                     result=movieService.AddMovie(movie),

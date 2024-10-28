@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
+import Pagination from 'react-paginate'
 import Cookies from 'js-cookie';
 import Select from 'react-select';
 import ReactQuill from 'react-quill';
 import { CreateCategoryBlog, GetCategoryBlog } from "../../Services/CategoryBlogService";
 import { AddBlog, GetBlog, UpdateBlog, UpdateStatus } from "../../Services/BlogService";
+import { useNavigate } from "react-router-dom";
 function Blog() {
-
+    const navigate = useNavigate();
     const getTokenFromCookies = () => {
         return Cookies.get('token');
     };
@@ -221,6 +223,18 @@ function Blog() {
     const option = CategoryBlog.map(category => ({ value: category.id, label: category.name }))
     const today = new Date();
     const maxBirthdate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    const [searchTerm, setSearchtem] = useState('');
+    const [currentPage, setCurrentPage] = useState(0);
+    const [perPage, setperPage] = useState(5);
+    const filterCinema=Blog.filter(cinema=>
+      cinema.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    const indexOflastCategory = (currentPage + 1) * perPage;
+      const indexofFirstCategory = indexOflastCategory - perPage;
+      const currentCategory = filterCinema.slice(indexofFirstCategory, indexOflastCategory)
+      const handlePageclick = (data) => {
+        setCurrentPage(data.selected);
+    };
     return (
 
         <div>
@@ -310,7 +324,7 @@ function Blog() {
                                 </div>
                                 <div className="flex items-center space-x-4 float-left flex-1 mb-2 ml-2">
                                     <label for="search" className="text-gray-600">Search</label>
-                                    <input type="text" id="search" name="search" placeholder="Enter your search term" className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
+                                    <input type="text" id="search" name="search" value={searchTerm} onChange={(e)=>setSearchtem(e.target.value)} placeholder="Enter your search term" className="border border-gray-300 px-3 py-1 rounded-md focus:outline-none focus:border-blue-500" />
                                 </div>
 
 
@@ -324,13 +338,14 @@ function Blog() {
                                             
                                                 <th>Category Blog</th>
                                                 <th>Image Blog</th>
+                                                <th>Desciption</th>
                                                 <th>Status</th>
                                                 <th>Edit</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {Blog.map((blog, index) => (
+                                            {currentCategory.map((blog, index) => (
                                                 <tr>
                                                     <td>{index + 1}</td>
                                                     <td>{blog.title}</td>
@@ -338,6 +353,7 @@ function Blog() {
                                                   
                                                     <td>{blog.categoryBlog.name}</td>
                                                     <td><img src={`http://localhost:5277/Images/${blog.imageUrl}`} width="100" height="100" alt="" /></td>
+                                                    <td><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate(`/SuperAdmin/DescriptionBlog/${blog.id}`, { state: { Id: blog.id } })}>Description</button></td>
                                                     <td> <Select
                                                         options={optionsStatus}
                                                         value={selectedStatus[blog.id] || optionsStatus.find(option => blog.status ? option.value === 1 : option.value === 2)}
@@ -350,7 +366,26 @@ function Blog() {
                                         </tbody>
 
                                     </table>
+                                    <Pagination
+                                        previousLabel={'previous'}
+                                        nextLabel={'next'}
+                                        breakLabel={'...'}
+                                        pageCount={Math.ceil(filterCinema.length / perPage)}
+                                        marginPagesDisplayed={2}
+                                        pageRangeDisplayed={5}
+                                        onPageChange={handlePageclick}
+                                        containerClassName={'pagination'}
+                                        activeClassName={'active'}
+                                        previousClassName={'page-item'}
+                                        previousLinkClassName={'page-link'}
+                                        nextClassName={'page-item'}
+                                        nextLinkClassName={'page-link'}
+                                        breakClassName={'page-item'}
+                                        breakLinkClassName={'page-link'}
+                                        pageClassName={'page-item'}
+                                        pageLinkClassName={'page-link'}
 
+                                    />
 
                                 </div>
                             </div>

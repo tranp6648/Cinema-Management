@@ -4,6 +4,7 @@ import Menu from '../Menu/Menu'
 import picture1 from '../images/1917.jpg';
 import { Outlet } from "react-router-dom";
 function layout(){
+   
  return(
     <div>
         

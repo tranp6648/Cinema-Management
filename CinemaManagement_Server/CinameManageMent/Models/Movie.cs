@@ -20,6 +20,7 @@ public partial class Movie
     public string Trailer { get; set; } = null!;
 
     public string Picture { get; set; } = null!;
+    public bool Status { get; set; }
 
     
 }

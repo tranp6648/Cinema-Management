@@ -1,5 +1,64 @@
 import { Actor } from "../Url/api";
 const baseUrl=Actor();
+export const GetDetailActor=async(Id)=>{
+    try{
+        const response=await fetch(`${baseUrl}GetDetailActor/${Id}`,{
+            method:'Get',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+        
+        const data = await response.json();
+        return data;
+    }catch(error){
+        console.log(error)
+    }
+}
+export const UpdateDescription = async (id, Description) => {
+    try {
+        const response = await fetch(`${baseUrl}UpdateDescription/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Description)
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const CountActor=async(token)=>{
+    try{
+        const response=await fetch(`${baseUrl}CountActor`,{
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        if (!response.ok) {
+            const responseBody = await response.json();
+            return responseBody;
+        }
+
+        const data = await response.json();
+        return data;
+    }catch(err){
+        console.log(err)
+    }
+}
 export const  GetActorNotIn=async(id)=>{
 try{
 const response=await fetch(`${baseUrl}GetActorNotIn/${id}`,{

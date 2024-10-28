@@ -98,7 +98,7 @@ namespace CinameManageMent.Services
 .FromSqlRaw("SELECT ImageUrl FROM dbo.fn_SelectBannerBlog({0})", id)
 .Select(x => x.ImageUrl)
 .FirstOrDefault();
-                    var sql = "EXEC UpdateBlog @Id,@Title,@IdCategoryblog";
+                    var sql = "EXEC UpdateBlog @Id,@Title,@IdCategoryblog,@ImageUrl";
                     var parameters = new[]
                     {
                         new SqlParameter("@Id",id),
@@ -136,6 +136,37 @@ namespace CinameManageMent.Services
             catch
             {
                 return false ;
+            }
+        }
+
+        public dynamic GetBlogStatus()
+        {
+            return databaseContext.Blogs.FromSqlRaw("Select * From GetBlogStatus").ToList();
+        }
+
+        public dynamic DetailBlog(int id)
+        {
+            return databaseContext.Blogs
+ .FromSqlRaw("SELECT * FROM dbo.ViewDetailBlog({0})", id).FirstOrDefault();
+        }
+
+        public int CountBlog()
+        {
+            return databaseContext.Blogs.Count();
+        }
+
+        public bool UpdateDescriptionMovie(int id, UpdateDescription updateDescription)
+        {
+            try
+            {
+                var idMovie = new SqlParameter("@Id", id);
+                var Description = new SqlParameter("@Description", updateDescription.Description);
+                var result = databaseContext.Database.ExecuteSqlRaw("Exec UpdateBlogDescription @Id,@Description", idMovie, Description);
+                return result > 0;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

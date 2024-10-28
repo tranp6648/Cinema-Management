@@ -6,5 +6,6 @@
         public int RatingComment { get; set; }
         public int idMovie { get; set; }
         public int IdAccount { get; set; }
+        
     }
 }
